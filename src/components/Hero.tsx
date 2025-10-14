@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
 
         <div className="flex justify-center mb-8">
-          <img src="/boppi-logo.png" alt="Boppi Logo" className="w-32 h-32 animate-float glow-primary" />
+          <img src="/assets/boppi_logo_glow.svg" className="boppi-logo" alt="Boppi Logo" />
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
