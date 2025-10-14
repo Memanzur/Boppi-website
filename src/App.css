@@ -40,23 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-.boppi-logo {
-  width: 180px; /* same visual size */
-  height: auto;
-  filter: drop-shadow(0 0 20px rgba(92, 220, 255, 0.8))
-          drop-shadow(0 0 40px rgba(255, 105, 255, 0.4))
-          drop-shadow(0 0 80px rgba(0, 255, 255, 0.2));
-  background: none;
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}

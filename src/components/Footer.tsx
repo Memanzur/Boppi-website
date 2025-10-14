@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/assets/boppi_logo_glow.svg" alt="Boppi" className="w-8 h-8" />
+              <img src="/boppi-logo.png" alt="Boppi" className="w-8 h-8" />
               <span className="text-xl font-bold gradient-text">Boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
