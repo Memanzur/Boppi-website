@@ -9,9 +9,6 @@
     </linearGradient>
   </defs>
   
-  <!-- Background circle with dark blue-purple -->
-  <circle cx="64" cy="64" r="64" fill="#1e1b4b"/>
-  
   <!-- Star shape with rounded points -->
   <path d="M64 25 C72 30, 80 25, 84 33 C88 41, 96 45, 92 53 C88 61, 92 69, 84 73 C76 77, 72 85, 64 81 C56 85, 52 77, 48 73 C40 69, 44 61, 40 53 C36 45, 44 41, 48 33 C52 25, 60 30, 64 25 Z" 
         fill="url(#starGradient)"/>
