@@ -1,0 +1,26 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d"/>
+      <stop offset="25%" style="stop-color:#c44569"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="75%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle with dark blue-purple -->
+  <circle cx="64" cy="64" r="64" fill="#1e1b4b"/>
+  
+  <!-- Star shape with rounded points -->
+  <path d="M64 25 C72 30, 80 25, 84 33 C88 41, 96 45, 92 53 C88 61, 92 69, 84 73 C76 77, 72 85, 64 81 C56 85, 52 77, 48 73 C40 69, 44 61, 40 53 C36 45, 44 41, 48 33 C52 25, 60 30, 64 25 Z" 
+        fill="url(#starGradient)"/>
+  
+  <!-- Boppi text -->
+  <text x="64" y="70" 
+        font-family="Arial, sans-serif" 
+        font-size="14" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        fill="white">Boppi</text>
+</svg>
