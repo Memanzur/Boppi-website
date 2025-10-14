@@ -40,7 +40,13 @@ const Support = () => {
             </div>
             <h3 className="text-xl font-semibold mb-2">Feedback</h3>
             <p className="text-muted-foreground mb-4">Share your thoughts</p>
-            <Button variant="outline" className="w-full">Send Feedback</Button>
+            <Button 
+              variant="outline" 
+              className="w-full"
+              onClick={() => window.open('https://form.typeform.com/to/vbiGSeh4', '_blank')}
+            >
+              Send Feedback
+            </Button>
           </Card>
         </div>
 

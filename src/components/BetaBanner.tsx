@@ -30,7 +30,11 @@ const BetaBanner = () => {
               <p>🔧 Some advanced features still in development</p>
             </div>
 
-            <Button size="lg" className="gap-2 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-opacity">
+            <Button 
+              size="lg" 
+              className="gap-2 bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-opacity"
+              onClick={() => window.open('https://form.typeform.com/to/rqp5yYJf', '_blank')}
+            >
               Get Early Access
             </Button>
           </div>

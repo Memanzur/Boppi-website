@@ -1,4 +1,4 @@
-import { Shield, Download, Star, Users, ArrowRight, Zap, Lock } from "lucide-react";
+import { Star, Download, Users, ArrowRight, Zap, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -14,13 +14,13 @@ const Hero = () => {
         {/* Logo/Brand */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 mb-6 glow-primary">
-            <Shield className="w-10 h-10 text-primary" />
+            <Star className="w-10 h-10 text-primary fill-primary" />
           </div>
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
             <span className="gradient-text">Boppi</span>
           </h1>
           <Badge className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 text-sm font-medium mb-6">
-            🛡️ Your AI Data Guard
+            Your Data Guard
           </Badge>
         </div>
 
@@ -42,7 +42,7 @@ const Hero = () => {
         {/* Key Benefits */}
         <div className="flex flex-wrap justify-center gap-4 mb-12 text-sm md:text-base">
           <div className="flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full">
-            <Shield className="w-4 h-4" />
+            <Star className="w-4 h-4 fill-current" />
             <span>100% Local Processing</span>
           </div>
           <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
@@ -57,9 +57,13 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold glow-primary">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold glow-primary"
+            onClick={() => window.open('https://form.typeform.com/to/rqp5yYJf', '_blank')}
+          >
             <Download className="w-5 h-5 mr-2" />
-            Download Extension
+            Join Beta Program
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
           <Button variant="outline" size="lg" className="border-primary/20 hover:bg-primary/5 px-8 py-4 text-lg">
