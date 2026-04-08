@@ -126,7 +126,7 @@ const LiveDemo = () => {
         </div>
 
         {/* Preset chips row */}
-        <div className="reveal flex flex-wrap justify-center gap-2 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           {PRESETS.map((preset) => (
             <button
               key={preset.label}
@@ -139,7 +139,7 @@ const LiveDemo = () => {
           ))}
         </div>
 
-        <Card className="reveal p-6 md:p-10 bg-card/60 backdrop-blur-sm border-primary/20 relative overflow-hidden">
+        <Card className="p-6 md:p-10 bg-card/60 backdrop-blur-sm border-primary/20 relative overflow-hidden">
           {/* Soft brand orbs behind the card */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
@@ -309,7 +309,7 @@ const LiveDemo = () => {
           )}
         </Card>
 
-        <div className="reveal mt-8 text-center">
+        <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground mb-4">
             This demo runs 100% in your browser. Nothing you type leaves this tab.
           </p>
