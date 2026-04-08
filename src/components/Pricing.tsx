@@ -17,9 +17,9 @@ const launchFeatures = [
 const Pricing = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="pricing" className="py-24 px-6 bg-card/30">
+    <section id="pricing" className="py-16 px-6 bg-card/30">
       <div className="max-w-5xl mx-auto">
-        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Pricing</span>
           </h2>

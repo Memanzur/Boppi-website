@@ -111,9 +111,9 @@ const LiveDemo = () => {
   };
 
   return (
-    <section id="demo" className="py-24 px-6 relative">
+    <section id="demo" className="py-16 px-6 relative">
       <div className="max-w-6xl mx-auto relative">
-        <div ref={sectionRef} className="reveal text-center mb-10 space-y-4">
+        <div ref={sectionRef} className="reveal text-center mb-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-semibold text-primary">Live playground</span>
@@ -227,20 +227,11 @@ const LiveDemo = () => {
                 onFocus={() => setIsTouched(true)}
                 rows={3}
                 placeholder="Type anything here. Try typing a fake SSN, email, or credit card number..."
-                className="w-full bg-transparent resize-none p-4 md:p-5 text-base md:text-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none font-mono"
+                className="w-full bg-transparent resize-none p-4 md:p-5 text-sm md:text-lg text-foreground placeholder:text-muted-foreground/60 focus:outline-none font-mono"
                 spellCheck={false}
                 autoCapitalize="off"
                 autoCorrect="off"
               />
-              {!isTouched && (
-                <span
-                  className="absolute pointer-events-none text-primary text-lg md:text-xl animate-boppi-caret"
-                  style={{ left: `calc(1rem + ${text.length * 0.6}ch)`, top: "1rem" }}
-                  aria-hidden
-                >
-                  ▍
-                </span>
-              )}
             </div>
 
             {/* Live counter strip */}
@@ -299,7 +290,7 @@ const LiveDemo = () => {
               )}
             </div>
 
-            <div className="rounded-2xl border border-success/20 bg-success/5 p-4 md:p-5 min-h-[96px] font-mono text-base md:text-lg whitespace-pre-wrap break-words leading-relaxed">
+            <div className="rounded-2xl border border-success/20 bg-success/5 p-4 md:p-5 min-h-[96px] font-mono text-sm md:text-lg whitespace-pre-wrap break-words leading-relaxed">
               {text.length === 0 ? (
                 <span className="text-muted-foreground/60">
                   Whatever you type above will show up here, with PII replaced.
@@ -312,7 +303,7 @@ const LiveDemo = () => {
                   return (
                     <span
                       key={i}
-                      className={`inline-flex items-center px-2 py-0.5 mx-0.5 rounded-md border text-sm md:text-base font-semibold animate-boppi-pop ${KIND_STYLES[seg.kind].masked}`}
+                      className={`px-1.5 rounded-md border font-semibold animate-boppi-pop ${KIND_STYLES[seg.kind].masked}`}
                       title={`${seg.kind}: masked in your browser`}
                     >
                       {seg.masked}

@@ -72,9 +72,9 @@ const resetTilt = (e: React.MouseEvent<HTMLDivElement>) => {
 const Features = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="features" className="py-24 px-6 relative">
+    <section id="features" className="py-16 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">What Boppi does</span>
           </h2>

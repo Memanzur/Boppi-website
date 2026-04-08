@@ -1,11 +1,55 @@
-import { Shield } from "lucide-react";
+import { Shield, Mail, MessageCircle, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="py-12 px-6 border-t border-border/50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="space-y-4">
+        {/* Help strip: replaces the old Support section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+          <a
+            href="https://memanzur.github.io/boppi-privacy/how-it-works.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
+          >
+            <div className="p-2 rounded-lg bg-primary/10">
+              <FileText className="w-4 h-4 text-primary" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold">How it works</div>
+              <div className="text-xs text-muted-foreground">Technical overview</div>
+            </div>
+          </a>
+          <a
+            href="mailto:boppii.ioo@gmail.com"
+            className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
+          >
+            <div className="p-2 rounded-lg bg-primary/10">
+              <Mail className="w-4 h-4 text-primary" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold">Email us</div>
+              <div className="text-xs text-muted-foreground">boppii.ioo@gmail.com</div>
+            </div>
+          </a>
+          <a
+            href="https://form.typeform.com/to/vbiGSeh4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
+          >
+            <div className="p-2 rounded-lg bg-primary/10">
+              <MessageCircle className="w-4 h-4 text-primary" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold">Feedback</div>
+              <div className="text-xs text-muted-foreground">Missed a detection?</div>
+            </div>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <img src="/boppi-logo.png" alt="Boppi" className="w-8 h-8" />
               <span className="text-xl font-bold gradient-text">boppi</span>
@@ -18,9 +62,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#demo" className="hover:text-primary transition-colors">Live demo</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="#admin" className="hover:text-primary transition-colors">For IT admins</a></li>
               <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
             </ul>
           </div>
@@ -28,7 +72,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#support" className="hover:text-primary transition-colors">Support</a></li>
+              <li><a href="#admin" className="hover:text-primary transition-colors">For IT admins</a></li>
               <li><a href="mailto:boppii.ioo@gmail.com" className="hover:text-primary transition-colors">Contact</a></li>
               <li><a href="https://memanzur.github.io/boppi-privacy/how-it-works.html" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Docs</a></li>
             </ul>

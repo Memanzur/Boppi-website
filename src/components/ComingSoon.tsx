@@ -3,79 +3,67 @@ import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const profiles = [
-  {
-    icon: Stethoscope,
-    title: "Healthcare",
-    description: "HIPAA-aware patterns: patient names, MRNs, diagnoses, insurance IDs, PHI.",
-  },
-  {
-    icon: Building2,
-    title: "Finance",
-    description: "Account numbers, routing numbers, SSNs, tax IDs, credit cards, wire details.",
-  },
-  {
-    icon: Scale,
-    title: "Legal",
-    description: "Client names, case numbers, privileged terms, settlement figures, docket IDs.",
-  },
-  {
-    icon: Landmark,
-    title: "Government",
-    description: "Classification markers, internal identifiers, CUI categories, clearance cues.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Education",
-    description: "FERPA-aware patterns: student names, grades, SIDs, disciplinary records.",
-  },
-  {
-    icon: FileSpreadsheet,
-    title: "CSV audit export",
-    description: "Export a full audit log of every detection, every pause, and every unmask. One click.",
-  },
+  { icon: Stethoscope, label: "Healthcare", hint: "HIPAA patterns" },
+  { icon: Building2, label: "Finance", hint: "Account + tax IDs" },
+  { icon: Scale, label: "Legal", hint: "Client + case data" },
+  { icon: Landmark, label: "Government", hint: "CUI markers" },
+  { icon: GraduationCap, label: "Education", hint: "FERPA patterns" },
 ];
 
 const ComingSoon = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="admin" className="py-24 px-6 relative">
-      <div className="max-w-7xl mx-auto">
-        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30 mb-4">
+    <section id="admin" className="py-16 px-6 relative">
+      <div className="max-w-5xl mx-auto">
+        <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <span className="text-sm font-semibold text-secondary">Built for IT Admins</span>
           </div>
-
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Industry profiles + audit trail</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            IT managers can set company-wide masking policies, flip on industry presets,
-            and export CSV audit logs for compliance reviews.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Flip on industry presets, set company-wide masking policies, and export audit logs
+            for compliance reviews.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {profiles.map((profile, index) => {
+        {/* Compact profile chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {profiles.map((profile) => {
             const Icon = profile.icon;
             return (
-              <Card
-                key={index}
-                className="p-6 bg-card/30 backdrop-blur-sm border-secondary/20 hover:border-secondary/40 transition-all duration-300 relative overflow-hidden group"
+              <div
+                key={profile.label}
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-card/60 backdrop-blur-sm border border-secondary/20 hover:border-secondary/50 transition-colors"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all" />
-
-                <div className="relative z-10">
-                  <div className="p-3 rounded-2xl bg-secondary/10 inline-flex mb-4">
-                    <Icon className="w-6 h-6 text-secondary" />
-                  </div>
-
-                  <h3 className="text-xl font-semibold mb-2">{profile.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{profile.description}</p>
+                <Icon className="w-4 h-4 text-secondary shrink-0" />
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-sm font-semibold">{profile.label}</span>
+                  <span className="text-[11px] text-muted-foreground hidden sm:inline">
+                    {profile.hint}
+                  </span>
                 </div>
-              </Card>
+              </div>
             );
           })}
         </div>
+
+        {/* CSV export callout */}
+        <Card className="p-5 md:p-6 bg-card/40 backdrop-blur-sm border-secondary/20 max-w-2xl mx-auto">
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 p-3 rounded-xl bg-secondary/15">
+              <FileSpreadsheet className="w-5 h-5 text-secondary" />
+            </div>
+            <div>
+              <h3 className="font-semibold mb-1">One-click CSV audit export</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Export a full audit log of every detection, every pause, and every unmask.
+                Hand it straight to compliance.
+              </p>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   );

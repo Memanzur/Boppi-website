@@ -31,9 +31,9 @@ const steps = [
 const HowItWorks = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-card/30">
+    <section id="how-it-works" className="py-16 px-6 bg-card/30">
       <div className="max-w-6xl mx-auto">
-        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">How It Works</span>
           </h2>

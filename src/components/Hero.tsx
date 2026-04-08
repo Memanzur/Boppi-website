@@ -1,4 +1,4 @@
-import { Download, ArrowRight, Shield, Zap, Lock } from "lucide-react";
+import { Download, ArrowRight, Shield, Zap, Lock, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -19,9 +19,15 @@ const Hero = () => {
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
             <span className="gradient-text">boppi</span>
           </h1>
-          <Badge className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 text-sm font-medium mb-6">
-            PII masking for teams using AI
-          </Badge>
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 text-sm font-medium">
+              PII masking for teams using AI
+            </Badge>
+            <Badge className="bg-card/60 text-foreground border border-primary/30 hover:bg-card/80 px-4 py-2 text-sm font-medium gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
+              In Chrome Web Store review
+            </Badge>
+          </div>
         </div>
 
         {/* Main Headline */}
