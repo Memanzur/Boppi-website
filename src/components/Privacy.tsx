@@ -3,37 +3,41 @@ import { Card } from "@/components/ui/card";
 
 const principles = [
   {
-    icon: Shield,
-    title: "No Data Collection",
-    description: "Boppi never stores or sells your personal data. Everything stays on your device."
+    icon: Lock,
+    title: "Detection runs in your browser",
+    description:
+      "Every regex, every pattern match, every masking decision happens locally. Boppi does not send your input to a server for analysis.",
   },
   {
-    icon: Lock,
-    title: "Local Processing",
-    description: "All scanning happens locally and ephemerally. Data is discarded immediately after processing."
+    icon: Shield,
+    title: "Your activity log stays on your machine",
+    description:
+      "The audit log of what Boppi caught, on which tool, and when, lives in your browser's local storage. It does not leave your device unless you export it.",
   },
   {
     icon: Eye,
-    title: "Complete Transparency",
-    description: "No third-party analytics during beta. You control what information you share."
+    title: "Opt-in telemetry only",
+    description:
+      "Boppi can share anonymous usage stats to help us improve detection accuracy, but only if you explicitly turn it on. It's off by default.",
   },
   {
     icon: Database,
-    title: "Optional Reporting",
-    description: "Opt-in error reporting only—and only if you explicitly choose to help improve Boppi."
-  }
+    title: "No tracking, no ads, no sale of data",
+    description:
+      "We do not use third-party analytics. We do not sell data. We do not have data to sell, because we do not collect it.",
+  },
 ];
 
 const Privacy = () => {
   return (
-    <section className="py-24 px-6">
+    <section id="privacy" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Privacy First</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Your privacy isn't just a feature—it's our foundation
+            A PII masking tool that phones home would defeat the entire point.
           </p>
         </div>
 
@@ -41,7 +45,7 @@ const Privacy = () => {
           {principles.map((principle, index) => {
             const Icon = principle.icon;
             return (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all duration-300"
               >
@@ -60,23 +64,30 @@ const Privacy = () => {
         </div>
 
         <Card className="p-8 bg-card/30 backdrop-blur-sm border-primary/10">
-          <h3 className="text-2xl font-bold mb-4">Privacy Policy Summary</h3>
+          <h3 className="text-2xl font-bold mb-4">What Boppi does with your data</h3>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              <strong className="text-foreground">Zero Data Storage:</strong> Boppi does not store, transmit, 
-              or retain any of your personal information. All detection and masking happens locally on your device.
+              <strong className="text-foreground">Nothing, in the cloud sense.</strong>{" "}
+              Boppi reads the text you type into web forms and AI chat inputs, runs it through a set
+              of pattern matchers, and replaces matches with safe placeholders before the submit.
+              The original text never leaves your browser tab.
             </p>
             <p>
-              <strong className="text-foreground">No Third Parties:</strong> We don't use third-party analytics 
-              or tracking during the beta period. Your browsing activity stays completely private.
+              <strong className="text-foreground">Local audit log.</strong>{" "}
+              When a detection fires, Boppi writes a row to your local activity log so you can see
+              what was caught and when. This log is stored in your browser and is only accessible to
+              you. IT admins can ask users to export it as CSV for compliance reviews.
             </p>
             <p>
-              <strong className="text-foreground">Opt-in Only:</strong> Error reporting and feedback collection 
-              are entirely optional. You choose what data, if any, you want to share.
+              <strong className="text-foreground">Optional anonymous stats.</strong>{" "}
+              If you opt in, Boppi can send aggregate counts of detections (not the detected text
+              itself) so we can improve accuracy. This is off by default. You can turn it off at any
+              time.
             </p>
             <p>
-              <strong className="text-foreground">Open Source:</strong> Our detection algorithms are transparent 
-              and auditable. We believe in earning your trust through openness.
+              <strong className="text-foreground">Pause is audited.</strong>{" "}
+              If a user pauses masking, they have to enter a reason. That reason is logged so IT has
+              a full picture of when and why protection was off.
             </p>
           </div>
           <div className="mt-6 pt-6 border-t border-border/50">

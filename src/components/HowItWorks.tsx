@@ -1,38 +1,42 @@
-import { Search, Shield, Eye, CheckCircle } from "lucide-react";
+import { Download, MessageSquare, Shield, BarChart3 } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
-    title: "Install & Activate",
-    description: "Add Boppi to your browser with one click. No configuration needed."
+    icon: Download,
+    title: "Install from the Chrome Web Store",
+    description:
+      "One click to add Boppi to Chrome. No account, no config, no onboarding survey. The badge appears in the corner of every tab immediately.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Open any AI tool",
+    description:
+      "Go to ChatGPT, Claude, Gemini, Copilot, or anywhere else your team works. Boppi is already watching the input field.",
   },
   {
     icon: Shield,
-    title: "Browse Normally",
-    description: "Continue using the web as usual. Boppi works silently in the background."
+    title: "Type normally. Boppi masks before send",
+    description:
+      "The moment sensitive data shows up in your prompt, Boppi replaces it with a safe placeholder. You see the mask. The AI only ever sees the mask.",
   },
   {
-    icon: Eye,
-    title: "Automatic Detection",
-    description: "AI scans in real-time, identifying sensitive information before it's exposed."
+    icon: BarChart3,
+    title: "Check the dashboard",
+    description:
+      "See exactly what was caught, on which tools, and how often. IT managers can export audit logs as CSV for compliance reviews.",
   },
-  {
-    icon: CheckCircle,
-    title: "Smart Protection",
-    description: "PII is masked or blocked instantly. You stay safe without lifting a finger."
-  }
 ];
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 px-6 bg-card/30">
+    <section id="how-it-works" className="py-24 px-6 bg-card/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">How It Works</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Four simple steps to complete protection
+            Four steps. No training. Your team keeps working the way they already do.
           </p>
         </div>
 
@@ -50,7 +54,7 @@ const HowItWorks = () => {
                       {index + 1}
                     </div>
                   </div>
-                  
+
                   <h3 className="text-xl font-semibold">{step.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>

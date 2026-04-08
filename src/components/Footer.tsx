@@ -8,10 +8,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <img src="/boppi-logo.png" alt="Boppi" className="w-8 h-8" />
-              <span className="text-xl font-bold gradient-text">Boppi</span>
+              <span className="text-xl font-bold gradient-text">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Your AI Data Guard protecting personal information in real-time.
+              PII masking for teams using AI. Detection runs entirely in your browser.
             </p>
           </div>
 
@@ -19,19 +19,18 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
+              <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
+              <li><a href="#admin" className="hover:text-primary transition-colors">For IT admins</a></li>
               <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="#beta" className="hover:text-primary transition-colors">Beta Access</a></li>
-              <li><a href="#roadmap" className="hover:text-primary transition-colors">Roadmap</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
               <li><a href="#support" className="hover:text-primary transition-colors">Support</a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
-              <li><a href="#privacy" className="hover:text-primary transition-colors">Privacy</a></li>
+              <li><a href="mailto:boppii.ioo@gmail.com" className="hover:text-primary transition-colors">Contact</a></li>
+              <li><a href="https://memanzur.github.io/boppi-privacy/how-it-works.html" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Docs</a></li>
             </ul>
           </div>
 
@@ -40,16 +39,15 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href="/compliance" className="hover:text-primary transition-colors">Compliance</a></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2025 Boppi. All rights reserved. Based in Utah, USA.</p>
+          <p>© 2026 Boppi. Built in Utah.</p>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
-            <span>Privacy-First • Local Processing • Zero Data Storage</span>
+            <span>Local processing · No data sent anywhere</span>
           </div>
         </div>
       </div>
