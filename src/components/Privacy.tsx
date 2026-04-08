@@ -1,5 +1,6 @@
 import { Shield, Lock, Eye, Database } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const principles = [
   {
@@ -29,10 +30,11 @@ const principles = [
 ];
 
 const Privacy = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
   return (
     <section id="privacy" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Privacy First</span>
           </h2>

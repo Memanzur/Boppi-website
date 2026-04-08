@@ -137,4 +137,52 @@ All colors MUST be HSL.
   .glow-accent {
     box-shadow: var(--glow-accent);
   }
+
+  /* Scroll reveal: elements start hidden + translated, .is-visible triggers. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Soft brand pulse for the live badge dot. */
+  @keyframes boppi-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(142 76% 60% / 0.6); }
+    50%      { box-shadow: 0 0 0 8px hsl(142 76% 60% / 0); }
+  }
+  .animate-boppi-pulse {
+    animation: boppi-pulse 1800ms ease-out infinite;
+  }
+
+  /* Caret blink for the live demo auto-type. */
+  @keyframes boppi-caret {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  .animate-boppi-caret {
+    animation: boppi-caret 1s steps(1, end) infinite;
+  }
+
+  /* Detection pop-in for masked chips. */
+  @keyframes boppi-pop {
+    0%   { transform: scale(0.8); opacity: 0; }
+    60%  { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1);    opacity: 1; }
+  }
+  .animate-boppi-pop {
+    animation: boppi-pop 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
 }

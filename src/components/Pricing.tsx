@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const launchFeatures = [
   "Real-time detection as you type",
@@ -14,10 +15,11 @@ const launchFeatures = [
 ];
 
 const Pricing = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
   return (
     <section id="pricing" className="py-24 px-6 bg-card/30">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Pricing</span>
           </h2>

@@ -1,6 +1,7 @@
 import { Shield, Zap, Lock, MousePointer2, PauseCircle, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const features = [
   {
@@ -48,10 +49,11 @@ const features = [
 ];
 
 const Features = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
   return (
     <section id="features" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">What Boppi does</span>
           </h2>

@@ -1,12 +1,14 @@
 import { Mail, MessageCircle, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Support = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
   return (
     <section id="support" className="py-24 px-6 bg-card/30">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">Need Help?</span>
           </h2>

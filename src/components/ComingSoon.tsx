@@ -1,5 +1,6 @@
 import { Building2, Stethoscope, Scale, Landmark, GraduationCap, FileSpreadsheet } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const profiles = [
   {
@@ -35,10 +36,11 @@ const profiles = [
 ];
 
 const ComingSoon = () => {
+  const headerRef = useScrollReveal<HTMLDivElement>();
   return (
     <section id="admin" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div ref={headerRef} className="reveal text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30 mb-4">
             <span className="text-sm font-semibold text-secondary">Built for IT Admins</span>
           </div>
