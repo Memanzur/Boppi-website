@@ -185,4 +185,127 @@ All colors MUST be HSL.
   .animate-boppi-pop {
     animation: boppi-pop 260ms cubic-bezier(0.22, 1, 0.36, 1);
   }
+
+  /* Cursor star trail: each star is a fixed div with inline style vars. */
+  .boppi-cursor-star {
+    position: fixed;
+    width: var(--size, 16px);
+    height: var(--size, 16px);
+    color: var(--color, hsl(310 90% 85%));
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+    z-index: 70;
+    will-change: transform, opacity;
+    animation: boppi-star 1200ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .boppi-cursor-star svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor);
+  }
+  @keyframes boppi-star {
+    0%   {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(0.3);
+    }
+    20%  {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(calc(var(--rot, 0deg) + 60deg)) scale(1.05);
+    }
+    100% {
+      opacity: 0;
+      transform:
+        translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, -24px)))
+        rotate(calc(var(--rot, 0deg) + 240deg))
+        scale(0.5);
+    }
+  }
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .boppi-cursor-star { display: none; }
+  }
+
+  /* Animated hero orbs: two subtle drift paths on different tempos. */
+  @keyframes boppi-drift-1 {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(36px, -28px); }
+  }
+  @keyframes boppi-drift-2 {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-30px, 22px); }
+  }
+  @keyframes boppi-drift-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(18px, 14px) scale(1.06); }
+  }
+  .animate-boppi-drift-1 { animation: boppi-drift-1 14s ease-in-out infinite; }
+  .animate-boppi-drift-2 { animation: boppi-drift-2 18s ease-in-out infinite; }
+  .animate-boppi-drift-3 { animation: boppi-drift-3 22s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-boppi-drift-1,
+    .animate-boppi-drift-2,
+    .animate-boppi-drift-3 { animation: none; }
+  }
+
+  /* Infinite marquee: duplicate children, translate -50% to loop seamlessly. */
+  @keyframes boppi-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-boppi-marquee {
+    animation: boppi-marquee 36s linear infinite;
+  }
+  .boppi-marquee-pause:hover .animate-boppi-marquee {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-boppi-marquee { animation: none; }
+  }
+  .boppi-marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  /* Global dot pattern: fixed behind all content, faded via radial mask. */
+  .boppi-dot-pattern {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, hsl(var(--primary) / 0.09) 1px, transparent 1px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 10%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 10%, transparent 80%);
+  }
+
+  /* Tilt card: transform driven by CSS vars set in JS. */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px)
+      rotateX(var(--tilt-rx, 0deg))
+      rotateY(var(--tilt-ry, 0deg));
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tilt-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at var(--tilt-gx, 50%) var(--tilt-gy, 50%),
+      hsl(var(--primary) / 0.22),
+      transparent 55%
+    );
+    opacity: 0;
+    transition: opacity 220ms ease-out;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  .tilt-card:hover::before {
+    opacity: 1;
+  }
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .tilt-card { transform: none !important; }
+    .tilt-card::before { display: none; }
+  }
 }

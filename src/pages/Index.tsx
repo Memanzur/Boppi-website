@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AiToolsMarquee from "@/components/AiToolsMarquee";
 import LiveDemo from "@/components/LiveDemo";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
@@ -9,20 +10,31 @@ import Privacy from "@/components/Privacy";
 import Support from "@/components/Support";
 import Footer from "@/components/Footer";
 import FloatingBadge from "@/components/FloatingBadge";
+import CursorStars from "@/components/CursorStars";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Hero />
-      <LiveDemo />
-      <Features />
-      <HowItWorks />
-      <BetaBanner />
-      <ComingSoon />
-      <Pricing />
-      <Privacy />
-      <Support />
-      <Footer />
+    <div className="min-h-screen bg-background relative">
+      {/* Global fixed dot pattern behind all content. */}
+      <div className="boppi-dot-pattern" aria-hidden="true" />
+
+      {/* Actual page content sits above the dot pattern. */}
+      <div className="relative" style={{ zIndex: 1 }}>
+        <Hero />
+        <AiToolsMarquee />
+        <LiveDemo />
+        <Features />
+        <HowItWorks />
+        <BetaBanner />
+        <ComingSoon />
+        <Pricing />
+        <Privacy />
+        <Support />
+        <Footer />
+      </div>
+
+      {/* Global overlays */}
+      <CursorStars />
       <FloatingBadge />
     </div>
   );

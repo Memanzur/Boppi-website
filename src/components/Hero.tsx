@@ -85,10 +85,11 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/10 animate-pulse" />
-      <div className="absolute top-40 right-20 w-16 h-16 rounded-full bg-secondary/10 animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-20 left-20 w-12 h-12 rounded-full bg-accent/10 animate-pulse" style={{ animationDelay: '2s' }} />
+      {/* Floating orbs: slowly drift on their own tempos for a living feel. */}
+      <div className="absolute top-16 left-8 w-28 h-28 md:w-40 md:h-40 rounded-full bg-primary/15 blur-2xl animate-boppi-drift-1" />
+      <div className="absolute top-32 right-12 w-24 h-24 md:w-36 md:h-36 rounded-full bg-secondary/15 blur-2xl animate-boppi-drift-2" />
+      <div className="absolute bottom-20 left-1/4 w-20 h-20 md:w-32 md:h-32 rounded-full bg-accent/15 blur-2xl animate-boppi-drift-3" />
+      <div className="absolute bottom-32 right-8 w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/10 blur-xl animate-boppi-drift-1" style={{ animationDelay: '3s' }} />
     </section>
   );
 };

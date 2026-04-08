@@ -48,6 +48,27 @@ const features = [
   },
 ];
 
+// Track mouse position over a card and translate it into tilt + glow vars.
+const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  const y = (e.clientY - rect.top) / rect.height;
+  // Max tilt around 6 degrees so it's lively but not seasick-inducing.
+  const rotateY = (x - 0.5) * 12;
+  const rotateX = (0.5 - y) * 12;
+  el.style.setProperty("--tilt-rx", `${rotateX}deg`);
+  el.style.setProperty("--tilt-ry", `${rotateY}deg`);
+  el.style.setProperty("--tilt-gx", `${x * 100}%`);
+  el.style.setProperty("--tilt-gy", `${y * 100}%`);
+};
+
+const resetTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+  const el = e.currentTarget;
+  el.style.setProperty("--tilt-rx", "0deg");
+  el.style.setProperty("--tilt-ry", "0deg");
+};
+
 const Features = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
@@ -69,8 +90,9 @@ const Features = () => {
             return (
               <Card
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all duration-300 hover:glow-primary group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                onMouseMove={handleTilt}
+                onMouseLeave={resetTilt}
+                className="tilt-card relative overflow-hidden p-6 bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/40 hover:shadow-[0_10px_40px_-10px_hsl(310_90%_85%/0.35)] transition-[border-color,box-shadow] duration-300 group"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 group-hover:glow-secondary transition-all">
