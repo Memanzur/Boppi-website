@@ -7,6 +7,12 @@
 
 export type DetectionKind = "SSN" | "Credit Card" | "Email" | "Phone" | "API Key";
 
+/**
+ * "partial" keeps the last few characters for human context (e.g. ***-**-6789),
+ * "redact" replaces the whole match with a type label like [SSN].
+ */
+export type MaskingMode = "partial" | "redact";
+
 export interface Detection {
   start: number;
   end: number;
@@ -22,39 +28,45 @@ export type Segment =
 interface Matcher {
   kind: DetectionKind;
   pattern: RegExp;
-  mask: (m: string) => string;
+  partial: (m: string) => string;
+  redact: (m: string) => string;
 }
 
 const matchers: Matcher[] = [
   {
     kind: "SSN",
     pattern: /\b\d{3}-\d{2}-\d{4}\b/g,
-    mask: (m) => `***-**-${m.slice(-4)}`,
+    partial: (m) => `***-**-${m.slice(-4)}`,
+    redact: () => "[SSN]",
   },
   {
     kind: "Credit Card",
     pattern: /\b(?:\d{4}[\s-]?){3}\d{4}\b/g,
-    mask: (m) => {
+    partial: (m) => {
       const digits = m.replace(/[\s-]/g, "");
       return `**** **** **** ${digits.slice(-4)}`;
     },
+    redact: () => "[Credit Card]",
   },
   {
     kind: "API Key",
-    // Match common API-key prefixes like sk-, pk-, ghp_, xoxb- and Stripe keys.
+    // Match common API-key prefixes like sk-, pk-, rk-.
     pattern: /\b(?:sk|pk|rk)[-_][A-Za-z0-9_-]{16,}/g,
-    mask: (m) => `${m.slice(0, 3)}••••••`,
+    partial: (m) => `${m.slice(0, 3)}••••••`,
+    redact: () => "[API Key]",
   },
   {
     kind: "Email",
     pattern: /\b[\w.+-]+@[\w-]+\.[\w.-]+\b/g,
-    mask: () => "[Email]",
+    partial: () => "[Email]",
+    redact: () => "[Email]",
   },
   {
     kind: "Phone",
     // US-style phones: 415-555-0123, (415) 555-0123, +1 415.555.0123
     pattern: /(?:\+?1[-.\s]?)?\(?\b\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b/g,
-    mask: () => "[Phone]",
+    partial: () => "[Phone]",
+    redact: () => "[Phone]",
   },
 ];
 
@@ -63,10 +75,11 @@ const matchers: Matcher[] = [
  * of detections. Earlier matchers in the list win on conflict (SSNs beat
  * phone numbers, etc.).
  */
-export function detect(text: string): Detection[] {
+export function detect(text: string, mode: MaskingMode = "partial"): Detection[] {
   const hits: Detection[] = [];
 
-  for (const { kind, pattern, mask } of matchers) {
+  for (const { kind, pattern, partial, redact } of matchers) {
+    const maskFn = mode === "redact" ? redact : partial;
     // Clone per-call so we don't share lastIndex across renders.
     const re = new RegExp(pattern.source, pattern.flags);
     let m: RegExpExecArray | null;
@@ -76,7 +89,7 @@ export function detect(text: string): Detection[] {
         end: m.index + m[0].length,
         kind,
         original: m[0],
-        masked: mask(m[0]),
+        masked: maskFn(m[0]),
       });
       // Guard against zero-width matches hanging the loop.
       if (m.index === re.lastIndex) re.lastIndex++;

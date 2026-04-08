@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Sparkles, ArrowDown, ArrowRight, Bot, User, RefreshCcw, Trash2, Lock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { detect, segmentize, type DetectionKind } from "@/lib/masking";
+import { detect, segmentize, type DetectionKind, type MaskingMode } from "@/lib/masking";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const EXAMPLES: string[] = [
@@ -43,6 +43,7 @@ const LiveDemo = () => {
   const [text, setText] = useState("");
   const [isTouched, setIsTouched] = useState(false);
   const [exampleIdx, setExampleIdx] = useState(0);
+  const [maskingMode, setMaskingMode] = useState<MaskingMode>("partial");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const sectionRef = useScrollReveal<HTMLDivElement>();
 
@@ -79,7 +80,7 @@ const LiveDemo = () => {
     };
   }, [exampleIdx, isTouched]);
 
-  const detections = useMemo(() => detect(text), [text]);
+  const detections = useMemo(() => detect(text, maskingMode), [text, maskingMode]);
   const segments = useMemo(() => segmentize(text, detections), [text, detections]);
 
   const detectionCount = detections.length;
@@ -126,7 +127,7 @@ const LiveDemo = () => {
         </div>
 
         {/* Preset chips row */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
           {PRESETS.map((preset) => (
             <button
               key={preset.label}
@@ -137,6 +138,42 @@ const LiveDemo = () => {
               {preset.label}
             </button>
           ))}
+        </div>
+
+        {/* Masking mode toggle: partial vs full redaction */}
+        <div className="flex justify-center mb-6">
+          <div
+            role="radiogroup"
+            aria-label="Masking mode"
+            className="inline-flex items-center gap-1 p-1 rounded-full bg-card/60 backdrop-blur-sm border border-border/60"
+          >
+            <button
+              type="button"
+              role="radio"
+              aria-checked={maskingMode === "partial"}
+              onClick={() => setMaskingMode("partial")}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                maskingMode === "partial"
+                  ? "bg-gradient-to-r from-primary via-secondary to-accent text-white shadow-[0_0_0_1px_hsl(310_90%_85%/0.4)]"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Partial mask
+            </button>
+            <button
+              type="button"
+              role="radio"
+              aria-checked={maskingMode === "redact"}
+              onClick={() => setMaskingMode("redact")}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                maskingMode === "redact"
+                  ? "bg-gradient-to-r from-primary via-secondary to-accent text-white shadow-[0_0_0_1px_hsl(310_90%_85%/0.4)]"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Full redaction
+            </button>
+          </div>
         </div>
 
         <Card className="p-6 md:p-10 bg-card/60 backdrop-blur-sm border-primary/20 relative overflow-hidden">
