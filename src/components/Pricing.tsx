@@ -59,7 +59,7 @@ const Pricing = () => {
               className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90"
               onClick={() => window.open('https://chromewebstore.google.com/detail/Boppi/pnfpbhjhmpfmkjdjpdbkapaibjmpmkld', '_blank')}
             >
-              Add to Chrome — Free
+              Add to Chrome - Free
             </Button>
           </Card>
 
