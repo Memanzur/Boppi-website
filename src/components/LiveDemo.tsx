@@ -61,7 +61,9 @@ const LiveDemo = () => {
       if (i <= current.length) {
         setText(current.slice(0, i));
         i += 1;
-        const delay = 22 + Math.random() * 30;
+        // Slowed from 22-52ms → 42-92ms so visitors can actually
+        // watch the masking happen mid-keystroke.
+        const delay = 42 + Math.random() * 50;
         timer = window.setTimeout(typeNext, delay);
       } else {
         // Pause at the end so the viewer can read, then move on.
@@ -69,11 +71,11 @@ const LiveDemo = () => {
           if (cancelled) return;
           setText("");
           setExampleIdx((idx) => (idx + 1) % EXAMPLES.length);
-        }, 2400);
+        }, 3800);
       }
     };
 
-    let timer = window.setTimeout(typeNext, 250);
+    let timer = window.setTimeout(typeNext, 600);
     return () => {
       cancelled = true;
       window.clearTimeout(timer);

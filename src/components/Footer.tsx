@@ -62,6 +62,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="https://chromewebstore.google.com/detail/Boppi/pnfpbhjhmpfmkjdjpdbkapaibjmpmkld" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Chrome Web Store</a></li>
               <li><a href="#demo" className="hover:text-primary transition-colors">Live demo</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
@@ -88,7 +89,11 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2026 Boppi. Built in Utah.</p>
+          <div className="flex flex-col md:flex-row md:items-center md:gap-3 text-center md:text-left">
+            <p>© 2026 Boppi. Built by Melody in Utah.</p>
+            <span className="hidden md:inline opacity-40">·</span>
+            <p className="font-mono text-xs opacity-70">v0.7.0 · April 2026</p>
+          </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
             <span>Local processing · No data sent anywhere</span>

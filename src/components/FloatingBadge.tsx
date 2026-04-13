@@ -110,12 +110,12 @@ const FloatingBadge = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    window.open('https://form.typeform.com/to/rqp5yYJf', '_blank');
+                    window.open('https://chromewebstore.google.com/detail/Boppi/pnfpbhjhmpfmkjdjpdbkapaibjmpmkld', '_blank');
                     setOpen(false);
                   }}
                   className="text-xs font-semibold text-secondary hover:underline"
                 >
-                  Join waitlist
+                  Add to Chrome
                 </button>
               </div>
             </div>

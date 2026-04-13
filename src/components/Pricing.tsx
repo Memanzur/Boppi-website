@@ -57,9 +57,9 @@ const Pricing = () => {
 
             <Button
               className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90"
-              onClick={() => window.open('https://form.typeform.com/to/rqp5yYJf', '_blank')}
+              onClick={() => window.open('https://chromewebstore.google.com/detail/Boppi/pnfpbhjhmpfmkjdjpdbkapaibjmpmkld', '_blank')}
             >
-              Join the Waitlist
+              Add to Chrome — Free
             </Button>
           </Card>
 

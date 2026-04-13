@@ -23,18 +23,23 @@ const Hero = () => {
             <Badge className="bg-primary/10 text-primary hover:bg-primary/20 px-4 py-2 text-sm font-medium">
               PII masking for teams using AI
             </Badge>
-            <Badge className="bg-card/60 text-foreground border border-primary/30 hover:bg-card/80 px-4 py-2 text-sm font-medium gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-primary" />
-              In Chrome Web Store review
+            <Badge className="bg-success/10 text-success border border-success/30 hover:bg-success/20 px-4 py-2 text-sm font-medium gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-success" />
+              Now on Chrome Web Store
             </Badge>
           </div>
         </div>
 
-        {/* Main Headline */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-          Stop sensitive data from leaking into
-          <br />
-          <span className="gradient-text">ChatGPT, Claude, and Gemini</span>
+        {/* Main Headline.
+            Mobile: drops the hard <br/> so the browser can wrap naturally,
+            and uses [text-wrap:balance] so the line breaks land cleanly
+            instead of orphaning "Gemini." on its own line. */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground [text-wrap:balance] px-2 md:px-0">
+          Stop sensitive data from leaking into{" "}
+          <span className="font-serif italic font-normal text-foreground md:whitespace-nowrap">
+            ChatGPT, Claude, and Gemini
+          </span>
+          <span className="text-primary">.</span>
         </h2>
 
         {/* Description */}
@@ -65,10 +70,10 @@ const Hero = () => {
           <Button
             size="lg"
             className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 text-lg font-semibold glow-primary"
-            onClick={() => window.open('https://form.typeform.com/to/rqp5yYJf', '_blank')}
+            onClick={() => window.open('https://chromewebstore.google.com/detail/Boppi/pnfpbhjhmpfmkjdjpdbkapaibjmpmkld', '_blank')}
           >
             <Download className="w-5 h-5 mr-2" />
-            Join the Waitlist
+            Add to Chrome — Free
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
           <Button

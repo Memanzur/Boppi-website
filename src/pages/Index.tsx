@@ -19,8 +19,8 @@ const Index = () => {
       {/* Actual page content sits above the dot pattern. */}
       <div className="relative" style={{ zIndex: 1 }}>
         <Hero />
-        <AiToolsMarquee />
         <LiveDemo />
+        <AiToolsMarquee />
         <Features />
         <HowItWorks />
         <ComingSoon />
