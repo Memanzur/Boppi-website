@@ -1,3 +1,21 @@
+import { LINKS } from "@/lib/links";
+
+const H2 = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="text-2xl font-semibold text-cyan-400 mb-4">{children}</h2>
+);
+
+const P = ({ children }: { children: React.ReactNode }) => (
+  <p className="text-gray-300 leading-relaxed mb-3">{children}</p>
+);
+
+const UL = ({ items }: { items: string[] }) => (
+  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+    {items.map((item) => (
+      <li key={item}>{item}</li>
+    ))}
+  </ul>
+);
+
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -6,95 +24,102 @@ export default function Privacy() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last Updated: October 26, 2025</p>
+          <p className="text-gray-400 mb-8 italic">Last updated: October 1, 2026</p>
 
-          <section className="prose prose-invert max-w-none space-y-6">
+          <section className="prose prose-invert max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">1. Introduction</h2>
-              <p className="text-gray-300 leading-relaxed">
-                Boppi ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Chrome extension and services.
-              </p>
+              <H2>1. What Boppi is</H2>
+              <P>
+                Boppi has two parts. The scanner, published as the npm package "boppi", runs on your
+                machine and reports what your local AI agents can reach. The control plane is a hosted
+                workspace where a team can collect scans from many machines. This policy covers both,
+                plus this website.
+              </P>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">2. Information We Collect</h2>
-              
-              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.1 Information You Provide</h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Email address and password (for account creation)</li>
-                <li>Name (optional)</li>
-                <li>User preferences and settings</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.2 Information Automatically Collected</h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>PII detection logs (anonymized)</li>
-                <li>Risk level assessments</li>
-                <li>Extension usage statistics</li>
-                <li>Page URLs where detections occur (anonymized)</li>
-              </ul>
+              <H2>2. The scanner collects nothing</H2>
+              <P>
+                The scanner contains no network code. It reads the MCP configuration files for Claude
+                Desktop, Claude Code, and Cursor, analyzes them in memory, and prints a report. Nothing is
+                sent to Boppi or to anyone else.
+              </P>
+              <UL
+                items={[
+                  "It never collects secret values, environment variable values, or file contents.",
+                  "Raw filesystem paths are replaced with fingerprints before they reach the report.",
+                  "If a config entry looks like it contains a secret, the scanner refuses that config and tells you why.",
+                  "Every file read during a run is listed at the end of the output.",
+                ]}
+              />
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-300 mb-2">We use your information to:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Provide and maintain our services</li>
-                <li>Notify you about changes to our services</li>
-                <li>Analyze usage patterns to improve our services</li>
-                <li>Detect and prevent security threats</li>
-              </ul>
+              <H2>3. The control plane, if your team uses it</H2>
+              <P>
+                The control plane is only available to pilot customers. When a team uses it, we store:
+              </P>
+              <UL
+                items={[
+                  "Your email address and a password hash, to sign you in.",
+                  "Your organization name and the role of each member.",
+                  "Scan snapshots that a collector on one of your machines pushes with a token your organization created. These contain the same metadata the scanner prints: agent names, server names, inferred capabilities, and path fingerprints. Never secret values or file contents.",
+                  "An audit event for each change made in the workspace.",
+                ]}
+              />
+              <P>
+                Data is stored in a Supabase project with row-level security enforced in the database, so
+                one organization cannot read another's rows. Collector tokens are stored hashed and can be
+                rotated or revoked at any time. Deleting your organization deletes its data.
+              </P>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">4. Data Storage and Security</h2>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>All data is encrypted in transit and at rest</li>
-                <li>Data is stored securely in Supabase (PostgreSQL database)</li>
-                <li>We implement industry-standard security measures</li>
-              </ul>
+              <H2>4. This website</H2>
+              <P>
+                boppi.io is a static site hosted on Vercel. We do not run analytics or advertising scripts.
+                Vercel may log requests for the purpose of serving the site, as any host does. Fonts load
+                from Google Fonts.
+              </P>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">5. Data Sharing</h2>
-              <p className="text-gray-300 mb-2">We do not sell your personal information. We may share data only:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>To comply with legal obligations</li>
-                <li>To protect our rights and safety</li>
-                <li>With service providers (e.g., Supabase) under strict agreements</li>
-              </ul>
+              <H2>5. What we never do</H2>
+              <UL
+                items={[
+                  "Sell or rent personal data.",
+                  "Train models on customer data.",
+                  "Collect data from the scanner.",
+                  "Share customer data with third parties except the hosting providers named above, or when the law requires it.",
+                ]}
+              />
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">6. Your Rights</h2>
-              <p className="text-gray-300 mb-2">You have the right to:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Access your personal data</li>
-                <li>Request deletion of your data</li>
-                <li>Request data portability</li>
-                <li>Opt-out of certain data processing</li>
-              </ul>
+              <H2>6. Your rights</H2>
+              <P>
+                You can ask for a copy of the data we hold about you or your organization, ask us to
+                correct it, or ask us to delete it. Email us and we will do it.
+              </P>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">7. Contact Us</h2>
-              <p className="text-gray-300 mb-2">For privacy concerns, contact us at:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Email: privacy@boppi.io</li>
-                <li>Website: <a href="https://boppi.io/contact" className="text-cyan-400 hover:underline">https://boppi.io/contact</a></li>
-              </ul>
+              <H2>7. Contact</H2>
+              <P>
+                <a href={LINKS.contact} className="text-cyan-400 hover:underline">{LINKS.email}</a>
+              </P>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">8. Changes to This Policy</h2>
-              <p className="text-gray-300">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-              </p>
+              <H2>8. Changes</H2>
+              <P>
+                If this policy changes, the new version goes on this page with a new date at the top.
+              </P>
             </section>
           </section>
 
           <div className="mt-12 pt-8 border-t border-white/20">
-            <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">← Back to Home</a>
+            <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">Back to home</a>
           </div>
         </div>
       </div>
