@@ -1,5 +1,5 @@
+import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ScanDemo from "@/components/ScanDemo";
 import DiscoveryMarquee from "@/components/DiscoveryMarquee";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
@@ -16,8 +16,8 @@ const Index = () => {
       <div className="boppi-dot-pattern" aria-hidden="true" />
 
       <div className="relative" style={{ zIndex: 1 }}>
+        <Nav />
         <Hero />
-        <ScanDemo />
         <DiscoveryMarquee />
         <Features />
         <HowItWorks />

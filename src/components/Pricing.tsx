@@ -62,7 +62,7 @@ const Pricing = () => {
             </ul>
 
             <Button
-              className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-background font-mono"
+              className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-background font-mono font-semibold"
               onClick={() => window.open(LINKS.github, "_blank", "noopener")}
             >
               {SCAN_COMMAND}

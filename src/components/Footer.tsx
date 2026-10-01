@@ -62,7 +62,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#demo" className="hover:text-primary transition-colors">Example scan</a></li>
+                            <li><a href="#paths" className="hover:text-primary transition-colors">Exposure paths</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">What it tells you</a></li>
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
               <li><a href="#platform" className="hover:text-primary transition-colors">For teams</a></li>

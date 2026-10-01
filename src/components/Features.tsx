@@ -1,6 +1,5 @@
 import { Route, Wrench, FileSearch, GitBranch, FileOutput, ListTree } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const features = [
@@ -91,11 +90,8 @@ const Features = () => {
                 onMouseLeave={resetTilt}
                 className="tilt-card relative overflow-hidden p-6 bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/40 hover:shadow-[0_10px_40px_-10px_hsl(310_90%_85%/0.35)] transition-[border-color,box-shadow] duration-300 group"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 group-hover:glow-secondary transition-all">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <Badge className="bg-success/20 text-success hover:bg-success/30">Shipped</Badge>
+                <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 group-hover:glow-secondary transition-all mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
 
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
