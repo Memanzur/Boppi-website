@@ -61,12 +61,10 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
             <CopyCommand />
             <a
-              href={LINKS.app}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={LINKS.talk}
               className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Open team workspace <ArrowRight className="w-4 h-4" />
+              Request team beta <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 

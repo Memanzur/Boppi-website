@@ -89,11 +89,8 @@ const Pricing = () => {
               ))}
             </ul>
 
-            <Button
-              className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
-              onClick={() => window.open(LINKS.app, "_blank", "noopener")}
-            >
-              Create a workspace
+            <Button asChild className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90">
+              <a href={LINKS.talk}>Request team beta</a>
             </Button>
             <a
               href={LINKS.talk}
