@@ -21,7 +21,7 @@ const features = [
     icon: Wrench,
     title: "The smallest fix, computed",
     description:
-      "For each grant, the engine removes it, reruns the search, and counts the paths that disappear. The grant that breaks the most paths is the recommended fix. Rescan to confirm.",
+      "For each grant, the engine removes it, reruns the search, and counts the paths that disappear. The grant that breaks the most paths is the recommended fix. npx boppi verify boppi-scan.json rescans and confirms it is gone.",
     category: "Prioritize",
   },
   {
@@ -42,7 +42,7 @@ const features = [
     icon: FileOutput,
     title: "Reports you can hand over",
     description:
-      "A self-contained HTML report for the security lead, or JSON with the full evidence per claim for whatever you want to pipe it into.",
+      "npx boppi scan --html boppi-report.html writes a self-contained report for the security lead, JSON carries the full evidence per claim, and npx boppi history keeps a sanitized local record of past scans.",
     category: "Share",
   },
 ];

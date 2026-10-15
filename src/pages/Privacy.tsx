@@ -24,7 +24,7 @@ export default function Privacy() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last updated: October 1, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Last updated: October 14, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
@@ -38,11 +38,19 @@ export default function Privacy() {
             </section>
 
             <section>
-              <H2>2. The scanner collects nothing</H2>
+              <H2>2. The scanner sends nothing unless you tell it to</H2>
               <P>
-                The scanner contains no network code. It reads the MCP configuration files for Claude
-                Desktop, Claude Code, and Cursor, analyzes them in memory, and prints a report. Nothing is
-                sent to Boppi or to anyone else.
+                The scan, verify, history, and report commands make no network calls. They read the MCP
+                configuration files for Claude Desktop, Claude Code, and Cursor, analyze them in memory,
+                and write output to your machine. None of them sends anything to Boppi or to anyone
+                else.
+              </P>
+              <P>
+                One command, boppi push, does send data, and only when you run it. It sends the
+                sanitized inventory of a single scan (agent, server, capability, and permission records,
+                plus fingerprinted paths, never secret values or file contents) to the workspace you
+                name with --url, over HTTPS, authenticated by the collector token you generated in that
+                workspace. No other command sends anything.
               </P>
               <UL
                 items={[
@@ -50,6 +58,7 @@ export default function Privacy() {
                   "Raw filesystem paths are replaced with fingerprints before they reach the report.",
                   "If a config entry looks like it contains a secret, the scanner refuses that config and tells you why.",
                   "Every file read during a run is listed at the end of the output.",
+                  "boppi history keeps a sanitized record of past scans on your machine only.",
                 ]}
               />
             </section>
@@ -57,13 +66,13 @@ export default function Privacy() {
             <section>
               <H2>3. The control plane, if your team uses it</H2>
               <P>
-                The control plane is only available to pilot customers. When a team uses it, we store:
+                The control plane is a free public beta at app.boppi.io. When a team uses it, we store:
               </P>
               <UL
                 items={[
                   "Your email address and a password hash, to sign you in.",
                   "Your organization name and the role of each member.",
-                  "Scan snapshots that a collector on one of your machines pushes with a token your organization created. These contain the same metadata the scanner prints: agent names, server names, inferred capabilities, and path fingerprints. Never secret values or file contents.",
+                  "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain the same metadata the scanner prints: agent names, server names, inferred capabilities and permissions, and path fingerprints. Never secret values or file contents.",
                   "An audit event for each change made in the workspace.",
                 ]}
               />
@@ -89,7 +98,7 @@ export default function Privacy() {
                 items={[
                   "Sell or rent personal data.",
                   "Train models on customer data.",
-                  "Collect data from the scanner.",
+                  "Receive anything from the scanner other than what you send with boppi push.",
                   "Share customer data with third parties except the hosting providers named above, or when the law requires it.",
                 ]}
               />

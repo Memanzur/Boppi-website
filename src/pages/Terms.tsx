@@ -24,7 +24,7 @@ export default function Terms() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Terms of Service
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last updated: October 1, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Last updated: October 14, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
@@ -38,9 +38,10 @@ export default function Terms() {
             <section>
               <H2>2. The control plane</H2>
               <P>
-                The hosted Boppi control plane is available to pilot customers under a written pilot
-                agreement. Where that agreement and these terms differ, the agreement wins. By using the
-                control plane you agree to these terms.
+                The hosted Boppi control plane is offered as a free public beta. It may change or be
+                unavailable while in beta. If your organization has a written agreement with us and it
+                differs from these terms, the agreement wins. By using the control plane you agree to
+                these terms.
               </P>
               <UL
                 items={[

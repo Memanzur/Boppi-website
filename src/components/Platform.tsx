@@ -9,7 +9,7 @@ const capabilities = [
     icon: KeyRound,
     title: "Collectors push, the workspace analyzes",
     description:
-      "Each machine runs the same free scanner and pushes a snapshot with a token you can rotate or revoke. The engine runs server-side on the whole inventory.",
+      "Each machine runs the same free scanner. npx boppi push sends one scan's sanitized inventory to your workspace with a token you can rotate or revoke, and it is the only scanner command that touches the network. The engine runs server-side on the whole inventory.",
   },
   {
     icon: Network,
@@ -39,15 +39,16 @@ const Platform = () => {
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <Building2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-secondary">Boppi for teams · private pilots</span>
+            <span className="text-sm font-semibold text-secondary">Boppi for teams · free public beta</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="gradient-text">The same engine, every machine</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A scan on one laptop is a snapshot. A security lead needs the whole fleet. The Boppi
-            control plane takes scanner snapshots from every machine and answers the question
-            your CEO will eventually ask: what can our AI agents actually reach?
+            A scan on one laptop is a snapshot. A security lead needs the whole fleet. Create a
+            workspace at app.boppi.io, generate a collector token, and push scans from every
+            machine to answer the question your CEO will eventually ask: what could our AI agents
+            reach, according to their configuration?
           </p>
         </div>
 
@@ -78,18 +79,26 @@ const Platform = () => {
                 <h3 className="font-semibold">What it is not, yet</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Boppi reports posture from configuration. It does not watch agents at runtime
-                and it does not block anything. We will not claim either until it is built.
-                The control plane is running with design partners now, not open for self-serve
-                signup.
+                Boppi reports potential exposure from configuration evidence. It does not watch
+                agents at runtime and it does not block anything. We will not claim either until
+                it is built. The workspace is a free public beta: expect rough edges, and tell us
+                about them.
               </p>
             </div>
-            <Button
-              className="shrink-0 bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
-              onClick={() => window.open(LINKS.pilot, "_blank")}
-            >
-              Ask about a pilot
-            </Button>
+            <div className="shrink-0 flex flex-col items-stretch gap-2">
+              <Button
+                className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
+                onClick={() => window.open(LINKS.app, "_blank", "noopener")}
+              >
+                Create a workspace
+              </Button>
+              <a
+                href={LINKS.talk}
+                className="text-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Talk to us
+              </a>
+            </div>
           </div>
         </Card>
       </div>

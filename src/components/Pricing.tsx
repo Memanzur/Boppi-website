@@ -10,15 +10,15 @@ const scannerFeatures = [
   "Root cause with the smallest fix, verified by re-simulation",
   "HTML and JSON reports with evidence per claim",
   "CI gate with --fail-on and clear exit codes",
-  "Apache-2.0, no account, no telemetry, no network code",
+  "Apache-2.0, no account, no telemetry. Only boppi push uses the network, and only when you run it",
 ];
 
-const pilotFeatures = [
-  "Thirty minutes, on a call, on your machines",
-  "You write down what you think your agents can reach before we scan",
-  "We count the high and critical findings that were not on your list",
-  "You keep the report either way",
-  "If it finds nothing, that is a valid result and we say so",
+const teamFeatures = [
+  "Create a workspace, invite your team, generate a collector token",
+  "npx boppi push sends one scan's sanitized inventory per machine",
+  "Every agent, server, and exposure path across the org in one view",
+  "Rescan a fixed machine and the path clears in the dashboard too",
+  "Free during the beta. Any change to that shows up on this page first",
 ];
 
 const Pricing = () => {
@@ -31,7 +31,7 @@ const Pricing = () => {
             <span className="gradient-text">Pricing</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The scanner is free and stays free. Teams start with a pilot.
+            The scanner is free and stays free. The team workspace is a free public beta.
           </p>
         </div>
 
@@ -73,8 +73,8 @@ const Pricing = () => {
             <div className="mb-6 pt-4">
               <h3 className="text-2xl font-bold mb-2">Boppi for teams</h3>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold">Pilot</span>
-                <span className="text-muted-foreground text-sm">free, then let's talk</span>
+                <span className="text-5xl font-bold">Free beta</span>
+                <span className="text-muted-foreground text-sm">at app.boppi.io</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 For security leads at companies whose engineers use AI coding tools.
@@ -82,7 +82,7 @@ const Pricing = () => {
             </div>
 
             <ul className="space-y-3 mb-8 flex-grow">
-              {pilotFeatures.map((feature) => (
+              {teamFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-success shrink-0 mt-0.5" />
                   <span className="text-sm">{feature}</span>
@@ -91,17 +91,22 @@ const Pricing = () => {
             </ul>
 
             <Button
-              variant="outline"
-              className="w-full"
-              onClick={() => window.open(LINKS.pilot, "_blank")}
+              className="w-full bg-gradient-to-r from-secondary to-accent text-background font-semibold hover:opacity-90"
+              onClick={() => window.open(LINKS.app, "_blank", "noopener")}
             >
-              Book a pilot
+              Create a workspace
             </Button>
+            <a
+              href={LINKS.talk}
+              className="mt-3 text-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Talk to us
+            </a>
           </Card>
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>No card, no signup, no sales deck before you have seen a scan of your own machine.</p>
+          <p>No card, no sales deck. Scan your own machine before you create anything.</p>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ const HowItWorks = () => {
             works
           </h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            Five steps, about twenty milliseconds, no network code anywhere in the package.
+            Five steps, about twenty milliseconds, and the scan never touches the network.
           </p>
         </div>
 

@@ -33,7 +33,7 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: Unplug, text: "No network code. Nothing leaves the machine." },
+  { icon: Unplug, text: "The scan never touches the network. Only boppi push sends, and only when you run it." },
   { icon: Terminal, text: "No account, no install. Node 18 or newer." },
   { icon: Scale, text: "Apache-2.0. Scanner and engine in the open." },
 ];

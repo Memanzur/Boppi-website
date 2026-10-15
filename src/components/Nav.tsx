@@ -21,15 +21,23 @@ const Nav = () => (
           </a>
         ))}
       </nav>
-      <a
-        href={LINKS.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/60 bg-card/60 text-sm font-medium hover:border-primary/50 transition-colors"
-      >
-        <Github className="w-4 h-4" />
-        GitHub
-      </a>
+      <div className="flex items-center gap-2">
+        <a
+          href={LINKS.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/60 bg-card/60 text-sm font-medium hover:border-primary/50 transition-colors"
+        >
+          <Github className="w-4 h-4" />
+          <span className="hidden sm:inline">GitHub</span>
+        </a>
+        <a
+          href={LINKS.app}
+          className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-background text-sm font-semibold hover:opacity-90 transition-opacity"
+        >
+          Sign in
+        </a>
+      </div>
     </div>
   </header>
 );
