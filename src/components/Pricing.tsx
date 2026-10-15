@@ -15,7 +15,7 @@ const scannerFeatures = [
 
 const teamFeatures = [
   "Create a workspace, invite your team, generate a collector token",
-  "npx boppi push sends one scan's sanitized inventory per machine",
+  "npx boppi-cli push sends one scan's sanitized inventory per machine",
   "Every agent, server, and exposure path across the org in one view",
   "Rescan a fixed machine and the path clears in the dashboard too",
   "Free during the beta. Any change to that shows up on this page first",
