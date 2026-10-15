@@ -32,10 +32,10 @@ const Nav = () => (
           <span className="hidden sm:inline">GitHub</span>
         </a>
         <a
-          href={LINKS.talk}
+          href={LINKS.app}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          Request access <ArrowUpRight className="w-3.5 h-3.5" />
+          Sign in <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>

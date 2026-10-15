@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
           </a>
           <a
-            href={LINKS.github}
+            href={LINKS.npm}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
@@ -30,8 +30,8 @@ const Footer = () => {
               <Package className="w-4 h-4 text-primary" />
             </div>
             <div>
-              <div className="text-sm font-semibold">Scanner source</div>
-              <div className="text-xs text-muted-foreground">Open on GitHub</div>
+              <div className="text-sm font-semibold">boppi on npm</div>
+              <div className="text-xs text-muted-foreground">npx boppi scan</div>
             </div>
           </a>
           <a
@@ -74,7 +74,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Open source</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
-              <li><a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Scanner source</a></li>
+              <li><a href={LINKS.npm} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">npm</a></li>
               <li><a href={LINKS.issues} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Report an issue</a></li>
               <li><a href={LINKS.contact} className="hover:text-primary transition-colors">Contact</a></li>
             </ul>

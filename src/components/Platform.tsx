@@ -85,8 +85,11 @@ const Platform = () => {
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-stretch gap-2">
-              <Button asChild className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90">
-                <a href={LINKS.talk}>Request team beta</a>
+              <Button
+                className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
+                onClick={() => window.open(LINKS.app, "_blank", "noopener")}
+              >
+                Create a workspace
               </Button>
               <a
                 href={LINKS.talk}
