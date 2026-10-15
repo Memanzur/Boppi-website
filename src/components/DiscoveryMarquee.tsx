@@ -38,7 +38,7 @@ const DiscoveryMarquee = () => (
       </div>
     </div>
     <div className="max-w-7xl mx-auto mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground border-t border-border pt-5">
-      {boundaries.map((boundary) => <span key={boundary}>— {boundary}</span>)}
+      {boundaries.map((boundary) => <span key={boundary} className="coverage-chip">{boundary}</span>)}
     </div>
   </section>
 );
