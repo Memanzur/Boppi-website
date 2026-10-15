@@ -52,6 +52,37 @@ const productTruth = [
   },
 ];
 
+const roadmap = [
+  {
+    phase: "Live beta",
+    title: "Configuration clarity",
+    body: "Inventory agents and MCP servers, map potential exposure paths, explain the evidence, recommend a high-leverage fix, and verify the result.",
+    icon: ShieldCheck,
+    tone: "bg-primary/15 text-primary border-primary/30",
+  },
+  {
+    phase: "Next",
+    title: "Broader coverage",
+    body: "Add more agent providers, MCP servers, configuration formats, and platform-specific discovery so teams can see more of their real estate.",
+    icon: Network,
+    tone: "bg-secondary/15 text-secondary border-secondary/30",
+  },
+  {
+    phase: "Then",
+    title: "Remediation and controls",
+    body: "Make fixes easier to review and apply, with previews, rollback-minded workflows, policies, CI gates, roles, and fleet-wide controls.",
+    icon: Wrench,
+    tone: "bg-accent/15 text-accent border-accent/30",
+  },
+  {
+    phase: "Later",
+    title: "Continuous and runtime visibility",
+    body: "Track changes over time, observe what agents actually do, and eventually help contain dangerous behavior. These capabilities are not in the beta yet.",
+    icon: Activity,
+    tone: "bg-muted text-muted-foreground border-border",
+  },
+];
+
 const Platform = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
@@ -86,6 +117,32 @@ const Platform = () => {
               </Card>
             );
           })}
+        </div>
+
+        <div className="mb-10">
+          <div className="text-center mb-7">
+            <p className="section-kicker">The roadmap</p>
+            <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">From knowing to controlling.</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
+              Boppi starts with honest configuration evidence and grows toward continuous control.
+            </p>
+          </div>
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="hidden md:block absolute left-[12.5%] right-[12.5%] top-7 h-px bg-gradient-to-r from-primary/50 via-secondary/50 to-border" aria-hidden="true" />
+            {roadmap.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.phase} className="relative text-center">
+                  <div className={`relative z-10 mx-auto w-14 h-14 rounded-2xl border flex items-center justify-center shadow-lg shadow-background/40 ${item.tone}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground font-semibold mt-4">{item.phase}</p>
+                  <h4 className="font-semibold text-lg mt-2">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-2">{item.body}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
