@@ -1,4 +1,4 @@
-import { Building2, KeyRound, Network, RefreshCw, Users, EyeOff } from "lucide-react";
+import { Activity, Building2, EyeOff, KeyRound, Network, RefreshCw, ShieldCheck, Users, Wrench } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -31,6 +31,27 @@ const capabilities = [
   },
 ];
 
+const productTruth = [
+  {
+    icon: ShieldCheck,
+    label: "What Boppi does today",
+    title: "Turn AI-agent configuration into evidence.",
+    body: "Boppi discovers supported agent and MCP configurations, maps what those servers can reach, identifies potential exposure paths, explains the evidence, and recommends the smallest high-leverage fix. You can verify the result locally, generate a report, or send a sanitized inventory to a workspace.",
+  },
+  {
+    icon: Building2,
+    label: "Why companies need it",
+    title: "Know what your AI agents can access before it becomes an incident.",
+    body: "AI tools are being configured faster than security teams can inventory them. Boppi gives a security lead a repeatable answer to which agents and MCP servers exist, what they can reach, which paths deserve attention, and whether a fix actually removed the risk.",
+  },
+  {
+    icon: Wrench,
+    label: "What we are building",
+    title: "From configuration visibility to continuous control.",
+    body: "The roadmap includes broader provider coverage, clearer one-click remediation, policy enforcement, stronger fleet workflows, and runtime activity monitoring. Those capabilities are not in the beta yet, and Boppi will label them clearly as they arrive.",
+  },
+];
+
 const Platform = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
@@ -49,6 +70,22 @@ const Platform = () => {
             machine to answer the question your CEO will eventually ask: what could our AI agents
             reach, according to their configuration?
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+          {productTruth.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card key={item.label} className="p-6 bg-card border-border/80">
+                <div className="flex items-center gap-2 mb-4">
+                  <Icon className="w-4 h-4 text-secondary" />
+                  <span className="section-kicker !text-xs">{item.label}</span>
+                </div>
+                <h3 className="text-xl font-semibold tracking-[-0.02em] mb-3">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
