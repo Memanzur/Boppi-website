@@ -57,7 +57,7 @@ const LINES: Line[] = [
   { text: "NEXT STEPS", tone: "head" },
   { text: "  1. Apply the fix above, then run boppi verify boppi-scan.json to confirm the paths are gone." },
   { text: "  2. boppi scan --html boppi-report.html writes a shareable report with the evidence for every claim." },
-  { text: "  3. Working with a team? BOPPI_TOKEN=<token> boppi push sends this sanitized inventory to your Boppi workspace. Nothing else ever leaves the machine.", delay: 500 },
+  { text: "  3. Working with a team? npx boppi push --url https://app.boppi.io prompts for a token and sends this sanitized inventory. Nothing else leaves the machine.", delay: 500 },
   { text: "" },
   { text: "PRIVACY  Files read this run (metadata only, sanitized in memory, nothing left this machine):", tone: "head" },
   { text: "  - ~/Library/Application Support/Claude/claude_desktop_config.json", tone: "dim" },

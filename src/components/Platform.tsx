@@ -41,9 +41,8 @@ const Platform = () => {
             <Building2 className="w-4 h-4 text-secondary" />
             <span className="text-sm font-semibold text-secondary">Boppi for teams · free public beta</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">The same engine, every machine</span>
-          </h2>
+          <p className="section-kicker">Optional workspace</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Bring the evidence together.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A scan on one laptop is a snapshot. A security lead needs the whole fleet. Create a
             workspace at app.boppi.io, generate a collector token, and push scans from every
@@ -71,7 +70,7 @@ const Platform = () => {
           })}
         </div>
 
-        <Card className="p-6 md:p-8 bg-gradient-to-b from-secondary/10 to-card border-secondary/30 max-w-3xl mx-auto">
+        <Card className="p-6 md:p-8 bg-card border-secondary/30 max-w-3xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">

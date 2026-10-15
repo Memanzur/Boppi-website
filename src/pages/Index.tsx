@@ -8,14 +8,13 @@ import Platform from "@/components/Platform";
 import Pricing from "@/components/Pricing";
 import Honesty from "@/components/Honesty";
 import Footer from "@/components/Footer";
-import CursorStars from "@/components/CursorStars";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <div className="boppi-dot-pattern" aria-hidden="true" />
 
-      <div className="relative" style={{ zIndex: 1 }}>
+      <div className="relative z-10">
         <Nav />
         <Hero />
         <DiscoveryMarquee />
@@ -28,7 +27,6 @@ const Index = () => {
         <Footer />
       </div>
 
-      <CursorStars />
     </div>
   );
 };

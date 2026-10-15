@@ -2,310 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 240 33% 8%;
-    --foreground: 210 40% 98%;
-
-    --card: 240 28% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 240 28% 12%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 310 90% 85%;
-    --primary-foreground: 240 33% 8%;
-
-    --secondary: 190 85% 70%;
-    --secondary-foreground: 240 33% 8%;
-
-    --accent: 170 100% 75%;
-    --accent-foreground: 240 33% 8%;
-
-    --muted: 240 20% 20%;
-    --muted-foreground: 215 20% 65%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --warning: 45 93% 60%;
-    --success: 142 76% 60%;
-
-    --border: 240 20% 20%;
-    --input: 240 20% 20%;
-    --ring: 310 90% 85%;
-
-    --radius: 1rem;
-
-    --gradient-primary: linear-gradient(135deg, hsl(310 90% 85%), hsl(200 85% 70%), hsl(170 100% 75%));
-    --gradient-hero: linear-gradient(180deg, hsl(240 33% 8%), hsl(240 28% 12%));
-    --glow-primary: 0 0 40px hsl(310 90% 85% / 0.3);
-    --glow-secondary: 0 0 30px hsl(200 85% 70% / 0.3);
-    --glow-accent: 0 0 30px hsl(170 100% 75% / 0.3);
-    
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 222 31% 8%;
+    --foreground: 210 25% 96%;
+    --card: 222 27% 12%;
+    --card-foreground: 210 25% 96%;
+    --popover: 222 27% 12%;
+    --popover-foreground: 210 25% 96%;
+    --primary: 188 86% 62%;
+    --primary-foreground: 222 31% 8%;
+    --secondary: 221 84% 72%;
+    --secondary-foreground: 222 31% 8%;
+    --accent: 38 95% 66%;
+    --accent-foreground: 222 31% 8%;
+    --muted: 222 22% 18%;
+    --muted-foreground: 215 16% 68%;
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 210 25% 96%;
+    --warning: 38 95% 66%;
+    --success: 154 64% 55%;
+    --border: 220 20% 24%;
+    --input: 220 20% 24%;
+    --ring: 188 86% 62%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 31% 8%;
+    --sidebar-foreground: 210 25% 96%;
+    --sidebar-primary: 188 86% 62%;
+    --sidebar-primary-foreground: 222 31% 8%;
+    --sidebar-accent: 222 22% 18%;
+    --sidebar-accent-foreground: 210 25% 96%;
+    --sidebar-border: 220 20% 24%;
+    --sidebar-ring: 188 86% 62%;
   }
 
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 240 33% 8%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 240 33% 8%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 33% 8%;
-
-    --primary: 310 90% 85%;
-    --primary-foreground: 240 33% 8%;
-
-    --secondary: 190 85% 70%;
-    --secondary-foreground: 240 33% 8%;
-
-    --accent: 170 100% 75%;
-    --accent-foreground: 240 33% 8%;
-
-    --muted: 240 10% 96%;
-    --muted-foreground: 240 5% 40%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --warning: 45 93% 60%;
-    --success: 142 76% 60%;
-
-    --border: 240 10% 90%;
-    --input: 240 10% 90%;
-    --ring: 310 90% 85%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(310 90% 85%), hsl(200 85% 70%), hsl(170 100% 75%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 10% 96%));
-    --glow-primary: 0 0 40px hsl(310 90% 85% / 0.3);
-    --glow-secondary: 0 0 30px hsl(200 85% 70% / 0.3);
-    --glow-accent: 0 0 30px hsl(170 100% 75% / 0.3);
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  ::selection { background: hsl(var(--primary) / 0.25); }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+@layer components {
+  .section-kicker { @apply mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary; }
+  .coverage-chip { @apply inline-flex items-center rounded border border-border px-2.5 py-1.5 text-xs text-muted-foreground; }
 }
 
 @layer utilities {
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glow-primary {
-    box-shadow: var(--glow-primary);
-  }
-
-  .glow-secondary {
-    box-shadow: var(--glow-secondary);
-  }
-
-  .glow-accent {
-    box-shadow: var(--glow-accent);
-  }
-
-  /* Scroll reveal: elements start hidden + translated, .is-visible triggers. */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-  }
-
-  /* Soft brand pulse for the live badge dot. */
-  @keyframes boppi-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 hsl(142 76% 60% / 0.6); }
-    50%      { box-shadow: 0 0 0 8px hsl(142 76% 60% / 0); }
-  }
-  .animate-boppi-pulse {
-    animation: boppi-pulse 1800ms ease-out infinite;
-  }
-
-  /* Caret blink for the live demo auto-type. */
-  @keyframes boppi-caret {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
-  }
-  .animate-boppi-caret {
-    animation: boppi-caret 1s steps(1, end) infinite;
-  }
-
-  /* Detection pop-in for masked chips. */
-  @keyframes boppi-pop {
-    0%   { transform: scale(0.8); opacity: 0; }
-    60%  { transform: scale(1.08); opacity: 1; }
-    100% { transform: scale(1);    opacity: 1; }
-  }
-  .animate-boppi-pop {
-    animation: boppi-pop 260ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  /* Cursor star trail: each star is a fixed div with inline style vars. */
-  .boppi-cursor-star {
-    position: fixed;
-    width: var(--size, 16px);
-    height: var(--size, 16px);
-    color: var(--color, hsl(310 90% 85%));
-    pointer-events: none;
-    transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
-    z-index: 70;
-    will-change: transform, opacity;
-    animation: boppi-star 1200ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-  .boppi-cursor-star svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-    filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor);
-  }
-  @keyframes boppi-star {
-    0%   {
-      opacity: 0;
-      transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(0.3);
-    }
-    20%  {
-      opacity: 1;
-      transform: translate(-50%, -50%) rotate(calc(var(--rot, 0deg) + 60deg)) scale(1.05);
-    }
-    100% {
-      opacity: 0;
-      transform:
-        translate(calc(-50% + var(--drift-x, 0px)), calc(-50% + var(--drift-y, -24px)))
-        rotate(calc(var(--rot, 0deg) + 240deg))
-        scale(0.5);
-    }
-  }
-  @media (hover: none), (prefers-reduced-motion: reduce) {
-    .boppi-cursor-star { display: none; }
-  }
-
-  /* Animated hero orbs: two subtle drift paths on different tempos. */
-  @keyframes boppi-drift-1 {
-    0%, 100% { transform: translate(0, 0); }
-    50%      { transform: translate(36px, -28px); }
-  }
-  @keyframes boppi-drift-2 {
-    0%, 100% { transform: translate(0, 0); }
-    50%      { transform: translate(-30px, 22px); }
-  }
-  @keyframes boppi-drift-3 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50%      { transform: translate(18px, 14px) scale(1.06); }
-  }
-  .animate-boppi-drift-1 { animation: boppi-drift-1 14s ease-in-out infinite; }
-  .animate-boppi-drift-2 { animation: boppi-drift-2 18s ease-in-out infinite; }
-  .animate-boppi-drift-3 { animation: boppi-drift-3 22s ease-in-out infinite; }
-  @media (prefers-reduced-motion: reduce) {
-    .animate-boppi-drift-1,
-    .animate-boppi-drift-2,
-    .animate-boppi-drift-3 { animation: none; }
-  }
-
-  /* Infinite marquee: duplicate children, translate -50% to loop seamlessly. */
-  @keyframes boppi-marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-  .animate-boppi-marquee {
-    animation: boppi-marquee 36s linear infinite;
-  }
-  .boppi-marquee-pause:hover .animate-boppi-marquee {
-    animation-play-state: paused;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .animate-boppi-marquee { animation: none; }
-  }
-  .boppi-marquee-mask {
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  }
-
-  /* Global dot pattern: fixed behind all content, faded via radial mask. */
-  .boppi-dot-pattern {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle, hsl(var(--primary) / 0.09) 1px, transparent 1px);
-    background-size: 28px 28px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 10%, transparent 80%);
-    mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 10%, transparent 80%);
-  }
-
-  /* Tilt card: transform driven by CSS vars set in JS. */
-  .tilt-card {
-    transform-style: preserve-3d;
-    transform: perspective(1000px)
-      rotateX(var(--tilt-rx, 0deg))
-      rotateY(var(--tilt-ry, 0deg));
-    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .tilt-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle at var(--tilt-gx, 50%) var(--tilt-gy, 50%),
-      hsl(var(--primary) / 0.22),
-      transparent 55%
-    );
-    opacity: 0;
-    transition: opacity 220ms ease-out;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
-  .tilt-card:hover::before {
-    opacity: 1;
-  }
-  @media (hover: none), (prefers-reduced-motion: reduce) {
-    .tilt-card { transform: none !important; }
-    .tilt-card::before { display: none; }
-  }
+  .reveal { opacity: 1; transform: none; }
+  .gradient-text { color: hsl(var(--foreground)); }
+  .glow-primary, .glow-secondary, .glow-accent { box-shadow: none; }
+  .boppi-dot-pattern { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(hsl(var(--border) / 0.18) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.18) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 65%); opacity: 0.22; }
+  .animate-boppi-marquee, .boppi-marquee-mask, .tilt-card, .boppi-cursor-star { animation: none; transform: none; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
 }

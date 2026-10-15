@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { LINKS } from "@/lib/links";
 
 const items = [
@@ -26,16 +26,16 @@ const Nav = () => (
           href={LINKS.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/60 bg-card/60 text-sm font-medium hover:border-primary/50 transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-border text-sm font-medium hover:border-primary/60 transition-colors"
         >
           <Github className="w-4 h-4" />
           <span className="hidden sm:inline">GitHub</span>
         </a>
         <a
           href={LINKS.app}
-          className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-background text-sm font-semibold hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          Sign in
+          Sign in <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>

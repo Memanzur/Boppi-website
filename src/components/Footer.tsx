@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
               <img src="/boppi-logo.png" alt="Boppi" className="w-8 h-8" />
-              <span className="text-xl font-bold gradient-text">boppi</span>
+            <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
               See what your AI agents can reach before they act.

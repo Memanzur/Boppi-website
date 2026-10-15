@@ -29,16 +29,15 @@ const Honesty = () => {
     <section id="honesty" className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-8 space-y-3">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">Honest by design</span>
-          </h2>
+          <p className="section-kicker">Boundary</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Security claims with receipts.</h2>
           <p className="text-lg text-muted-foreground">
             A security tool that overstates what it knows is a liability. These are the rules the
             code is written to.
           </p>
         </div>
 
-        <Card className="p-6 md:p-8 bg-card/50 backdrop-blur-sm border-primary/20">
+        <Card className="p-6 md:p-8 bg-card border-border">
           <ul className="space-y-5">
             {rules.map((rule) => {
               const Icon = rule.icon;

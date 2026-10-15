@@ -27,16 +27,15 @@ const Pricing = () => {
     <section id="pricing" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">Pricing</span>
-          </h2>
+          <p className="section-kicker">Access</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start with one machine. Add the workspace when you need it.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             The scanner is free and stays free. The team workspace is a free public beta.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="p-8 flex flex-col bg-gradient-to-b from-primary/10 to-card border-primary/30 glow-primary backdrop-blur-sm relative">
+          <Card className="p-8 flex flex-col bg-card border-primary/40 relative">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-xs font-semibold whitespace-nowrap text-background">
               Open source
             </div>
@@ -62,14 +61,14 @@ const Pricing = () => {
             </ul>
 
             <Button
-              className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-background font-mono font-semibold"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-semibold"
               onClick={() => window.open(LINKS.github, "_blank", "noopener")}
             >
               {SCAN_COMMAND}
             </Button>
           </Card>
 
-          <Card className="p-8 flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all duration-300">
+          <Card className="p-8 flex flex-col bg-card border-border hover:border-secondary/50 transition-colors duration-200">
             <div className="mb-6 pt-4">
               <h3 className="text-2xl font-bold mb-2">Boppi for teams</h3>
               <div className="flex items-baseline gap-1 mb-2">
@@ -91,7 +90,7 @@ const Pricing = () => {
             </ul>
 
             <Button
-              className="w-full bg-gradient-to-r from-secondary to-accent text-background font-semibold hover:opacity-90"
+              className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
               onClick={() => window.open(LINKS.app, "_blank", "noopener")}
             >
               Create a workspace

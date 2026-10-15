@@ -22,9 +22,8 @@ const ExposurePaths = () => {
     <section id="paths" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="gradient-text">The six chains it looks for</span>
-          </h2>
+          <p className="section-kicker">Detection model</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Exposure paths, not noise.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every path is potential. The scanner sees configuration, not behavior. It cannot tell
             you an agent has been exploited, only that the grants would allow it.
