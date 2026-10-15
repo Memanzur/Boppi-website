@@ -9,7 +9,7 @@ const capabilities = [
     icon: KeyRound,
     title: "Collectors push, the workspace analyzes",
     description:
-      "Each machine runs the same free scanner. npx boppi-cli push sends one scan's sanitized inventory to your workspace with a token you can rotate or revoke, and it is the only scanner command that touches the network. The engine runs server-side on the whole inventory.",
+      "Each machine runs the same free scanner. npx boppi push sends one scan's sanitized inventory to your workspace with a token you can rotate or revoke, and it is the only scanner command that touches the network. The engine runs server-side on the whole inventory.",
   },
   {
     icon: Network,

@@ -21,7 +21,7 @@ const features = [
     icon: Wrench,
     title: "The smallest fix, computed",
     description:
-      "For each grant, the engine removes it, reruns the search, and counts the paths that disappear. The grant that breaks the most paths is the recommended fix. npx boppi-cli verify boppi-scan.json rescans and confirms it is gone.",
+      "For each grant, the engine removes it, reruns the search, and counts the paths that disappear. The grant that breaks the most paths is the recommended fix. npx boppi verify boppi-scan.json rescans and confirms it is gone.",
     category: "Prioritize",
   },
   {
@@ -35,14 +35,14 @@ const features = [
     icon: GitBranch,
     title: "A gate for CI",
     description:
-      "npx boppi-cli scan --fail-on critical --quiet fails the job when a critical path exists on the runner, or when a client config could not be analyzed.",
+      "npx boppi scan --fail-on critical --quiet fails the job when a critical path exists on the runner, or when a client config could not be analyzed.",
     category: "Ship",
   },
   {
     icon: FileOutput,
     title: "Reports you can hand over",
     description:
-      "npx boppi-cli scan --html boppi-report.html writes a self-contained report for the security lead, JSON carries the full evidence per claim, and npx boppi-cli history keeps a sanitized local record of past scans.",
+      "npx boppi scan --html boppi-report.html writes a self-contained report for the security lead, JSON carries the full evidence per claim, and npx boppi history keeps a sanitized local record of past scans.",
     category: "Share",
   },
 ];
