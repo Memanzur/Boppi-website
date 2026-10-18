@@ -6,10 +6,10 @@ type Tone = "plain" | "dim" | "head" | "ok" | "crit" | "high" | "fix" | "path";
 
 type Line = { text: string; tone?: Tone; delay?: number; block?: boolean };
 
-// Verbatim output of boppi 0.2.0 against a lab machine with four MCP servers in
+// Output of boppi 0.2.0 (header updated to 0.3.0) against a lab machine with four MCP servers in
 // Claude Desktop and one in Cursor. Same text the scanner README shows.
 const LINES: Line[] = [
-  { text: "BOPPI · AI Agent Security scan · v0.2.0", tone: "head" },
+  { text: "BOPPI · AI Agent Security scan · v0.3.0", tone: "head" },
   { text: "completed in 0.03s · everything ran locally", tone: "dim", delay: 400 },
   { text: "" },
   { text: "DISCOVERY", tone: "head" },

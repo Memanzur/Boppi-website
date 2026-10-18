@@ -1,5 +1,5 @@
 export const SCAN_COMMAND = "npx boppi scan";
-export const SCAN_VERSION = "v0.2.0";
+export const SCAN_VERSION = "v0.3.0";
 
 export const LINKS = {
   github: "https://github.com/Memanzur/boppi-scan",
