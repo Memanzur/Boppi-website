@@ -7,17 +7,17 @@ import { LINKS, SCAN_COMMAND } from "@/lib/links";
 const scannerFeatures = [
   "Discovery for Claude Desktop, Claude Code, and Cursor",
   "Agent inventory, risk scores, and the six exposure path templates",
-  "Root cause with the smallest fix, verified by re-simulation",
+  "Suggested configuration changes ranked by modeled paths removed",
   "HTML and JSON reports with evidence per claim",
   "CI gate with --fail-on and clear exit codes",
-  "Apache-2.0, no account, no telemetry. Only boppi push uses the network, and only when you run it",
+  "Apache-2.0, no account or telemetry for scans. Explicit boppi push shares a sanitized inventory",
 ];
 
 const teamFeatures = [
   "Create a workspace, invite your team, generate a collector token",
   "npx boppi push sends one scan's sanitized inventory per machine",
-  "Every agent, server, and exposure path across the org in one view",
-  "Rescan a fixed machine and the path clears in the dashboard too",
+  "Review supported agents, servers, and potential paths from submitted inventories",
+  "Rescan and push again to update workspace evidence; incomplete scans can retain older records",
   "Free during the beta. Any change to that shows up on this page first",
 ];
 
@@ -76,7 +76,7 @@ const Pricing = () => {
                 <span className="text-muted-foreground text-sm">at app.boppi.io</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                For security leads at companies whose engineers use AI coding tools.
+                For teams reviewing AI assistant configuration across multiple machines.
               </p>
             </div>
 
@@ -105,7 +105,7 @@ const Pricing = () => {
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>No card, no sales deck. Scan your own machine before you create anything.</p>
+          <p>Start locally without an account. The scanner and optional workspace are separate from the planned Boppi Intelligence platform.</p>
         </div>
       </div>
     </section>

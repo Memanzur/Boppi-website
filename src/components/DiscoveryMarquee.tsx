@@ -14,10 +14,11 @@ const DiscoveryMarquee = () => (
     <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
       <div>
         <p className="section-kicker">Current coverage</p>
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.03em]">Start where the evidence lives.</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.03em]">Start with your assistant's settings.</h2>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-lg">
-          Boppi reads supported local MCP configuration. It does not pretend to see agents or tools
-          that are not represented in the evidence.
+          Boppi reads supported local configuration for MCP connections: the integrations that
+          let an AI assistant use tools and services. It infers potential access from those settings;
+          it does not test live permissions or observe activity.
         </p>
       </div>
       <div className="grid sm:grid-cols-2 gap-3 text-sm">
@@ -33,7 +34,7 @@ const DiscoveryMarquee = () => (
           <div className="flex items-center gap-2 text-foreground font-semibold mb-3">
             <CircleAlert className="w-4 h-4 text-warning" /> Not yet discovered
           </div>
-          <p className="text-muted-foreground leading-relaxed">Windsurf and VS Code integrations are not part of this beta.</p>
+          <p className="text-muted-foreground leading-relaxed">Windsurf and VS Code are not discovered. Windows and Linux configuration lookup is implemented but has not been verified on real machines.</p>
         </div>
       </div>
     </div>

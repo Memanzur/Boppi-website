@@ -5,44 +5,44 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const features = [
   {
     icon: ListTree,
-    title: "Agent inventory with a risk score",
+    title: "See what is connected",
     description:
-      "Every agent on the machine, the MCP servers behind it, the capabilities those servers grant, and a 0 to 100 score you can trace back to the rules that produced it.",
-    category: "Discover",
+      "Find supported AI assistants and their configured tool connections. Understand which connections suggest access to files, credentials, commands, or external services.",
+    category: "Visibility",
   },
   {
     icon: Route,
-    title: "Exposure paths, not a pile of findings",
+    title: "Understand why access matters",
     description:
-      "Boppi builds a graph of agents, servers, capabilities, data, credentials, and destinations, then walks it. A path is reported only when the whole chain is in the graph.",
-    category: "Understand",
+      "Reading files and connecting to the internet can each be useful. Together, they may create a way for private data to leave your machine. Boppi highlights potential combinations like this and explains the evidence.",
+    category: "Understanding",
   },
   {
     icon: Wrench,
-    title: "The smallest fix, computed",
+    title: "Choose a change, then check it",
     description:
-      "For each grant, the engine removes it, reruns the search, and counts the paths that disappear. The grant that breaks the most paths is the recommended fix. npx boppi verify boppi-scan.json rescans and confirms it is gone.",
-    category: "Prioritize",
+      "Compare suggested configuration changes and the access you would give up. After you make an edit, rescan to see which modeled risks remain. A scan itself changes no permissions.",
+    category: "Control",
   },
   {
     icon: FileSearch,
     title: "Evidence on every claim",
     description:
-      "Capabilities inferred from a package name say so, with a confidence. Unknown stays unknown. Nothing is presented as observed fact that the scanner did not observe.",
+      "Review what was read and what was inferred. Findings include evidence and confidence; a risk score helps prioritize review, rather than measuring the probability of an attack.",
     category: "Trust",
   },
   {
     icon: GitBranch,
-    title: "A gate for CI",
+    title: "Check configuration before shipping",
     description:
-      "npx boppi scan --fail-on critical --quiet fails the job when a critical path exists on the runner, or when a client config could not be analyzed.",
+      "Developers can scan a specific configuration in CI with --config and --fail-on. Fail a check on a chosen severity or an unreadable configuration. This checks settings; it does not block an assistant at runtime.",
     category: "Ship",
   },
   {
     icon: FileOutput,
-    title: "Reports you can hand over",
+    title: "Keep a report you can review",
     description:
-      "npx boppi scan --html boppi-report.html writes a self-contained report for the security lead, JSON carries the full evidence per claim, and npx boppi history keeps a sanitized local record of past scans.",
+      "Save an HTML report, inspect the evidence in JSON, or compare local scan history. Reports stay on your machine unless you share them or explicitly push a sanitized inventory to a team workspace.",
     category: "Share",
   },
 ];
@@ -53,10 +53,11 @@ const Features = () => {
     <section id="features" className="py-16 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
-          <p className="section-kicker">Product surface</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">From config to a fix you can defend.</h2>
+          <p className="section-kicker">What the scanner helps you do today</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Useful access can add up to unexpected risk.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Each hop in a path is authorized. The path never was. Boppi shows you the path.
+            As you add AI tools, it gets harder to keep track of what they can reach.
+            Boppi gives you a starting point for deciding which access is necessary.
           </p>
         </div>
 

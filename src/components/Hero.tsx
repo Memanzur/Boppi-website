@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Check, Copy, ArrowRight, FileSearch, GitBranch, LockKeyhole } from "lucide-react";
 import ScanTerminal from "@/components/ScanTerminal";
-import { LINKS, SCAN_COMMAND } from "@/lib/links";
+import { SCAN_COMMAND } from "@/lib/links";
 
 const CopyCommand = () => {
   const [copied, setCopied] = useState(false);
@@ -33,9 +33,9 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: LockKeyhole, text: "Local by default. No account or network access for a scan." },
-  { icon: FileSearch, text: "Evidence attached to every inventory, inference, and path." },
-  { icon: GitBranch, text: "Open source scanner with CI-friendly exit codes." },
+  { icon: LockKeyhole, text: "Your scan stays on your machine. No account needed." },
+  { icon: FileSearch, text: "See the evidence and limits behind each finding." },
+  { icon: GitBranch, text: "Free, open source scanner. You choose what to change." },
 ];
 
 const Hero = () => {
@@ -45,30 +45,37 @@ const Hero = () => {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-success" />
-            Open beta · agent security
+            AI assistant security · free scanner beta
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance] mb-7">
-            Find the path before it becomes an incident.
+            Know what your AI can access. Stay in control.
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-            Boppi maps what Claude Desktop, Claude Code, and Cursor can reach through MCP. It turns
-            configuration evidence into exposure paths, then shows the smallest change that breaks
-            the most risk.
+            Boppi helps you discover what your AI assistants are connected to, understand potential
+            security risks, and make safer decisions about their permissions.
+          </p>
+
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">
+            Start with a local check of Claude Desktop, Claude Code, and Cursor settings.
+            See which configured connections could put files, credentials, or systems at risk.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
             <CopyCommand />
             <a
-              href={LINKS.app}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#how-it-works"
               className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Open team workspace <ArrowRight className="w-4 h-4" />
+              See how the scanner works <ArrowRight className="w-4 h-4" />
             </a>
           </div>
+
+          <p className="mb-6 text-xs text-muted-foreground leading-relaxed">
+            Run the command in your terminal. Requires Node.js 18+. Tested on macOS;
+            Windows and Linux discovery are not yet verified on real machines.
+          </p>
 
           <ul className="space-y-2.5">
             {proofs.map((p) => {
@@ -88,8 +95,8 @@ const Hero = () => {
         <div className="min-w-0">
           <ScanTerminal />
           <p className="mt-4 text-xs text-muted-foreground text-center leading-relaxed">
-            Real output from a lab machine with file, shell, web fetch, and 1Password servers wired
-            into Claude Desktop. Each one looks reasonable alone.
+            Illustrative scan output from a sample configuration. This animation does not scan
+            your device or show live activity.
           </p>
         </div>
       </div>

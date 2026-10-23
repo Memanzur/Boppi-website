@@ -6,11 +6,11 @@ type Tone = "plain" | "dim" | "head" | "ok" | "crit" | "high" | "fix" | "path";
 
 type Line = { text: string; tone?: Tone; delay?: number; block?: boolean };
 
-// Output of boppi 0.2.0 (header updated to 0.3.0) against a lab machine with four MCP servers in
-// Claude Desktop and one in Cursor. Same text the scanner README shows.
+// Illustrative output adapted from the scanner README sample (originally v0.2.0).
+// This is an animation, not a current-version scan or a live device connection.
 const LINES: Line[] = [
-  { text: "BOPPI · AI Agent Security scan · v0.3.0", tone: "head" },
-  { text: "completed in 0.03s · everything ran locally", tone: "dim", delay: 400 },
+  { text: "BOPPI · Example configuration scan", tone: "head" },
+  { text: "sample data · no scan is running", tone: "dim", delay: 400 },
   { text: "" },
   { text: "DISCOVERY", tone: "head" },
   { text: "  ✓ Claude Desktop  ~/Library/Application Support/Claude/claude_desktop_config.json  4 servers", tone: "ok" },
@@ -140,7 +140,7 @@ const ScanTerminal = () => {
             <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
             <span className="w-3 h-3 rounded-full bg-[#28c840]" />
           </div>
-          <span className="text-[11px] font-mono text-muted-foreground tracking-wide">boppi scan</span>
+          <span className="text-[11px] font-mono text-muted-foreground tracking-wide">Example scan · sample data</span>
           <button
             type="button"
             onClick={() => setRun((r) => r + 1)}

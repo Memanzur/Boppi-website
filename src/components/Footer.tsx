@@ -55,18 +55,18 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              See what your AI agents can reach before they act.
+              Know what your AI can access. Stay in control.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><a href="#paths" className="hover:text-primary transition-colors">Exposure paths</a></li>
+                            <li><a href="#paths" className="hover:text-primary transition-colors">Risk model</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">What it tells you</a></li>
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="#platform" className="hover:text-primary transition-colors">For teams</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
+              <li><a href="#platform" className="hover:text-primary transition-colors">Boppi Intelligence</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">Access</a></li>
             </ul>
           </div>
 
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
-            <span>Scans run locally · Metadata only</span>
+            <span>Scans run locally · Sharing is optional</span>
           </div>
         </div>
       </div>

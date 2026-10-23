@@ -1,10 +1,10 @@
 import { ArrowUpRight, Github } from "lucide-react";
-import { LINKS } from "@/lib/links";
+import { BETA_DEMO, LINKS } from "@/lib/links";
 
 const items = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "For teams", href: "#platform" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Vision & status", href: "#platform" },
+  { label: "Access", href: "#pricing" },
 ];
 
 const Nav = () => (
@@ -22,6 +22,12 @@ const Nav = () => (
         ))}
       </nav>
       <div className="flex items-center gap-2">
+        <a
+          href={BETA_DEMO.live ? BETA_DEMO.path : BETA_DEMO.preview}
+          className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
+        >
+          {BETA_DEMO.live ? "Try the demo" : "Demo · soon"}
+        </a>
         <a
           href={LINKS.github}
           target="_blank"

@@ -7,78 +7,74 @@ import { LINKS } from "@/lib/links";
 const capabilities = [
   {
     icon: KeyRound,
-    title: "Collectors push, the workspace analyzes",
-    description:
-      "Each machine runs the same free scanner. npx boppi push sends one scan's sanitized inventory to your workspace with a token you can rotate or revoke, and it is the only scanner command that touches the network. The engine runs server-side on the whole inventory.",
+    title: "Share only when you choose",
+    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. Local scanning needs no account.",
   },
   {
     icon: Network,
-    title: "Attack paths across the org",
-    description:
-      "One view of every agent, every server, every path, and the single fix that removes the most risk across all machines, with the evidence behind each claim.",
+    title: "Review submitted snapshots together",
+    description: "A workspace brings uploaded agent and server inventories together for team review. It reflects submitted configuration evidence, not a live view of every machine or action.",
   },
   {
     icon: RefreshCw,
-    title: "Fixed machines show up fixed",
-    description:
-      "Snapshots replace what a collector reported last time. Remove a grant, rescan, and the path is gone in the dashboard too. Evidence that comes back reopens it.",
+    title: "Rescan to check a change",
+    description: "A local rescan can show whether a modeled path remains. Updating workspace evidence requires another push; it is not continuous monitoring. Empty or incomplete discovery may leave older evidence in place.",
   },
   {
     icon: Users,
-    title: "Workspaces, roles, audit trail",
-    description:
-      "Organizations with owner, admin, and member roles, email-matched invites, and an audit event for every change. Tenant isolation is enforced in the database, not the app.",
+    title: "An optional team beta",
+    description: "The hosted workspace is a separate free beta at app.boppi.io. It can change or be unavailable. It is not the planned Boppi Intelligence service, and the local scanner works independently.",
   },
 ];
 
 const productTruth = [
   {
     icon: ShieldCheck,
-    label: "What Boppi does today",
-    title: "Turn AI-agent configuration into evidence.",
-    body: "Boppi discovers supported agent and MCP configurations, maps what those servers can reach, identifies potential exposure paths, explains the evidence, and recommends the smallest high-leverage fix. You can verify the result locally, generate a report, or send a sanitized inventory to a workspace.",
+    label: "Visibility",
+    title: "Know what is connected.",
+    body: "Today: inspect supported configuration on your machine. The vision: expand coverage so individuals and teams can understand more of their AI environment.",
   },
   {
     icon: Building2,
-    label: "Why companies need it",
-    title: "Know what your AI agents can access before it becomes an incident.",
-    body: "AI tools are being configured faster than security teams can inventory them. Boppi gives a security lead a repeatable answer to which agents and MCP servers exist, what they can reach, which paths deserve attention, and whether a fix actually removed the risk.",
+    label: "Understanding",
+    title: "Know why it matters.",
+    body: "Today: review potential risks with evidence and inference labels. The vision: connect richer signals into clearer explanations and more reliable priorities.",
   },
   {
     icon: Wrench,
-    label: "What we are building",
-    title: "From configuration visibility to continuous control.",
-    body: "The roadmap includes broader provider coverage, clearer one-click remediation, policy enforcement, stronger fleet workflows, and runtime activity monitoring. Those capabilities are not in the beta yet, and Boppi will label them clearly as they arrive.",
+    label: "Control",
+    title: "Choose what to do next.",
+    body: "Today: compare configuration changes and rescan after an edit. The vision: add reviewed, reversible actions and policy controls, with clear consent and measurable results.",
   },
 ];
 
 const roadmap = [
   {
-    phase: "Live beta",
-    title: "Configuration clarity",
-    body: "Inventory agents and MCP servers, map potential exposure paths, explain the evidence, recommend a high-leverage fix, and verify the result.",
+    phase: "Live · v0.3.0",
+    title: "Local scanner",
+    body: "Configuration discovery, potential-risk modeling, suggested edits, verification, local history, reports, and CI checks. Optional push shares a sanitized inventory.",
     icon: ShieldCheck,
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
-    phase: "Next",
-    title: "Broader coverage",
-    body: "Add more agent providers, MCP servers, configuration formats, and platform-specific discovery so teams can see more of their real estate.",
+    phase: "Local only · v0.3.1 candidate",
+    title: "Unpublished improvements",
+    body: "Synthetic demo, richer built-in tool and file-scope modeling, expanded change previews, and rollback are in local development. They are not included in the published npm release.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
-    phase: "Then",
-    title: "Remediation and controls",
-    body: "Make fixes easier to review and apply, with previews, rollback-minded workflows, policies, CI gates, roles, and fleet-wide controls.",
-    icon: Wrench,
+    phase: "Experimental · local only",
+    title: "Tool-event hook prototype",
+    body: "An optional Claude Code hook prototype records limited local event metadata when manually configured. Live delivery and concurrent capture remain unverified. It is not continuous protection.",
+    icon: Activity,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "Later",
-    title: "Continuous and runtime visibility",
-    body: "Track changes over time, observe what agents actually do, and eventually help contain dangerous behavior. These capabilities are not in the beta yet.",
-    icon: Activity,
+    phase: "Planned · not available",
+    title: "Boppi Intelligence",
+    body: "Broader discovery, continuous change detection, supported runtime visibility, prompt investigation, and reviewed controls. These are roadmap goals, with no promised release date.",
+    icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },
 ];
@@ -91,15 +87,14 @@ const Platform = () => {
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <Building2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-secondary">Boppi for teams · free public beta</span>
+            <span className="text-sm font-semibold text-secondary">The longer-term vision · planned</span>
           </div>
-          <p className="section-kicker">Optional workspace</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Bring the evidence together.</h2>
+          <p className="section-kicker">Boppi Intelligence</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Visibility. Understanding. Control.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A scan on one laptop is a snapshot. A security lead needs the whole fleet. Create a
-            workspace at app.boppi.io, generate a collector token, and push scans from every
-            machine to answer the question your CEO will eventually ask: what could our AI agents
-            reach, according to their configuration?
+            We are building toward a hybrid AI-agent security platform: local visibility and
+            analysis, with optional shared intelligence and team controls. Boppi Intelligence is
+            our longer-term vision, not a working capability in today's scanner or workspace beta.
           </p>
         </div>
 
@@ -121,10 +116,10 @@ const Platform = () => {
 
         <div className="mb-10">
           <div className="text-center mb-7">
-            <p className="section-kicker">The roadmap</p>
-            <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">From knowing to controlling.</h3>
+            <p className="section-kicker">Product status</p>
+            <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">What is available, and what comes next.</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
-              Boppi starts with honest configuration evidence and grows toward continuous control.
+              The public release, unpublished local work, experiments, and planned capabilities are different stages. Local work is not a release announcement.
             </p>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -145,6 +140,10 @@ const Platform = () => {
           </div>
         </div>
 
+        <div className="text-center mb-7">
+          <p className="section-kicker">Optional team workspace · current beta</p>
+          <h3 className="text-3xl font-semibold tracking-[-0.03em]">Bring scan snapshots together.</h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           {capabilities.map((c) => {
             const Icon = c.icon;
@@ -169,13 +168,13 @@ const Platform = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <EyeOff className="w-4 h-4 text-secondary" />
-                <h3 className="font-semibold">What it is not, yet</h3>
+                <h3 className="font-semibold">A snapshot, with clear limits</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Boppi reports potential exposure from configuration evidence. It does not watch
-                agents at runtime and it does not block anything. We will not claim either until
-                it is built. The workspace is a free public beta: expect rough edges, and tell us
-                about them.
+                The published scanner and workspace do not continuously watch AI activity,
+                detect prompt injection, or block actions at runtime. A scan is a configuration
+                snapshot; local history compares scans you run. Planned monitoring and enforcement
+                will need separate implementation, validation, and consent.
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-stretch gap-2">
@@ -193,6 +192,15 @@ const Platform = () => {
               </a>
             </div>
           </div>
+        </Card>
+        <Card id="beta-preview" className="mt-10 p-6 md:p-8 bg-card border-border scroll-mt-24">
+          <p className="section-kicker">Interactive demo · coming soon</p>
+          <h3 className="text-2xl font-semibold mb-3">Explore with sample data first.</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
+            We are preparing a synthetic interactive demo so you can explore example connections,
+            understand a finding, and preview a simulated change. The website demo is not live yet.
+            It is planned to use sample data without scanning your device or changing your permissions.
+          </p>
         </Card>
       </div>
     </section>

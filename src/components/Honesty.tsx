@@ -5,21 +5,21 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const rules = [
   {
     icon: FileSearch,
-    title: "The scanner reads metadata only",
+    title: "Local analysis, with explicit sharing",
     body:
-      "It never collects secret values, environment variable values, file contents, or raw filesystem paths. Paths become fingerprints before they reach the report. Every file read is listed at the end of the run so you can check the claim yourself.",
+      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded. Only an explicit boppi push sends a sanitized inventory to your workspace; review it first with --dry-run. Downloading the package with npx uses the npm registry.",
   },
   {
     icon: ShieldQuestion,
-    title: "Paths are potential, not attacks",
+    title: "A finding is a reason to review",
     body:
-      "Boppi sees what the configuration would allow. It cannot tell you an agent has been exploited. Capabilities inferred from a package name are labeled inferred, and if you ask, we say so plainly.",
+      "Boppi models potential access from supported configuration. It does not prove that access works, detect an attack in progress, or guarantee safety after a clean scan. Missing sources and inference limits matter.",
   },
   {
     icon: Scale,
-    title: "We do not claim to be the only ones",
+    title: "You decide what changes",
     body:
-      "Other vendors can see local agents and MCP servers too. What Boppi adds is the graph, the path, and the computed smallest fix, with the evidence attached. Judge it on a scan of your own machine.",
+      "Scanning and planning do not change permissions. The optional boppi fix command removes a chosen server entry, asks for confirmation by default, and creates a local backup. Review the tradeoff: a removed connection may stop a useful workflow, and backups contain the original configuration, including any secrets.",
   },
 ];
 
@@ -30,10 +30,9 @@ const Honesty = () => {
       <div className="max-w-3xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-8 space-y-3">
           <p className="section-kicker">Boundary</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Security claims with receipts.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Know what the results can tell you.</h2>
           <p className="text-lg text-muted-foreground">
-            A security tool that overstates what it knows is a liability. These are the rules the
-            code is written to.
+            Clear evidence, clear limits, and a choice about what happens next.
           </p>
         </div>
 

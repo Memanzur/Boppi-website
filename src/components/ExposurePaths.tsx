@@ -6,7 +6,7 @@ const TEMPLATES: { id: string; name: string; chain: string; severity: Severity }
   { id: "EP-A", name: "Data exfiltration", chain: "readable data reaches an external destination", severity: "critical" },
   { id: "EP-B", name: "Credential exposure", chain: "credential access reaches execution and the network", severity: "critical" },
   { id: "EP-C", name: "Software supply chain", chain: "source modification reaches production", severity: "critical" },
-  { id: "EP-D", name: "Unverified server", chain: "sensitive data sits behind a server nobody vetted", severity: "high" },
+  { id: "EP-D", name: "Unverified server", chain: "sensitive-data access is modeled through a server with insufficient trust evidence", severity: "high" },
   { id: "EP-E", name: "Privilege", chain: "untrusted content reaches shell, code, or destructive file tools", severity: "high" },
   { id: "EP-F", name: "Impersonation", chain: "untrusted content reaches email or messaging", severity: "high" },
 ];
@@ -22,11 +22,12 @@ const ExposurePaths = () => {
     <section id="paths" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
-          <p className="section-kicker">Detection model</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Exposure paths, not noise.</h2>
+          <p className="section-kicker">Technical detail · available scanner</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">How Boppi models potential risk.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every path is potential. The scanner sees configuration, not behavior. It cannot tell
-            you an agent has been exploited, only that the grants would allow it.
+            An exposure path is a chain of configured or inferred capabilities that could create
+            risk. The six templates below describe what the engine looks for. A match does not
+            establish effective access, a successful exploit, or data leaving your device.
           </p>
         </div>
 

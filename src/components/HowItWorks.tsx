@@ -2,29 +2,29 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "Discover",
+    title: "Read settings",
     description:
-      "Locate each client's MCP config files. A missing file is reported as not found, never as an error.",
+      "Locate supported MCP configuration files. The report names the sources it checked and flags files it could not read.",
   },
   {
-    title: "Infer capabilities",
+    title: "Identify possible access",
     description:
-      "Config files rarely declare what a server can do, so Boppi infers it from the package name, the command, directory arguments, and environment variable names. Each inference is labeled.",
+      "Infer tool capabilities from package identity, commands, directory arguments, and environment variable names. Inferred access is labeled; it is not a live permission check.",
   },
   {
-    title: "Build the graph",
+    title: "Connect the evidence",
     description:
       "Agents, servers, capabilities, data, credentials, and destinations become nodes. Every edge records where it came from.",
   },
   {
-    title: "Find paths",
+    title: "Explain potential risks",
     description:
-      "Six templates describe chains that matter. A path is reported when the graph contains the whole chain, with a confidence that drops as the evidence gets weaker.",
+      "Six exposure-path templates look for combinations such as file access plus an external destination. These are modeled possibilities, not evidence of an attack.",
   },
   {
-    title: "Rank the fix",
+    title: "Compare and verify",
     description:
-      "For each grant, remove it and rerun the search. The grant that breaks the most paths is the recommended fix.",
+      "Simulate removing a grant and count the modeled paths that disappear. Review the tradeoff, make your chosen edit, then use boppi verify with an earlier JSON scan to compare the result.",
   },
 ];
 
@@ -35,9 +35,10 @@ const HowItWorks = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal mb-14 max-w-2xl">
           <p className="section-kicker">Method</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">A transparent path from evidence to action.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">A local check. A clearer next step.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            Five steps, about twenty milliseconds, and the scan never touches the network.
+            The scanner reads configuration, models potential risks, and helps you review changes.
+            It does not start your MCP servers or upload a scan.
           </p>
         </div>
 
