@@ -24,7 +24,7 @@ export default function Privacy() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last updated: October 14, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Release draft updated: October 25, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
@@ -48,14 +48,14 @@ export default function Privacy() {
               <P>
                 One command, boppi push, does send data, and only when you run it. It sends the
                 sanitized inventory of a single scan (agent, server, capability, and permission records,
-                plus fingerprinted paths, never secret values or file contents) to the workspace you
+                plus fingerprinted paths and redacted configuration metadata) to the workspace you
                 name with --url, over HTTPS, authenticated by the collector token you generated in that
-                workspace. No other command sends anything.
+                workspace. In the unpublished 0.4.0 candidate, a separately approved discover command can start one MCP server and contact it; ordinary scans never run that discovery. Package installation can contact the npm registry.
               </P>
               <UL
                 items={[
-                  "It never collects secret values, environment variable values, or file contents.",
-                  "Raw filesystem paths are replaced with fingerprints before they reach the report.",
+                  "Reports redact known secret shapes and environment variable values. Configuration metadata may still identify services or projects; review every export before sharing it.",
+                  "Recognized absolute filesystem paths are fingerprinted before export. This is tested against known shapes, not a guarantee that arbitrary configuration text can never contain private information.",
                   "If a config entry looks like it contains a secret, the scanner refuses that config and tells you why.",
                   "Every file read during a run is listed at the end of the output.",
                   "boppi history keeps a sanitized record of past scans on your machine only.",
@@ -72,14 +72,14 @@ export default function Privacy() {
                 items={[
                   "Your email address and a password hash, to sign you in.",
                   "Your organization name and the role of each member.",
-                  "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain the same metadata the scanner prints: agent names, server names, inferred capabilities and permissions, and path fingerprints. Never secret values or file contents.",
+                  "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
                   "An audit event for each change made in the workspace.",
                 ]}
               />
               <P>
                 Data is stored in a Supabase project with row-level security enforced in the database, so
                 one organization cannot read another's rows. Collector tokens are stored hashed and can be
-                rotated or revoked at any time. Deleting your organization deletes its data.
+                rotated or revoked at any time. Deleting your organization deletes its data. The unpublished 0.4.0 cloud workflow adds versioned sync consent, withdrawal that revokes tokens, and separately confirmed erasure of a collector’s uploaded inventory and snapshots. Those controls are verified locally; deployment is still gated. Do not assume the older hosted beta has those screens. Use local analysis or a dry-run preview until a compatible cloud release is confirmed.
               </P>
             </section>
 

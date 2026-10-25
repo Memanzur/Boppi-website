@@ -8,7 +8,7 @@ const capabilities = [
   {
     icon: KeyRound,
     title: "Share only when you choose",
-    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. Local scanning needs no account.",
+    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. The 0.4.0 release requires explicit workspace sync consent, withdrawal and erasure; hosted rollout is still pending. Local scanning needs no account.",
   },
   {
     icon: Network,
@@ -57,9 +57,9 @@ const roadmap = [
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
-    phase: "Local only · v0.3.1 candidate",
+    phase: "Local only · v0.4.0 candidate",
     title: "Unpublished improvements",
-    body: "Synthetic demo, richer built-in tool and file-scope modeling, expanded change previews, and rollback are in local development. They are not included in the published npm release.",
+    body: "A synthetic demo, approved local fixes and rollback, coverage-bound verification, and consent-controlled cloud history are tested locally in 0.4.0. Publication, human testing and hosted rollout remain gated; these improvements are not in the published npm release.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
