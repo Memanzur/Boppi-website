@@ -16,14 +16,16 @@ const Index = () => {
 
       <div className="relative z-10">
         <Nav />
-        <Hero />
-        <DiscoveryMarquee />
-        <Features />
-        <HowItWorks />
-        <ExposurePaths />
-        <Platform />
-        <Pricing />
-        <Honesty />
+        <main id="main">
+          <Hero />
+          <DiscoveryMarquee />
+          <Features />
+          <HowItWorks />
+          <ExposurePaths />
+          <Platform />
+          <Pricing />
+          <Honesty />
+        </main>
         <Footer />
       </div>
 

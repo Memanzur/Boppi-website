@@ -93,7 +93,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row md:items-center md:gap-3 text-center md:text-left">
             <p>© 2026 Boppi. Built by Melody in Utah.</p>
             <span className="hidden md:inline opacity-40">·</span>
-            <p className="font-mono text-xs opacity-70">boppi scan {SCAN_VERSION} · October 2026</p>
+            <p className="font-mono text-xs text-muted-foreground">boppi scan {SCAN_VERSION} · October 2026</p>
           </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />

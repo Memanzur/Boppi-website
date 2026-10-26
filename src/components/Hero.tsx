@@ -20,7 +20,6 @@ const CopyCommand = () => {
     <button
       type="button"
       onClick={copy}
-      aria-label="Copy the scan command"
       className="group inline-flex items-center gap-3 pl-5 pr-3 py-3.5 rounded-xl bg-card/80 backdrop-blur-sm border border-primary/30 hover:border-primary/60 glow-primary transition-colors font-mono text-base md:text-lg"
     >
       <span className="text-muted-foreground select-none">$</span>
@@ -28,6 +27,7 @@ const CopyCommand = () => {
       <span className="ml-1 p-1.5 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
         {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
       </span>
+      <span className="sr-only">{copied ? ", copied to the clipboard" : ", copy to the clipboard"}</span>
     </button>
   );
 };

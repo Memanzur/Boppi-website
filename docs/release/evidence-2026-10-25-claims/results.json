@@ -29,8 +29,8 @@
   },
   {
     "name": "1280px / axe violations",
-    "pass": false,
-    "detail": "color-contrast,label-content-name-mismatch,landmark-one-main,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "1280px /privacy shows \"as any host does.\"",
@@ -42,8 +42,8 @@
   },
   {
     "name": "1280px /privacy axe violations",
-    "pass": false,
-    "detail": "landmark-one-main,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "1280px /terms shows \"Release draft updated: October 25, 2026\"",
@@ -63,8 +63,8 @@
   },
   {
     "name": "1280px /terms axe violations",
-    "pass": false,
-    "detail": "landmark-one-main,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "terminal animation reaches the bounded redaction line",
@@ -109,8 +109,8 @@
   },
   {
     "name": "390px / axe violations",
-    "pass": false,
-    "detail": "color-contrast,label-content-name-mismatch,landmark-one-main,link-name,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "390px /privacy shows \"as any host does.\"",
@@ -122,8 +122,8 @@
   },
   {
     "name": "390px /privacy axe violations",
-    "pass": false,
-    "detail": "landmark-one-main,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "390px /terms shows \"Release draft updated: October 25, 2026\"",
@@ -143,8 +143,8 @@
   },
   {
     "name": "390px /terms axe violations",
-    "pass": false,
-    "detail": "landmark-one-main,region"
+    "pass": true,
+    "detail": "0"
   },
   {
     "name": "390px console errors",
