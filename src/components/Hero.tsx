@@ -33,7 +33,7 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: LockKeyhole, text: "Your scan stays on your machine. No account needed." },
+  { icon: LockKeyhole, text: "A scan stays on your machine unless you choose to push it. No account needed." },
   { icon: FileSearch, text: "See the evidence and limits behind each finding." },
   { icon: GitBranch, text: "Free, open source scanner. You choose what to change." },
 ];

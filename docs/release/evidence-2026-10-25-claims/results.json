@@ -1,0 +1,154 @@
+[
+  {
+    "name": "1280px / shows \"A scan stays on your machine unless you choose t\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / shows \"Sign in · beta\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / shows \"Create a beta workspace\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / shows \"The unpublished 0.4.0 candidate requires explici\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / no longer shows \"Your scan stays on your machine. No account need\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / no longer shows \"The 0.4.0 release requires\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / no longer shows \"raw path names are never collected\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / axe violations",
+    "pass": false,
+    "detail": "color-contrast,label-content-name-mismatch,landmark-one-main,region"
+  },
+  {
+    "name": "1280px /privacy shows \"as any host does.\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy no longer shows \"Google Fonts\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy axe violations",
+    "pass": false,
+    "detail": "landmark-one-main,region"
+  },
+  {
+    "name": "1280px /terms shows \"Release draft updated: October 25, 2026\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /terms shows \"what we store, what we do not collect, and the l\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /terms no longer shows \"what we never collect\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /terms no longer shows \"October 14, 2026\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /terms axe violations",
+    "pass": false,
+    "detail": "landmark-one-main,region"
+  },
+  {
+    "name": "terminal animation reaches the bounded redaction line",
+    "pass": true
+  },
+  {
+    "name": "terminal animation keeps the scan-run privacy header",
+    "pass": true
+  },
+  {
+    "name": "1280px console errors",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "390px / shows \"A scan stays on your machine unless you choose t\"",
+    "pass": true
+  },
+  {
+    "name": "390px / shows \"Sign in · beta\"",
+    "pass": true
+  },
+  {
+    "name": "390px / shows \"Create a beta workspace\"",
+    "pass": true
+  },
+  {
+    "name": "390px / shows \"The unpublished 0.4.0 candidate requires explici\"",
+    "pass": true
+  },
+  {
+    "name": "390px / no longer shows \"Your scan stays on your machine. No account need\"",
+    "pass": true
+  },
+  {
+    "name": "390px / no longer shows \"The 0.4.0 release requires\"",
+    "pass": true
+  },
+  {
+    "name": "390px / no longer shows \"raw path names are never collected\"",
+    "pass": true
+  },
+  {
+    "name": "390px / axe violations",
+    "pass": false,
+    "detail": "color-contrast,label-content-name-mismatch,landmark-one-main,link-name,region"
+  },
+  {
+    "name": "390px /privacy shows \"as any host does.\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy no longer shows \"Google Fonts\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy axe violations",
+    "pass": false,
+    "detail": "landmark-one-main,region"
+  },
+  {
+    "name": "390px /terms shows \"Release draft updated: October 25, 2026\"",
+    "pass": true
+  },
+  {
+    "name": "390px /terms shows \"what we store, what we do not collect, and the l\"",
+    "pass": true
+  },
+  {
+    "name": "390px /terms no longer shows \"what we never collect\"",
+    "pass": true
+  },
+  {
+    "name": "390px /terms no longer shows \"October 14, 2026\"",
+    "pass": true
+  },
+  {
+    "name": "390px /terms axe violations",
+    "pass": false,
+    "detail": "landmark-one-main,region"
+  },
+  {
+    "name": "390px console errors",
+    "pass": true,
+    "detail": ""
+  }
+]

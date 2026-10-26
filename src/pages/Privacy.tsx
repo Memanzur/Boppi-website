@@ -87,8 +87,7 @@ export default function Privacy() {
               <H2>4. This website</H2>
               <P>
                 boppi.io is a static site hosted on Vercel. We do not run analytics or advertising scripts.
-                Vercel may log requests for the purpose of serving the site, as any host does. Fonts load
-                from Google Fonts.
+                Vercel may log requests for the purpose of serving the site, as any host does.
               </P>
             </section>
 

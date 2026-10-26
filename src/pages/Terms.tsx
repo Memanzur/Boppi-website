@@ -24,7 +24,7 @@ export default function Terms() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Terms of Service
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last updated: October 14, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Release draft updated: October 25, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
@@ -67,7 +67,7 @@ export default function Terms() {
               <H2>4. Privacy</H2>
               <P>
                 Our <a href="/privacy" className="text-cyan-400 hover:underline">Privacy Policy</a> explains
-                what we store and what we never collect.
+                what we store, what we do not collect, and the limits of redaction.
               </P>
             </section>
 

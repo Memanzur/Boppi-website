@@ -8,7 +8,7 @@ const capabilities = [
   {
     icon: KeyRound,
     title: "Share only when you choose",
-    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. The 0.4.0 release requires explicit workspace sync consent, withdrawal and erasure; hosted rollout is still pending. Local scanning needs no account.",
+    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. The unpublished 0.4.0 candidate requires explicit workspace sync consent, withdrawal and erasure; hosted rollout is still pending. Local scanning needs no account.",
   },
   {
     icon: Network,
@@ -182,7 +182,7 @@ const Platform = () => {
                 className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
                 onClick={() => window.open(LINKS.app, "_blank", "noopener")}
               >
-                Create a workspace
+                Create a beta workspace
               </Button>
               <a
                 href={LINKS.talk}

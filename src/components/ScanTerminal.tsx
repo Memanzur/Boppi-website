@@ -63,7 +63,7 @@ const LINES: Line[] = [
   { text: "  - ~/Library/Application Support/Claude/claude_desktop_config.json", tone: "dim" },
   { text: "  - ~/.claude.json", tone: "dim" },
   { text: "  - ~/.cursor/mcp.json", tone: "dim" },
-  { text: "  Secret values, file contents, and raw path names are never collected. Paths become fingerprints.", tone: "dim" },
+  { text: "  Known secret shapes are redacted, environment variable values are not read, and recognized paths become fingerprints. Review an export before sharing it.", tone: "dim" },
 ];
 
 const TONE_CLASS: Record<Tone, string> = {

@@ -93,7 +93,7 @@ const Pricing = () => {
               className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
               onClick={() => window.open(LINKS.app, "_blank", "noopener")}
             >
-              Create a workspace
+              Create a beta workspace
             </Button>
             <a
               href={LINKS.talk}
