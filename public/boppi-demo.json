@@ -3,8 +3,8 @@
   "packageVersion": "0.4.0",
   "engineVersion": "1.1.1",
   "rubricVersion": "1.0.3",
-  "scannerCommit": "d154b2f82ba06886c757efbbd38d6fc5d3525f5b",
-  "candidateSha256": "5554dbaa0f3700e86a8429df8b27667bd46177bd516f67d31c93f73aae2d8d9a",
-  "htmlSha256": "ef46202410639013fddad78ac5a940cc424b7ecb0d4a852c0afb27a35572af9b",
+  "scannerCommit": "104147d48e43b5af21c8cb498a038fd9ac6e1f6b",
+  "candidateSha256": "1de37969ccb1ae094c69b48800b5d27303308ead12dca7e73fb8d938da2c16d0",
+  "htmlSha256": "de66db06d85f5c2a24474e8219c28845838acba50ad69641e3385a615c368c83",
   "published": false
 }
