@@ -65,10 +65,10 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
             <CopyCommand />
             <a
-              href="#how-it-works"
+              href="/checkup"
               className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              See how the scanner works <ArrowRight className="w-4 h-4" />
+              Start a guest checkup <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 

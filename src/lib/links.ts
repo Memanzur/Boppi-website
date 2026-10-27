@@ -11,9 +11,9 @@ export const LINKS = {
   contact: "mailto:boppii.ioo@gmail.com",
 } as const;
 
-// Enable only after the synthetic demo route exists and has been reviewed.
+// Bundled synthetic demo; publishing the website remains a separate decision.
 export const BETA_DEMO = {
-  path: "/beta",
-  live: false,
+  path: "/demo",
+  live: true,
   preview: "#beta-preview",
 } as const;

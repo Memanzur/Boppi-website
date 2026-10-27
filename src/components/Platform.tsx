@@ -59,21 +59,21 @@ const roadmap = [
   {
     phase: "Local only · v0.4.0 candidate",
     title: "Unpublished improvements",
-    body: "A synthetic demo, approved local fixes and rollback, coverage-bound verification, and consent-controlled cloud history are tested locally in 0.4.0. Publication, human testing and hosted rollout remain gated; these improvements are not in the published npm release.",
+    body: "Agent + Cloud: a synthetic demo, approved fixes and rollback, consent-controlled history, finding management, activity sync, and paired dashboard remediation are implemented and tested with synthetic data locally. Human testing, independent review, publication and hosted rollout remain gated.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
     phase: "Experimental · local only",
     title: "Tool-event hook prototype",
-    body: "An optional Claude Code hook prototype records limited local event metadata when manually configured. Live delivery and concurrent capture remain unverified. It is not continuous protection.",
+    body: "An optional Claude Code hook records limited event metadata when manually configured. Concurrent synthetic capture is tested; real-client delivery remains unverified. Explicit activity sync is separate from inventory sync. It is not continuous protection.",
     icon: Activity,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "Planned · not available",
+    phase: "Local foundations · not activated",
     title: "Boppi Intelligence",
-    body: "Broader discovery, continuous change detection, supported runtime visibility, prompt investigation, and reviewed controls. These are roadmap goals, with no promised release date.",
+    body: "Workspace corrections carry provenance and separate contribution consent. A synthetic research pipeline evaluates, signs, verifies and rolls back inactive rule candidates. Reviewed production updates, prompt investigation and selective enforcement remain planned; corrections never activate rules automatically.",
     icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },
@@ -87,14 +87,14 @@ const Platform = () => {
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <Building2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-secondary">The longer-term vision · planned</span>
+            <span className="text-sm font-semibold text-secondary">Agent + Cloud + Intelligence</span>
           </div>
-          <p className="section-kicker">Boppi Intelligence</p>
+          <p className="section-kicker">One hybrid product</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Visibility. Understanding. Control.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We are building toward a hybrid AI-agent security platform: local visibility and
-            analysis, with optional shared intelligence and team controls. Boppi Intelligence is
-            our longer-term vision, not a working capability in today's scanner or workspace beta.
+            Boppi Agent checks supported connections on your device. Optional Boppi Cloud brings
+            consented evidence and team decisions together. Boppi Intelligence is the reviewed
+            improvement loop, with local foundations and no automatic rule activation.
           </p>
         </div>
 
@@ -194,13 +194,14 @@ const Platform = () => {
           </div>
         </Card>
         <Card id="beta-preview" className="mt-10 p-6 md:p-8 bg-card border-border scroll-mt-24">
-          <p className="section-kicker">Interactive demo · coming soon</p>
+          <p className="section-kicker">Interactive synthetic demo · local website build</p>
           <h3 className="text-2xl font-semibold mb-3">Explore with sample data first.</h3>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
-            We are preparing a synthetic interactive demo so you can explore example connections,
-            understand a finding, and preview a simulated change. The website demo is not live yet.
-            It is planned to use sample data without scanning your device or changing your permissions.
+            Explore example connections, inspect a finding, and preview a simulated change.
+            This demo uses fictional data from the unpublished candidate. It does not scan your
+            device or change your permissions. Publishing this website build remains a separate step.
           </p>
+          <a className="inline-block mt-4 text-primary underline" href="/demo">Explore the synthetic demo →</a>
         </Card>
       </div>
     </section>

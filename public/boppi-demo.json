@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "packageVersion": "0.4.0",
+  "engineVersion": "1.1.1",
+  "rubricVersion": "1.0.3",
+  "scannerCommit": "9954750138b65d5ae3527f633fde8bd0b0abb2be",
+  "candidateSha256": "890d3f9f458f5f5df30505a172e58b512bdb679b3874193271b0aff2aa6ee8de",
+  "htmlSha256": "9b9bb1d2776c1f9d3fb6f28e5c86d49cfba995fa611685d82132b643bddb9c9a",
+  "published": false
+}
