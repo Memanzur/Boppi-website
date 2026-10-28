@@ -180,7 +180,7 @@ const Platform = () => {
             <div className="shrink-0 flex flex-col items-stretch gap-2">
               <Button
                 className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
-                onClick={() => window.open(LINKS.app, "_blank", "noopener")}
+                onClick={() => window.open(LINKS.signup, "_blank", "noopener")}
               >
                 Create a beta workspace
               </Button>

@@ -91,7 +91,7 @@ const Pricing = () => {
 
             <Button
               className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
-              onClick={() => window.open(LINKS.app, "_blank", "noopener")}
+              onClick={() => window.open(LINKS.signup, "_blank", "noopener")}
             >
               Create a beta workspace
             </Button>

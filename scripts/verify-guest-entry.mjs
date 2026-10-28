@@ -56,6 +56,10 @@ try {
     check(`${width}: checkup axe`, (await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()).violations.length === 0);
     check(`${width}: checkup has no page overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await page.screenshot({ path: path.join(out, `checkup-${width}.png`), fullPage: true });
+    await page.goto(base + '/');
+    await page.evaluate(() => { window.__opened = []; window.open = url => { window.__opened.push(String(url)); return null; }; });
+    await page.getByRole('button', { name: 'Create a beta workspace' }).first().click();
+    check(`${width}: "Create a beta workspace" opens account creation, not the sign-in page`, (await page.evaluate(() => window.__opened)).join() === 'https://app.boppi.io/signup');
     check(`${width}: no external requests`, external.length === 0);
     check(`${width}: no console errors`, errors.length === 0);
     await context.close();
