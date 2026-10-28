@@ -7,7 +7,7 @@ const rules = [
     icon: FileSearch,
     title: "Local analysis, with explicit sharing",
     body:
-      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded. Only an explicit boppi push sends a sanitized inventory to your workspace; review it first with --dry-run. Downloading the package with npx uses the npm registry.",
+      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded on their own. Data leaves only when you run boppi push (a sanitized inventory), boppi events push (hook activity metadata) or boppi connect (a paired computer's fix offers and results); review a push first with --dry-run. Downloading the package with npx uses the npm registry.",
   },
   {
     icon: ShieldQuestion,

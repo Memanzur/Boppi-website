@@ -73,7 +73,7 @@ const roadmap = [
   {
     phase: "Local foundations · not activated",
     title: "Boppi Intelligence",
-    body: "Workspace corrections carry provenance and separate contribution consent. A research prototype, not part of the scanner, evaluates, signs, verifies and rolls back synthetic rule candidates that stay inactive. Reviewed production updates, prompt investigation and selective enforcement remain planned; corrections never activate rules automatically.",
+    body: "Workspace corrections carry provenance and separate contribution consent. A research prototype evaluates, signs and rolls back synthetic rule candidates, and the 0.4.0 scanner can verify a signed bundle in shadow mode only: it never changes results. Reviewed production updates, prompt investigation and selective enforcement remain planned; corrections never activate rules automatically.",
     icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },

@@ -7,7 +7,7 @@ const base = process.argv[2];
 const outDir = process.argv[3] || __dirname;
 const expect = {
   '/': {
-    present: ['The scanner also runs seven per-agent rules. One of them is a data-governance check', 'A research prototype, not part of the scanner, evaluates, signs, verifies and rolls back synthetic rule candidates that stay inactive.'],
+    present: ['The scanner also runs seven per-agent rules. One of them is a data-governance check', 'A research prototype evaluates, signs and rolls back synthetic rule candidates, and the 0.4.0 scanner can verify a signed bundle in shadow mode only: it never changes results.'],
     absent: ['plus one data-governance check', 'A synthetic research pipeline evaluates'],
   },
   '/privacy': {
