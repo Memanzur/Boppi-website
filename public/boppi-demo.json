@@ -3,11 +3,11 @@
   "packageVersion": "0.4.0",
   "engineVersion": "1.1.1",
   "rubricVersion": "1.0.3",
-  "scannerCommit": "47b059585589e03b5bc1cb4fb428964a2b3c39de",
-  "candidateSha256": "594c273333ec72a6468211a55c7647fc963f94a9a53283f302cef24bd6e7b355",
-  "htmlSha256": "a74094c667fab453e9609197b50dbf1eb283e9653bdc84531947e2efeb3baf34",
+  "scannerCommit": "361101714919b084bbb1288a2b0144cae6014b0e",
+  "candidateSha256": "6beab48a81c6291bc530e3a2504f2e965b1492917e50fd2d878e75ffd7555b40",
+  "htmlSha256": "2d9f03f53866f933c9e07d736ecf4cf3352e25e5295cb5c9a192c8bd166ffe72",
   "reproducible": {
-    "pinnedTime": "2026-10-28T18:57:59.117Z",
+    "pinnedTime": "2026-10-28T19:43:25.224Z",
     "buildDir": "/tmp/boppi-website-demo-build",
     "demoKey": "sha256(\"boppi-synthetic-demo-key:\" + candidateSha256)",
     "check": "BOPPI_DEMO_CANDIDATE=<CANDIDATE.json> npm run demo:build -- --check"
