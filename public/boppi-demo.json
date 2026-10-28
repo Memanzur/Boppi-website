@@ -5,6 +5,12 @@
   "rubricVersion": "1.0.3",
   "scannerCommit": "32a96672640e38e8639b2a48a4d677ff32269040",
   "candidateSha256": "1def0c21d7f397f93731afb0927beb195e3bbd147fa06ea40ad99c5d95b14ed3",
-  "htmlSha256": "676c551bb7b86b8983fed9faf25b8a96b2aa711dc1ffc7d60d5d0872f137182c",
+  "htmlSha256": "3e8d9fb4abb7971e58035e5fc28a151ea6c033b02788d067a3a78b4e713377b3",
+  "reproducible": {
+    "pinnedTime": "2026-10-28T04:47:14.326Z",
+    "buildDir": "/tmp/boppi-website-demo-build",
+    "demoKey": "sha256(\"boppi-synthetic-demo-key:\" + candidateSha256)",
+    "check": "BOPPI_DEMO_CANDIDATE=<CANDIDATE.json> npm run demo:build -- --check"
+  },
   "published": false
 }
