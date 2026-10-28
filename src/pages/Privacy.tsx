@@ -74,6 +74,9 @@ export default function Privacy() {
                   "Your organization name and the role of each member.",
                   "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
                   "An audit event for each change made in the workspace.",
+                  "With the unpublished 0.4.0 release only: corrections and review notes your team writes on the Intelligence page, including their free-text reasons. They stay in your workspace and are kept until you delete them or the organization.",
+                  "With 0.4.0 only, if you turn on activity sync for a collector: activity events sent with boppi events push. These carry the event type, server, tool, outcome and duration, plus keyed digests. They do not include tool arguments, prompts or file contents.",
+                  "With 0.4.0 only, if you pair a device with boppi connect: the fixes that device offers (described by hashes, path fingerprints, server names and capability names), the proposals your team approves or declines, and the state the device reports back (previewed, applied, verified, rolled back). File paths, file contents and backups stay on the device.",
                 ]}
               />
               <P>
@@ -97,7 +100,7 @@ export default function Privacy() {
                 items={[
                   "Sell or rent personal data.",
                   "Train models on customer data.",
-                  "Receive anything from the scanner other than what you send with boppi push.",
+                  "Receive anything from the scanner other than what you send with boppi push, or, with 0.4.0, boppi events push after you turn on activity sync and boppi connect after you pair a device.",
                   "Share customer data with third parties except the hosting providers named above, or when the law requires it.",
                 ]}
               />

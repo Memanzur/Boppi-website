@@ -1,0 +1,112 @@
+[
+  {
+    "name": "1280px / shows \"The scanner also runs seven per-agent rules. One\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / shows \"A research prototype, not part of the scanner, e\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / no longer shows \"plus one data-governance check\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / no longer shows \"A synthetic research pipeline evaluates\"",
+    "pass": true
+  },
+  {
+    "name": "1280px / axe violations",
+    "pass": true,
+    "detail": "0"
+  },
+  {
+    "name": "1280px /privacy shows \"corrections and review notes your team writes on\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy shows \"activity events sent with boppi events push\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy shows \"File paths, file contents and backups stay on th\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy shows \"boppi connect after you pair a device.\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy no longer shows \"Receive anything from the scanner other than wha\"",
+    "pass": true
+  },
+  {
+    "name": "1280px /privacy axe violations",
+    "pass": true,
+    "detail": "0"
+  },
+  {
+    "name": "terminal animation reaches the bounded redaction line",
+    "pass": true
+  },
+  {
+    "name": "terminal animation keeps the scan-run privacy header",
+    "pass": true
+  },
+  {
+    "name": "1280px console errors",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "390px / shows \"The scanner also runs seven per-agent rules. One\"",
+    "pass": true
+  },
+  {
+    "name": "390px / shows \"A research prototype, not part of the scanner, e\"",
+    "pass": true
+  },
+  {
+    "name": "390px / no longer shows \"plus one data-governance check\"",
+    "pass": true
+  },
+  {
+    "name": "390px / no longer shows \"A synthetic research pipeline evaluates\"",
+    "pass": true
+  },
+  {
+    "name": "390px / axe violations",
+    "pass": true,
+    "detail": "0"
+  },
+  {
+    "name": "390px /privacy shows \"corrections and review notes your team writes on\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy shows \"activity events sent with boppi events push\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy shows \"File paths, file contents and backups stay on th\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy shows \"boppi connect after you pair a device.\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy no longer shows \"Receive anything from the scanner other than wha\"",
+    "pass": true
+  },
+  {
+    "name": "390px /privacy axe violations",
+    "pass": true,
+    "detail": "0"
+  },
+  {
+    "name": "390px console errors",
+    "pass": true,
+    "detail": ""
+  }
+]

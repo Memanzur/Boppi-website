@@ -50,7 +50,7 @@ const ExposurePaths = () => {
         </div>
 
         <p className="mt-6 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
-          Seven per-agent rules cover the same combinations, plus one data-governance check for
+          The scanner also runs seven per-agent rules. One of them is a data-governance check for
           broad file access granted to a vendor whose training posture is unknown.
         </p>
       </div>
