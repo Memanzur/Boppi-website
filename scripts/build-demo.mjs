@@ -3,14 +3,15 @@
  * candidate's built_at, the synthetic home sits at one fixed path, and its
  * fingerprint key is derived from the tarball checksum (it only ever keys
  * fictional demo paths). `--check` rebuilds and compares with the committed
- * public/boppi-demo.html instead of writing. Writing also moves the /demo
- * <lastmod> in public/sitemap.xml to today. */
+ * public/boppi-demo.html instead of writing. Writing also sets each
+ * <lastmod> in public/sitemap.xml to its source date, so a changed demo
+ * stamps /demo with today. */
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { bumpLastmod, today } from './sitemap.mjs';
+import { fixSitemap } from './sitemap.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const checkOnly = process.argv.includes('--check');
@@ -51,8 +52,8 @@ try {
       reproducible: { pinnedTime: manifest.built_at, buildDir, demoKey: 'sha256("boppi-synthetic-demo-key:" + candidateSha256)', check: 'BOPPI_DEMO_CANDIDATE=<CANDIDATE.json> npm run demo:build -- --check' },
       published: false,
     }, null, 2) + '\n');
-    // The demo page changed today, so its sitemap entry says so; commit both together (QA-006).
-    if (bumpLastmod(root, '/demo', today())) console.log(`public/sitemap.xml: /demo lastmod set to ${today()}.`);
+    // An uncommitted demo dates /demo today; commit the demo and sitemap together (QA-006).
+    for (const { route, date } of fixSitemap(root)) console.log(`public/sitemap.xml: ${route} lastmod set to ${date}.`);
     console.log(`Synthetic demo generated from ${manifest.scanner_commit.slice(0, 7)}; no personal configuration read.`);
   }
 } finally { fs.rmSync(buildDir, { recursive: true, force: true }); }
