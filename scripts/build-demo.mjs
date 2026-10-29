@@ -3,12 +3,14 @@
  * candidate's built_at, the synthetic home sits at one fixed path, and its
  * fingerprint key is derived from the tarball checksum (it only ever keys
  * fictional demo paths). `--check` rebuilds and compares with the committed
- * public/boppi-demo.html instead of writing. */
+ * public/boppi-demo.html instead of writing. Writing also moves the /demo
+ * <lastmod> in public/sitemap.xml to today. */
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { bumpLastmod, today } from './sitemap.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const checkOnly = process.argv.includes('--check');
@@ -49,6 +51,8 @@ try {
       reproducible: { pinnedTime: manifest.built_at, buildDir, demoKey: 'sha256("boppi-synthetic-demo-key:" + candidateSha256)', check: 'BOPPI_DEMO_CANDIDATE=<CANDIDATE.json> npm run demo:build -- --check' },
       published: false,
     }, null, 2) + '\n');
+    // The demo page changed today, so its sitemap entry says so; commit both together (QA-006).
+    if (bumpLastmod(root, '/demo', today())) console.log(`public/sitemap.xml: /demo lastmod set to ${today()}.`);
     console.log(`Synthetic demo generated from ${manifest.scanner_commit.slice(0, 7)}; no personal configuration read.`);
   }
 } finally { fs.rmSync(buildDir, { recursive: true, force: true }); }

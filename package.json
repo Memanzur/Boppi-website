@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "demo:build": "node scripts/build-demo.mjs",
-    "check:sitemap": "node scripts/check-sitemap.mjs"
+    "check:sitemap": "node scripts/check-sitemap.mjs",
+    "test:sitemap": "node scripts/verify-sitemap-refresh.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
