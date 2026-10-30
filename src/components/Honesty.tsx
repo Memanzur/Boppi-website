@@ -7,7 +7,7 @@ const rules = [
     icon: FileSearch,
     title: "Local analysis, with explicit sharing",
     body:
-      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded on their own. Data leaves only when you run boppi push (a sanitized inventory), boppi events push (hook activity metadata) or boppi connect (a paired computer's fix offers and results); review a push first with --dry-run. Downloading the package with npx uses the npm registry.",
+      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded on their own. The public release can upload scan metadata with boppi push; preview it with --dry-run. The unpublished candidate also supports explicit activity sync and device pairing. Redaction covers recognized patterns, so configuration metadata still needs your review. Downloading the package with npx uses the npm registry.",
   },
   {
     icon: ShieldQuestion,
@@ -23,6 +23,21 @@ const rules = [
   },
 ];
 
+const questions = [
+  {
+    question: "Does Boppi see what my AI actually did?",
+    answer: "A public scan reads configuration and models potential access. It does not observe tool calls or inspect files your AI could reach. Optional Claude Code event capture is an unpublished prototype; an observed call would still not prove what happened to files or the network.",
+  },
+  {
+    question: "Can Boppi change permissions for me?",
+    answer: "Public v0.3.0 can remove a selected, supported MCP server entry after confirmation and keep a backup. Paired-device fixes, selected directory narrowing, rollback, and temporary grants have local implementations, with release and real-device validation pending. Boppi cannot universally revoke SaaS permissions or guarantee a running client has lost access.",
+  },
+  {
+    question: "Can my team use the full platform today?",
+    answer: "The free public scanner is available now. An older hosted beta exists, but current Cloud, enterprise, and Just-in-Time workflows are not verified public capabilities. Email us about early access; there is no automatic enrollment or promised launch date.",
+  },
+];
+
 const Honesty = () => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   return (
@@ -30,7 +45,7 @@ const Honesty = () => {
       <div className="max-w-3xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-8 space-y-3">
           <p className="section-kicker">Boundary</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Know what the results can tell you.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Clear evidence. Clear boundaries.</h2>
           <p className="text-lg text-muted-foreground">
             Clear evidence, clear limits, and a choice about what happens next.
           </p>
@@ -53,6 +68,14 @@ const Honesty = () => {
               );
             })}
           </ul>
+          <div className="mt-6 pt-5 border-t border-border/50 space-y-4" aria-label="Common questions">
+            {questions.map((item) => (
+              <details key={item.question}>
+                <summary className="cursor-pointer font-semibold text-sm text-primary">{item.question}</summary>
+                <p className="pt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+              </details>
+            ))}
+          </div>
           <div className="mt-6 pt-5 border-t border-border/50 text-center">
             <a href="/privacy" className="text-sm text-primary hover:underline font-semibold">
               Read the privacy policy

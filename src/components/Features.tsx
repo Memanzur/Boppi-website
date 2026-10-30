@@ -21,7 +21,7 @@ const features = [
     icon: Wrench,
     title: "Choose a change, then check it",
     description:
-      "Compare suggested configuration changes and the access you would give up. After you make an edit, rescan to see which modeled risks remain. A scan itself changes no permissions.",
+      "Compare suggested configuration changes and the access you would give up. The public fix command can remove a selected MCP server entry after confirmation, with a backup. Rescan to check the configuration; a scan itself changes no permissions.",
     category: "Control",
   },
   {
@@ -53,11 +53,11 @@ const Features = () => {
     <section id="features" className="py-16 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
-          <p className="section-kicker">What the scanner helps you do today</p>
+          <p className="section-kicker">Start today · public scanner v0.3.0</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Useful access can add up to unexpected risk.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             As you add AI tools, it gets harder to keep track of what they can reach.
-            Boppi gives you a starting point for deciding which access is necessary.
+            Boppi connects the settings to the risk, so you can decide which access is necessary.
           </p>
         </div>
 

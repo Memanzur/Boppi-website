@@ -2,8 +2,8 @@ import { Check, CircleAlert } from "lucide-react";
 
 const clients = ["Claude Desktop", "Claude Code", "Cursor"];
 const boundaries = [
-  "MCP servers and tools",
-  "File and credential access",
+  "Configured MCP connections",
+  "Potential file and credential access",
   "Shell and code execution",
   "Web and external destinations",
   "Browser and messaging capability",
@@ -34,7 +34,7 @@ const DiscoveryMarquee = () => (
           <div className="flex items-center gap-2 text-foreground font-semibold mb-3">
             <CircleAlert className="w-4 h-4 text-warning" /> Not yet discovered
           </div>
-          <p className="text-muted-foreground leading-relaxed">Windsurf and VS Code are not discovered. Windows and Linux configuration lookup is implemented but has not been verified on real machines.</p>
+          <p className="text-muted-foreground leading-relaxed">The public scanner does not discover Codex, Windsurf, VS Code, or hosted app permissions. Windows and Linux remain experimental pending real-device verification.</p>
         </div>
       </div>
     </div>

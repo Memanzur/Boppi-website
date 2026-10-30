@@ -55,18 +55,18 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Know what your AI can access. Stay in control.
+              AI access security for people and organizations. Know what your AI can access. Stay in control.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><a href="#paths" className="hover:text-primary transition-colors">Risk model</a></li>
-              <li><a href="#features" className="hover:text-primary transition-colors">What it tells you</a></li>
-              <li><a href="#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="#platform" className="hover:text-primary transition-colors">Boppi Intelligence</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Access</a></li>
+                            <li><a href="/#paths" className="hover:text-primary transition-colors">Risk model</a></li>
+              <li><a href="/#features" className="hover:text-primary transition-colors">What it tells you</a></li>
+              <li><a href="/#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
+              <li><a href="/#platform" className="hover:text-primary transition-colors">Platform & status</a></li>
+              <li><a href="/#pricing" className="hover:text-primary transition-colors">Access</a></li>
             </ul>
           </div>
 

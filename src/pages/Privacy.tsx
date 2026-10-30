@@ -24,16 +24,17 @@ export default function Privacy() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 mb-8 italic">Release draft updated: October 25, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Release draft updated: October 29, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
               <H2>1. What Boppi is</H2>
               <P>
-                Boppi has two parts. The scanner, published as the npm package "boppi", runs on your
-                machine and reports what your local AI agents can reach. The control plane is a hosted
-                workspace where a team can collect scans from many machines. This policy covers both,
-                plus this website.
+                Boppi is an AI security and access-control platform. The public Agent scanner
+                (npm package "boppi", v0.3.0) analyzes supported AI and MCP configuration locally.
+                Cloud centralizes submitted evidence; Control adds supported permission workflows;
+                Intelligence develops evidence-based improvements. The wider platform is in development.
+                This draft describes the website, public scanner, and unpublished workflows separately.
               </P>
             </section>
 
@@ -46,7 +47,7 @@ export default function Privacy() {
                 else.
               </P>
               <P>
-                One command, boppi push, does send data, and only when you run it. It sends the
+                In public v0.3.0, boppi push is the network command. When you run it, it sends the
                 sanitized inventory of a single scan (agent, server, capability, and permission records,
                 plus fingerprinted paths and redacted configuration metadata) to the workspace you
                 name with --url, over HTTPS, authenticated by the collector token you generated in that
@@ -54,9 +55,9 @@ export default function Privacy() {
               </P>
               <UL
                 items={[
-                  "Reports redact known secret shapes and environment variable values. Configuration metadata may still identify services or projects; review every export before sharing it.",
+                  "Scan records omit environment variable values and redact recognized secret shapes. Configuration metadata may still identify services or projects; review every export before sharing it.",
                   "Recognized absolute filesystem paths are fingerprinted before export. This is tested against known shapes, not a guarantee that arbitrary configuration text can never contain private information.",
-                  "If a config entry looks like it contains a secret, the scanner refuses that config and tells you why.",
+                  "Some entries that appear to contain secrets are refused. Detection and redaction cover recognized patterns; they cannot establish that all arbitrary configuration text is safe to share.",
                   "Every file read during a run is listed at the end of the output.",
                   "boppi history keeps a sanitized record of past scans on your machine only.",
                 ]}
@@ -66,23 +67,21 @@ export default function Privacy() {
             <section>
               <H2>3. The control plane, if your team uses it</H2>
               <P>
-                The control plane is a free public beta at app.boppi.io. When a team uses it, we store:
+                An older beta is hosted at app.boppi.io. Successful public onboarding and parity with the current development build remain unverified. The Cloud implementation stores the following data when these workflows are used:
               </P>
               <UL
                 items={[
                   "Your email address and a password hash, to sign you in.",
                   "Your organization name and the role of each member.",
                   "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
-                  "An audit event for each change made in the workspace.",
-                  "With the unpublished 0.4.0 release only: corrections and review notes your team writes on the Intelligence page, including their free-text reasons. They stay in your workspace and are kept until you delete them or the organization.",
-                  "With 0.4.0 only, if you turn on activity sync for a collector: activity events sent with boppi events push. These carry the event type, server, tool, outcome and duration, plus keyed digests. They do not include tool arguments, prompts or file contents.",
-                  "With 0.4.0 only, if you pair a device with boppi connect: the fixes that device offers (described by hashes, path fingerprints, server names and capability names), the proposals your team approves or declines, and the state the device reports back (previewed, applied, verified, rolled back). File paths, file contents and backups stay on the device.",
+                  "Workspace audit records for supported actions.",
+                  "In the unpublished 0.4.0 implementation only: corrections and review notes your team writes on the Intelligence page, including free-text reasons. Review provenance, separate contribution consent, withdrawal, and erasure workflows are implemented locally; hosted rollout is pending.",
+                  "In the unpublished 0.4.0 implementation only, if you turn on activity sync for a collector: activity events sent with boppi events push. These carry the event type, server, tool, outcome and duration, plus keyed digests. They do not include tool arguments, prompts or file contents.",
+                  "In the unpublished 0.4.0 implementation only, if you pair a device with boppi connect: the fixes that device offers (described by hashes, path fingerprints, server names and capability names), the proposals your team approves or declines, and the state the device reports back (previewed, applied, verified, rolled back). The connector is designed to keep raw file paths, configuration contents, and backups on the device; identifiers and recognized redacted metadata still cross the boundary.",
                 ]}
               />
               <P>
-                Data is stored in a Supabase project with row-level security enforced in the database, so
-                one organization cannot read another's rows. Collector tokens are stored hashed and can be
-                rotated or revoked at any time. Deleting your organization deletes its data. The unpublished 0.4.0 cloud workflow adds versioned sync consent, withdrawal that revokes tokens, and separately confirmed erasure of a collector’s uploaded inventory and snapshots. Those controls are verified locally; deployment is still gated. Do not assume the older hosted beta has those screens. Use local analysis or a dry-run preview until a compatible cloud release is confirmed.
+                Cloud uses Supabase with row-level security for organization isolation, exercised by local database tests. This is not an independent certification of the hosted service. Collector tokens are stored hashed; the development workflows support rotation, revocation, and organization deletion. The unpublished 0.4.0 cloud workflow adds versioned sync consent, withdrawal that revokes tokens, and separately confirmed erasure of a collector’s uploaded inventory and snapshots. Those controls are verified locally; deployment is still gated. Do not assume the older hosted beta has those screens. Use local analysis or a dry-run preview until a compatible cloud release is confirmed.
               </P>
             </section>
 
@@ -95,13 +94,13 @@ export default function Privacy() {
             </section>
 
             <section>
-              <H2>5. What we never do</H2>
+              <H2>5. Data use and Intelligence development</H2>
               <UL
                 items={[
-                  "Sell or rent personal data.",
-                  "Train models on customer data.",
-                  "Receive anything from the scanner other than what you send with boppi push, or, with 0.4.0, boppi events push after you turn on activity sync and boppi connect after you pair a device.",
-                  "Share customer data with third parties except the hosting providers named above, or when the law requires it.",
+                  "We do not sell or rent personal data.",
+                  "The local Intelligence prototype uses reviewed evidence and separate contribution consent. Production learning is not activated.",
+                  "The public scanner uploads inventory only through explicit push. The unpublished candidate has separate activity-sync and pairing flows. Review metadata before sending it; redaction is not a guarantee that arbitrary text contains no private information.",
+                  "We share customer data with the hosting providers named above, or when the law requires it.",
                 ]}
               />
             </section>

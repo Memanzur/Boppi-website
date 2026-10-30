@@ -33,9 +33,9 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: LockKeyhole, text: "A scan stays on your machine unless you choose to push it. No account needed." },
+  { icon: LockKeyhole, text: "Run a local configuration check without an account." },
   { icon: FileSearch, text: "See the evidence and limits behind each finding." },
-  { icon: GitBranch, text: "Free, open source scanner. You choose what to change." },
+  { icon: GitBranch, text: "Open source analysis. Permission changes need your authorization." },
 ];
 
 const Hero = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-success" />
-            AI assistant security · free scanner beta
+            AI access security · start free
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance] mb-7">
@@ -53,13 +53,13 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-            Boppi helps you discover what your AI assistants are connected to, understand potential
-            security risks, and make safer decisions about their permissions.
+            Boppi is an AI security and access-control platform built to help you see what
+            your AI tools can reach, understand the risk, and decide what access to keep.
           </p>
 
           <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">
-            Start with a local check of Claude Desktop, Claude Code, and Cursor settings.
-            See which configured connections could put files, credentials, or systems at risk.
+            Start today with the free scanner for supported Claude Desktop, Claude Code, and Cursor
+            configurations. Cloud governance, verified controls, and monitoring are in development.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
@@ -73,7 +73,7 @@ const Hero = () => {
           </div>
 
           <p className="mb-6 text-xs text-muted-foreground leading-relaxed">
-            Run the command in your terminal. Requires Node.js 18+. Tested on macOS;
+            Public scanner v0.3.0 · Run in your terminal with Node.js 18+. Tested on macOS;
             Windows and Linux discovery are not yet verified on real machines.
           </p>
 

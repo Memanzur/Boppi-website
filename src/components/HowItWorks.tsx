@@ -2,29 +2,29 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "Read settings",
+    title: "See the access",
     description:
       "Locate supported MCP configuration files. The report names the sources it checked and flags files it could not read.",
   },
   {
-    title: "Identify possible access",
+    title: "Understand the risk",
     description:
-      "Infer tool capabilities from package identity, commands, directory arguments, and environment variable names. Inferred access is labeled; it is not a live permission check.",
+      "Connect configuration evidence with known or inferred tool capabilities. Boppi explains potential risk, assumptions, and unknowns; it does not show an attack happened.",
   },
   {
-    title: "Connect the evidence",
+    title: "Control permissions",
     description:
-      "Agents, servers, capabilities, data, credentials, and destinations become nodes. Every edge records where it came from.",
+      "Compare a proposed change and its tradeoffs. Today, remove a supported MCP server entry with your approval. More granular controls are in development.",
   },
   {
-    title: "Explain potential risks",
+    title: "Verify the change",
     description:
-      "Six exposure-path templates look for combinations such as file access plus an external destination. These are modeled possibilities, not evidence of an attack.",
+      "Rescan with boppi verify and an earlier JSON export to compare the result. Configuration verification does not prove a running client has stopped using access.",
   },
   {
-    title: "Compare and verify",
+    title: "Monitor access",
     description:
-      "Simulate removing a grant and count the modeled paths that disappear. Review the tradeoff, make your chosen edit, then use boppi verify with an earlier JSON scan to compare the result.",
+      "Today, rerun scans and compare local history. In development: foreground configuration watching and optional Claude Code event capture. Continuous monitoring is not publicly available.",
   },
 ];
 
@@ -35,10 +35,10 @@ const HowItWorks = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal mb-14 max-w-2xl">
           <p className="section-kicker">Method</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">A local check. A clearer next step.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From access to action.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            The scanner reads configuration, models potential risks, and helps you review changes.
-            It does not start your MCP servers or upload a scan.
+            See → understand → control → verify → monitor. Start with supported configuration
+            checks today; the wider platform is in development.
           </p>
         </div>
 

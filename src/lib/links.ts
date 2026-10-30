@@ -5,9 +5,8 @@ export const LINKS = {
   github: "https://github.com/Memanzur/boppi-scan",
   npm: "https://www.npmjs.com/package/boppi",
   issues: "https://github.com/Memanzur/boppi-scan/issues",
-  app: "https://app.boppi.io",
-  // "Create a beta workspace" lands on account creation, not the sign-in page.
-  signup: "https://app.boppi.io/signup",
+  // Hosted signup loads, but successful onboarding and current feature parity are unverified.
+  earlyAccess: "mailto:boppii.ioo@gmail.com?subject=Boppi%20early%20access",
   email: "boppii.ioo@gmail.com",
   talk: "mailto:boppii.ioo@gmail.com?subject=Boppi%20for%20teams",
   contact: "mailto:boppii.ioo@gmail.com",

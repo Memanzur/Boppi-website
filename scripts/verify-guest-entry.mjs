@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
-const require = createRequire(new URL('../../Boppi-auto/apps/control-plane/scripts/browser-validation/package.json', import.meta.url));
+const require = createRequire(path.resolve(process.env.BOPPI_BROWSER_DEPS || '../Boppi-auto/apps/control-plane/scripts/browser-validation/package.json'));
 const { chromium } = require('playwright');
 const { AxeBuilder } = require('@axe-core/playwright');
 const base = process.argv[2] || 'http://127.0.0.1:4178';
@@ -57,9 +57,27 @@ try {
     check(`${width}: checkup has no page overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await page.screenshot({ path: path.join(out, `checkup-${width}.png`), fullPage: true });
     await page.goto(base + '/');
-    await page.evaluate(() => { window.__opened = []; window.open = url => { window.__opened.push(String(url)); return null; }; });
-    await page.getByRole('button', { name: 'Create a beta workspace' }).first().click();
-    check(`${width}: "Create a beta workspace" opens account creation, not the sign-in page`, (await page.evaluate(() => window.__opened)).join() === 'https://app.boppi.io/signup');
+    check(`${width}: early-access CTA clearly opens email`, await page.getByRole('link', { name: 'Email about early access', exact: true }).getAttribute('href') === 'mailto:boppii.ioo@gmail.com?subject=Boppi%20early%20access');
+    check(`${width}: no unverified public signup or login CTAs`, await page.locator('a[href^="https://app.boppi.io"]').count() === 0);
+    check(`${width}: free checkup CTA goes to instructions`, await page.getByRole('link', { name: 'Run a free checkup', exact: true }).getAttribute('href') === '/checkup');
+    for (const route of ['/', '/checkup', '/demo', '/privacy', '/terms']) {
+      await page.goto(base + route);
+      const audit = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+      check(`${width}: ${route} WCAG A/AA automated checks`, audit.violations.length === 0);
+      check(`${width}: ${route} has no horizontal overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      check(`${width}: ${route} has a main target`, await page.locator('main#main').count() === 1);
+      const links = await page.locator('a').evaluateAll(anchors => anchors.map(a => ({ href: a.getAttribute('href'), label: a.textContent.trim() })));
+      check(`${width}: ${route} no empty or placeholder links`, links.every(l => l.href && l.href !== '#' && !l.href.startsWith('javascript:')));
+      for (const href of [...new Set(links.map(l => l.href).filter(h => h.startsWith('/#')))]) {
+        await page.goto(base + href);
+        const hash = new URL(page.url()).hash.slice(1);
+        check(`${width}: ${route} → ${href} resolves to a homepage section`, await page.locator(`[id="${hash}"]`).count() === 1);
+      }
+    }
+    await page.goto(base + '/');
+    const faq = page.getByText('Does Boppi see what my AI actually did?', { exact: true });
+    await faq.click();
+    check(`${width}: activity FAQ opens and explains the evidence boundary`, await page.getByText('A public scan reads configuration and models potential access.', { exact: false }).isVisible());
     check(`${width}: no external requests`, external.length === 0);
     check(`${width}: no console errors`, errors.length === 0);
     await context.close();

@@ -7,23 +7,23 @@ import { LINKS } from "@/lib/links";
 const capabilities = [
   {
     icon: KeyRound,
-    title: "Share only when you choose",
-    description: "The optional team workspace receives a sanitized scan inventory only when you run boppi push. Review the payload with --dry-run first. The unpublished 0.4.0 candidate requires explicit workspace sync consent, withdrawal and erasure; hosted rollout is still pending. Local scanning needs no account.",
+    title: "Choose what to share",
+    description: "Local scans need no account. The public push command sends scan metadata to a workspace you choose. New consent, withdrawal, and erasure controls are implemented locally; a compatible hosted release is still pending. Review exports before sharing.",
   },
   {
     icon: Network,
-    title: "Review submitted snapshots together",
-    description: "A workspace brings uploaded agent and server inventories together for team review. It reflects submitted configuration evidence, not a live view of every machine or action.",
+    title: "Bring evidence together",
+    description: "Boppi Cloud is designed to organize submitted inventories, security findings, and access relationships across devices. It reflects configuration snapshots you submit, with their coverage and age. The current development build is not the hosted release.",
   },
   {
     icon: RefreshCw,
-    title: "Rescan to check a change",
-    description: "A local rescan can show whether a modeled path remains. Updating workspace evidence requires another push; it is not continuous monitoring. Empty or incomplete discovery may leave older evidence in place.",
+    title: "Review, approve, verify",
+    description: "Paired-device removal, supported directory narrowing, verification, and rollback are tested with synthetic data locally. These workflows still need release review and real-device validation. Updating Cloud evidence requires a fresh submission.",
   },
   {
     icon: Users,
-    title: "An optional team beta",
-    description: "The hosted workspace is a separate free beta at app.boppi.io. It can change or be unavailable. It is not the planned Boppi Intelligence service, and the local scanner works independently.",
+    title: "Build toward organization-wide governance",
+    description: "Organizations, roles, findings, and audit workflows have local implementations. SSO, SCIM, service identities, and approval policies are at different development stages; they are not a publicly verified enterprise suite. Ask us about your requirements.",
   },
 ];
 
@@ -32,48 +32,48 @@ const productTruth = [
     icon: ShieldCheck,
     label: "Visibility",
     title: "Know what is connected.",
-    body: "Today: inspect supported configuration on your machine. The vision: expand coverage so individuals and teams can understand more of their AI environment.",
+    body: "Start with supported AI and MCP configuration. See the sources checked, the access they suggest, and the gaps Boppi cannot inspect.",
   },
   {
     icon: Building2,
     label: "Understanding",
     title: "Know why it matters.",
-    body: "Today: review potential risks with evidence and inference labels. The vision: connect richer signals into clearer explanations and more reliable priorities.",
+    body: "Follow the evidence behind a potential risk. Keep configured access, inferred capabilities, and observed activity distinct.",
   },
   {
     icon: Wrench,
     label: "Control",
-    title: "Choose what to do next.",
-    body: "Today: compare configuration changes and rescan after an edit. The vision: add reviewed, reversible actions and policy controls, with clear consent and measurable results.",
+    title: "Choose what happens next.",
+    body: "Review permission changes before authorizing them. Verify the configuration afterward; broader enforcement depends on the integration and release.",
   },
 ];
 
 const roadmap = [
   {
-    phase: "Live · v0.3.0",
-    title: "Local scanner",
-    body: "Configuration discovery, potential-risk modeling, suggested edits, verification, local history, reports, and CI checks. Optional push shares a sanitized inventory.",
+    phase: "Scanner public · v0.3.0",
+    title: "Boppi Agent",
+    body: "Discovers supported AI and MCP configurations, maps potential access, and explains risky combinations. Public controls include selected server removal and rescanning. Broader discovery, narrowing, rollback, and foreground watching are unpublished.",
     icon: ShieldCheck,
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
-    phase: "Local only · v0.4.0 candidate",
-    title: "Unpublished improvements",
-    body: "Agent + Cloud: a synthetic demo, approved fixes and rollback, consent-controlled history, finding management, activity sync, and paired dashboard remediation are implemented and tested with synthetic data locally. Human testing, independent review, publication and hosted rollout remain gated.",
+    phase: "In development · hosted parity pending",
+    title: "Boppi Cloud",
+    body: "Centralizes submitted evidence, security findings, organizations, and access reviews. An older hosted beta exists; the current development workflows and end-to-end onboarding have not been verified publicly.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
-    phase: "Experimental · local only",
-    title: "Tool-event hook prototype",
-    body: "An optional Claude Code hook records limited event metadata when manually configured. Concurrent synthetic capture is tested; real-client delivery remains unverified. Explicit activity sync is separate from inventory sync. It is not continuous protection.",
+    phase: "In development · limited control points",
+    title: "Boppi Control",
+    body: "Authorized remediation, verification, rollback, and Just-in-Time access. Local JIT tests cover temporary MCP configuration entries. Expiry removal needs an Agent invocation or foreground watcher; running clients may retain access until restart or reload. Public JIT and enterprise-wide enforcement are not available.",
     icon: Activity,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "Local foundations · not activated",
+    phase: "In development · learning not activated",
     title: "Boppi Intelligence",
-    body: "Workspace corrections carry provenance and separate contribution consent. A research prototype evaluates, signs and rolls back synthetic rule candidates, and the 0.4.0 scanner can verify a signed bundle in shadow mode only: it never changes results. Reviewed production updates, prompt investigation and selective enforcement remain planned; corrections never activate rules automatically.",
+    body: "Evidence-based analysis today, with privacy-preserving learning and improved detection in development. Local prototypes accept reviewed corrections and verify signed rule bundles in shadow mode, without changing scan results. Production learning and monitoring are not active.",
     icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },
@@ -87,14 +87,14 @@ const Platform = () => {
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <Building2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-secondary">Agent + Cloud + Intelligence</span>
+            <span className="text-sm font-semibold text-secondary">Agent + Cloud + Control + Intelligence</span>
           </div>
-          <p className="section-kicker">One hybrid product</p>
+          <p className="section-kicker">One AI access-security platform</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Visibility. Understanding. Control.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Boppi Agent checks supported connections on your device. Optional Boppi Cloud brings
-            consented evidence and team decisions together. Boppi Intelligence is the reviewed
-            improvement loop, with local foundations and no automatic rule activation.
+            For individuals, developers, teams, and enterprises: understand AI access,
+            make informed permission decisions, and build toward governed access across
+            your organization. Each part below has a clear release status.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ const Platform = () => {
             <p className="section-kicker">Product status</p>
             <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">What is available, and what comes next.</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
-              The public release, unpublished local work, experiments, and planned capabilities are different stages. Local work is not a release announcement.
+              Start with the public scanner. Cloud, Control, and Intelligence are being developed and validated; local test success does not mean a capability is publicly available.
             </p>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -141,8 +141,8 @@ const Platform = () => {
         </div>
 
         <div className="text-center mb-7">
-          <p className="section-kicker">Optional team workspace · current beta</p>
-          <h3 className="text-3xl font-semibold tracking-[-0.03em]">Bring scan snapshots together.</h3>
+          <p className="section-kicker">Boppi Cloud · in development</p>
+          <h3 className="text-3xl font-semibold tracking-[-0.03em]">Shared visibility. Accountable decisions.</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           {capabilities.map((c) => {
@@ -168,21 +168,21 @@ const Platform = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <EyeOff className="w-4 h-4 text-secondary" />
-                <h3 className="font-semibold">A snapshot, with clear limits</h3>
+                <h3 className="font-semibold">Control is specific to the integration</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The published scanner and workspace do not continuously watch AI activity,
-                detect prompt injection, or block actions at runtime. A scan is a configuration
-                snapshot; local history compares scans you run. Planned monitoring and enforcement
-                will need separate implementation, validation, and consent.
+                Removing or narrowing a configuration entry changes what a client can load next.
+                It does not revoke a vendor credential or stop an already running tool. Optional
+                Claude Code event capture and a JIT call gate exist locally; real-client delivery
+                and enforcement remain unverified. Always check the supported control point.
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-stretch gap-2">
               <Button
                 className="bg-gradient-to-r from-secondary to-accent text-background hover:opacity-90"
-                onClick={() => window.open(LINKS.signup, "_blank", "noopener")}
+                asChild
               >
-                Create a beta workspace
+                <a href="/demo">Explore the demo</a>
               </Button>
               <a
                 href={LINKS.talk}
@@ -194,12 +194,12 @@ const Platform = () => {
           </div>
         </Card>
         <Card id="beta-preview" className="mt-10 p-6 md:p-8 bg-card border-border scroll-mt-24">
-          <p className="section-kicker">Interactive synthetic demo · local website build</p>
+          <p className="section-kicker">Interactive demo · sample data</p>
           <h3 className="text-2xl font-semibold mb-3">Explore with sample data first.</h3>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
             Explore example connections, inspect a finding, and preview a simulated change.
             This demo uses fictional data from the unpublished candidate. It does not scan your
-            device or change your permissions. Publishing this website build remains a separate step.
+            device or change your permissions. A simulated result is not a verified real-device fix.
           </p>
           <a className="inline-block mt-4 text-primary underline" href="/demo">Explore the synthetic demo →</a>
         </Card>

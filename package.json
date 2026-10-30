@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "demo:build": "node scripts/build-demo.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
-    "test:sitemap": "node scripts/verify-sitemap-refresh.mjs"
+    "test:sitemap": "node scripts/verify-sitemap-refresh.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
+    "test:website": "node scripts/verify-guest-entry.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

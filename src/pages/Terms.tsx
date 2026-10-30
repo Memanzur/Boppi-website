@@ -24,7 +24,7 @@ export default function Terms() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Terms of Service
           </h1>
-          <p className="text-gray-400 mb-8 italic">Release draft updated: October 25, 2026</p>
+          <p className="text-gray-400 mb-8 italic">Release draft updated: October 29, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-8">
             <section>
@@ -38,8 +38,7 @@ export default function Terms() {
             <section>
               <H2>2. The control plane</H2>
               <P>
-                The hosted Boppi control plane is offered as a free public beta. It may change or be
-                unavailable while in beta. If your organization has a written agreement with us and it
+                Boppi Cloud has an older hosted beta; current Cloud, Control, and enterprise workflows remain in development and are not verified publicly. Beta access, when provided, may change or be unavailable. If your organization has a written agreement with us and it
                 differs from these terms, the agreement wins. By using the control plane you agree to
                 these terms.
               </P>
@@ -57,7 +56,7 @@ export default function Terms() {
               <H2>3. What the reports mean</H2>
               <P>
                 Boppi reports potential exposure based on configuration. A reported path means the
-                configured grants would allow that chain. It does not mean an attack happened. A clean
+                configuration evidence suggests that chain may be possible; effective access has not been established. It does not mean an attack happened. A clean
                 scan means the scanner found no such chain in the files it could read, not that your
                 machine is secure. You are responsible for decisions you make based on a report.
               </P>
@@ -74,7 +73,7 @@ export default function Terms() {
             <section>
               <H2>5. Termination</H2>
               <P>
-                You can delete your organization at any time. We may suspend access to the control plane
+                The development Cloud build supports organization deletion. For hosted data or access requests, contact us using the email below. We may suspend access to the control plane
                 if these terms are violated. The scanner is yours to keep under its license regardless.
               </P>
             </section>

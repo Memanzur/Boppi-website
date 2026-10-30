@@ -2,23 +2,23 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { LINKS, SCAN_COMMAND } from "@/lib/links";
+import { LINKS } from "@/lib/links";
 
 const scannerFeatures = [
   "Discovery for Claude Desktop, Claude Code, and Cursor",
   "Agent inventory, risk scores, and the six exposure path templates",
   "Suggested configuration changes ranked by modeled paths removed",
   "HTML and JSON reports with evidence per claim",
-  "CI gate with --fail-on and clear exit codes",
+  "CI checks with --config and --fail-on",
   "Apache-2.0, no account or telemetry for scans. Explicit boppi push shares a sanitized inventory",
 ];
 
 const teamFeatures = [
-  "Create a workspace, invite your team, generate a collector token",
-  "npx boppi push sends one scan's sanitized inventory per machine",
-  "Review supported agents, servers, and potential paths from submitted inventories",
-  "Rescan and push again to update workspace evidence; incomplete scans can retain older records",
-  "Free during the beta. Any change to that shows up on this page first",
+  "Centralized inventories and findings from submitted evidence — in development",
+  "Organization roles, approvals, and audit workflows — locally implemented, unpublished",
+  "Paired remediation and rollback — local synthetic tests; real-device validation pending",
+  "Just-in-Time MCP configuration access — limited local implementation, unpublished",
+  "Enterprise identity integrations — staged development; hosted validation pending",
 ];
 
 const Pricing = () => {
@@ -28,9 +28,9 @@ const Pricing = () => {
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <p className="section-kicker">Access</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start with one machine. Add the workspace when you need it.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start today. Help shape what comes next.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The scanner is free and stays free. The team workspace is a free public beta.
+            Use the free scanner now. For Cloud access and enterprise requirements, email us while the wider platform is in development.
           </p>
         </div>
 
@@ -42,12 +42,12 @@ const Pricing = () => {
 
             <div className="mb-6 pt-4">
               <h3 className="text-2xl font-bold mb-2">boppi scan</h3>
-              <div className="flex items-baseline gap-1 mb-2">
+              <div className="flex flex-wrap items-baseline gap-1 mb-2">
                 <span className="text-5xl font-bold">Free</span>
-                <span className="text-muted-foreground text-sm">forever, Apache-2.0</span>
+                <span className="text-muted-foreground text-sm">Apache-2.0</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                The local scanner and the whole engine, in the open.
+                Public v0.3.0 · local analysis and supported server removal.
               </p>
             </div>
 
@@ -62,21 +62,21 @@ const Pricing = () => {
 
             <Button
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-semibold"
-              onClick={() => window.open(LINKS.github, "_blank", "noopener")}
+              asChild
             >
-              {SCAN_COMMAND}
+              <a href="/checkup">Run a free checkup</a>
             </Button>
           </Card>
 
           <Card className="p-8 flex flex-col bg-card border-border hover:border-secondary/50 transition-colors duration-200">
             <div className="mb-6 pt-4">
-              <h3 className="text-2xl font-bold mb-2">Boppi for teams</h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold">Free beta</span>
-                <span className="text-muted-foreground text-sm">at app.boppi.io</span>
+              <h3 className="text-2xl font-bold mb-2">Boppi Cloud & Control</h3>
+              <div className="flex flex-wrap items-baseline gap-1 mb-2">
+                <span className="text-5xl font-bold">In progress</span>
+                <span className="text-muted-foreground text-sm">early access</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                For teams reviewing AI assistant configuration across multiple machines.
+                For teams and enterprises that need shared visibility, access reviews, and supported controls.
               </p>
             </div>
 
@@ -91,21 +91,18 @@ const Pricing = () => {
 
             <Button
               className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
-              onClick={() => window.open(LINKS.signup, "_blank", "noopener")}
+              asChild
             >
-              Create a beta workspace
+              <a href={LINKS.earlyAccess}>Email about early access</a>
             </Button>
-            <a
-              href={LINKS.talk}
-              className="mt-3 text-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Talk to us
-            </a>
+            <p className="mt-3 text-center text-sm text-muted-foreground">
+              Email opens in your mail app
+            </p>
           </Card>
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>Start locally without an account. The scanner and optional workspace are separate from the planned Boppi Intelligence platform.</p>
+          <p>One platform, different release stages. The public scanner works without an account; this page does not promise immediate Cloud access or a general release date.</p>
         </div>
       </div>
     </section>

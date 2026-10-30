@@ -2,9 +2,9 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { BETA_DEMO, LINKS } from "@/lib/links";
 
 const items = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Vision & status", href: "#platform" },
-  { label: "Access", href: "#pricing" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Platform", href: "/#platform" },
+  { label: "Access", href: "/#pricing" },
 ];
 
 const Nav = () => (
@@ -24,9 +24,10 @@ const Nav = () => (
       <div className="flex items-center gap-2">
         <a
           href={BETA_DEMO.live ? BETA_DEMO.path : BETA_DEMO.preview}
+          aria-label={BETA_DEMO.live ? "Try the demo" : "Demo · soon"}
           className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          {BETA_DEMO.live ? "Try the demo" : "Demo · soon"}
+          {BETA_DEMO.live ? <><span className="sm:hidden">Demo</span><span className="hidden sm:inline">Try the demo</span></> : "Demo · soon"}
         </a>
         <a
           href={LINKS.github}
@@ -38,10 +39,11 @@ const Nav = () => (
           <span className="sr-only sm:not-sr-only">GitHub</span>
         </a>
         <a
-          href={LINKS.app}
+          href="/#platform"
+          aria-label="Product status"
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          Sign in · beta <ArrowUpRight className="w-3.5 h-3.5" />
+          <span className="sm:hidden">Status</span><span className="hidden sm:inline">Product status</span> <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>

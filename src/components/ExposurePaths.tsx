@@ -22,7 +22,7 @@ const ExposurePaths = () => {
     <section id="paths" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
-          <p className="section-kicker">Technical detail · available scanner</p>
+          <p className="section-kicker">Technical detail · configuration evidence</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">How Boppi models potential risk.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             An exposure path is a chain of configured or inferred capabilities that could create
