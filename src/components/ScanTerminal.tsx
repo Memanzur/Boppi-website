@@ -47,7 +47,7 @@ const LINES: Line[] = [
   { text: "" },
   { text: "  HIGH  Potential privilege path  [EP-E · confidence 0.7]", tone: "high" },
   { text: "     Claude Desktop -> fetch (untrusted_external_content) -> untrusted external content -> desktop-commander (shell_access) -> run shell commands", tone: "path" },
-  { text: "     why: Instructions hidden in untrusted content could potentially influence an agent with privileged local capabilities.", tone: "dim", delay: 700 },
+  { text: "     why: Instructions hidden in untrusted content could potentially influence an agent with privileged capabilities.", tone: "dim", delay: 700 },
   { text: "" },
   { text: "PROPOSED CHANGE  simulated removal in the model, not an applied fix", tone: "fix", block: true },
   { text: "  ▸ Fix: Remove the \"fetch\" entry from Claude Desktop's MCP configuration. Rescan afterward to verify the change landed.", tone: "plain", block: true },

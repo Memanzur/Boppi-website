@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
-            <span>Scans run locally · Sharing is optional</span>
+            <span>Scans run on your device · Sharing is optional</span>
           </div>
         </div>
       </div>

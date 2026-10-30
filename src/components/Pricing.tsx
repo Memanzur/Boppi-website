@@ -48,7 +48,7 @@ const Pricing = () => {
                 <span className="text-muted-foreground text-sm">Apache-2.0</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Version 0.3.0 · local scans and one-click fixes.
+                Version 0.3.0 · scans and one-click fixes.
               </p>
             </div>
 

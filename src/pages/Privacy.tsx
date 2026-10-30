@@ -31,7 +31,7 @@ export default function Privacy() {
               <H2>1. What Boppi is</H2>
               <P>
                 Boppi is an AI security and access-control platform. The public Agent scanner
-                (npm package "boppi", v0.3.0) analyzes supported AI and MCP configuration locally.
+                (npm package "boppi", v0.3.0) analyzes supported AI and MCP configuration on your device.
                 Cloud centralizes submitted evidence; Control adds supported permission workflows;
                 Intelligence develops evidence-based improvements. The wider platform is in development.
                 This draft describes the website, public scanner, and unpublished workflows separately.
@@ -75,13 +75,13 @@ export default function Privacy() {
                   "Your organization name and the role of each member.",
                   "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
                   "Workspace audit records for supported actions.",
-                  "In the unpublished 0.4.0 implementation only: corrections and review notes your team writes on the Intelligence page, including free-text reasons. Review provenance, separate contribution consent, withdrawal, and erasure workflows are implemented locally; hosted rollout is pending.",
+                  "In the unpublished 0.4.0 implementation only: corrections and review notes your team writes on the Intelligence page, including free-text reasons. Review provenance, separate contribution consent, withdrawal, and erasure workflows are implemented; hosted rollout is pending.",
                   "In the unpublished 0.4.0 implementation only, if you turn on activity sync for a collector: activity events sent with boppi events push. These carry the event type, server, tool, outcome and duration, plus keyed digests. They do not include tool arguments, prompts or file contents.",
                   "In the unpublished 0.4.0 implementation only, if you pair a device with boppi connect: the fixes that device offers (described by hashes, path fingerprints, server names and capability names), the proposals your team approves or declines, and the state the device reports back (previewed, applied, verified, rolled back). The connector is designed to keep raw file paths, configuration contents, and backups on the device; identifiers and recognized redacted metadata still cross the boundary.",
                 ]}
               />
               <P>
-                Cloud uses Supabase with row-level security for organization isolation, exercised by local database tests. This is not an independent certification of the hosted service. Collector tokens are stored hashed; the development workflows support rotation, revocation, and organization deletion. The unpublished 0.4.0 cloud workflow adds versioned sync consent, withdrawal that revokes tokens, and separately confirmed erasure of a collector’s uploaded inventory and snapshots. Those controls are verified locally; deployment is still gated. Do not assume the older hosted beta has those screens. Use local analysis or a dry-run preview until a compatible cloud release is confirmed.
+                Cloud uses Supabase with row-level security for organization isolation, exercised by automated database tests. This is not an independent certification of the hosted service. Collector tokens are stored hashed; the development workflows support rotation, revocation, and organization deletion. The unpublished 0.4.0 cloud workflow adds versioned sync consent, withdrawal that revokes tokens, and separately confirmed erasure of a collector’s uploaded inventory and snapshots. Those controls are tested; deployment is still gated. Do not assume the older hosted beta has those screens. Use on-device analysis or a dry-run preview until a compatible cloud release is confirmed.
               </P>
             </section>
 
@@ -98,7 +98,7 @@ export default function Privacy() {
               <UL
                 items={[
                   "We do not sell or rent personal data.",
-                  "The local Intelligence prototype uses reviewed evidence and separate contribution consent. Production learning is not activated.",
+                  "The Intelligence prototype uses reviewed evidence and separate contribution consent. Production learning is not activated.",
                   "The public scanner uploads inventory only through explicit push. The unpublished candidate has separate activity-sync and pairing flows. Review metadata before sending it; redaction is not a guarantee that arbitrary text contains no private information.",
                   "We share customer data with the hosting providers named above, or when the law requires it.",
                 ]}
