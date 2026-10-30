@@ -22,12 +22,12 @@ const ExposurePaths = () => {
     <section id="paths" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
-          <p className="section-kicker">Technical detail · configuration evidence</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">How Boppi models potential risk.</h2>
+          <p className="section-kicker">Under the hood</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">How Boppi spots risk.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            An exposure path is a chain of configured or inferred capabilities that could create
-            risk. The six templates below describe what the engine looks for. A match does not
-            establish effective access, a successful exploit, or data leaving your device.
+            Some access is only dangerous in combination. Boppi looks for these chains,
+            called exposure paths. Here are the six it checks for. A match means
+            "take a look," not "you've been hacked."
           </p>
         </div>
 
@@ -50,8 +50,8 @@ const ExposurePaths = () => {
         </div>
 
         <p className="mt-6 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
-          The scanner also runs seven per-agent rules. One of them is a data-governance check for
-          broad file access granted to a vendor whose training posture is unknown.
+          Boppi also runs seven checks on each agent, including one for broad file access given
+          to a vendor with an unclear policy on training AI with your data.
         </p>
       </div>
     </section>

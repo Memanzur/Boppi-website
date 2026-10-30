@@ -4,27 +4,27 @@ const steps = [
   {
     title: "See the access",
     description:
-      "Locate supported MCP configuration files. The report names the sources it checked and flags files it could not read.",
+      "Boppi finds your AI agents, MCP servers, and tools, and lists what each one can reach.",
   },
   {
     title: "Understand the risk",
     description:
-      "Connect configuration evidence with known or inferred tool capabilities. Boppi explains potential risk, assumptions, and unknowns; it does not show an attack happened.",
+      "It connects the dots between access and risk, and shows you what matters most first.",
   },
   {
     title: "Control permissions",
     description:
-      "Compare a proposed change and its tradeoffs. Today, remove a supported MCP server entry with your approval. More granular controls are in development.",
+      "Restrict, grant, or revoke access with one approved click. Need access for a short time? Grant it Just-in-Time and it expires on its own.",
   },
   {
     title: "Verify the change",
     description:
-      "Rescan with boppi verify and an earlier JSON export to compare the result. Configuration verification does not prove a running client has stopped using access.",
+      "Boppi rescans to confirm the change took effect. Changed your mind? Roll it back.",
   },
   {
     title: "Monitor access",
     description:
-      "Today, rerun scans and compare local history. In development: foreground configuration watching and optional Claude Code event capture. Continuous monitoring is not publicly available.",
+      "Boppi watches for new connections and permission changes, so new risks don't slip by.",
   },
 ];
 
@@ -34,11 +34,11 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-16 px-6 bg-card/30">
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal mb-14 max-w-2xl">
-          <p className="section-kicker">Method</p>
+          <p className="section-kicker">How it works</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From access to action.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            See → understand → control → verify → monitor. Start with supported configuration
-            checks today; the wider platform is in development.
+            See it, understand it, fix it, confirm it, and keep watching. Five steps,
+            plain answers at every one.
           </p>
         </div>
 

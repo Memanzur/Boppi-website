@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Check, Copy, ArrowRight, FileSearch, GitBranch, LockKeyhole } from "lucide-react";
 import ScanTerminal from "@/components/ScanTerminal";
-import { SCAN_COMMAND } from "@/lib/links";
+import { SCAN_COMMAND, SCAN_VERSION } from "@/lib/links";
 
 const CopyCommand = () => {
   const [copied, setCopied] = useState(false);
@@ -33,9 +33,9 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: LockKeyhole, text: "Run a local configuration check without an account." },
-  { icon: FileSearch, text: "See the evidence and limits behind each finding." },
-  { icon: GitBranch, text: "Open source analysis. Permission changes need your authorization." },
+  { icon: LockKeyhole, text: "Runs on your machine. No account needed." },
+  { icon: FileSearch, text: "Every finding shows its evidence." },
+  { icon: GitBranch, text: "Open source. Nothing changes without your OK." },
 ];
 
 const Hero = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-success" />
-            AI access security · start free
+            AI security & access control
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance] mb-7">
@@ -53,13 +53,12 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-            Boppi is an AI security and access-control platform built to help you see what
-            your AI tools can reach, understand the risk, and decide what access to keep.
+            Boppi shows you which AI agents, MCP servers, and tools are connected to your work,
+            what each one can reach, and where the risks are. Then it helps you fix them in one click.
           </p>
 
           <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">
-            Start today with the free scanner for supported Claude Desktop, Claude Code, and Cursor
-            configurations. Cloud governance, verified controls, and monitoring are in development.
+            Start with the free scanner. One command, no account, results in seconds.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
@@ -68,13 +67,13 @@ const Hero = () => {
               href="/checkup"
               className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
             >
-              Start a guest checkup <ArrowRight className="w-4 h-4" />
+              Start a free checkup <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
           <p className="mb-6 text-xs text-muted-foreground leading-relaxed">
-            Public scanner v0.3.0 · Run in your terminal with Node.js 18+. Tested on macOS;
-            Windows and Linux discovery are not yet verified on real machines.
+            Free scanner {SCAN_VERSION} · Works with Claude Desktop, Claude Code, and Cursor ·
+            Needs Node.js 18+ · macOS (Windows and Linux are experimental)
           </p>
 
           <ul className="space-y-2.5">
@@ -95,8 +94,7 @@ const Hero = () => {
         <div className="min-w-0">
           <ScanTerminal />
           <p className="mt-4 text-xs text-muted-foreground text-center leading-relaxed">
-            Illustrative scan output from a sample configuration. This animation does not scan
-            your device or show live activity.
+            Sample scan output. This animation doesn't scan your device.
           </p>
         </div>
       </div>

@@ -5,36 +5,36 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const rules = [
   {
     icon: FileSearch,
-    title: "Local analysis, with explicit sharing",
+    title: "Your data stays yours",
     body:
-      "The scanner reads configuration files locally and reports sanitized metadata, not the contents of files your assistant can access. Scans are not uploaded on their own. The public release can upload scan metadata with boppi push; preview it with --dry-run. The unpublished candidate also supports explicit activity sync and device pairing. Redaction covers recognized patterns, so configuration metadata still needs your review. Downloading the package with npx uses the npm registry.",
+      "Scans run on your device and read your AI settings, not the contents of your files. Nothing is uploaded unless you choose to share it, and Boppi strips out known secret formats first. Preview any upload with --dry-run, and review exports before you share them.",
   },
   {
     icon: ShieldQuestion,
-    title: "A finding is a reason to review",
+    title: "A finding is a reason to look",
     body:
-      "Boppi models potential access from supported configuration. It does not prove that access works, detect an attack in progress, or guarantee safety after a clean scan. Missing sources and inference limits matter.",
+      "Boppi flags access that could be risky and shows you why. A finding isn't proof of an attack, and a clean scan isn't a guarantee of safety.",
   },
   {
     icon: Scale,
     title: "You decide what changes",
     body:
-      "Scanning and planning do not change permissions. The optional boppi fix command removes a chosen server entry, asks for confirmation by default, and creates a local backup. Review the tradeoff: a removed connection may stop a useful workflow, and backups contain the original configuration, including any secrets.",
+      "Boppi never changes a permission on its own. Every fix asks first and saves a backup. Backups hold your original settings, secrets included, so keep them somewhere safe.",
   },
 ];
 
 const questions = [
   {
     question: "Does Boppi see what my AI actually did?",
-    answer: "A public scan reads configuration and models potential access. It does not observe tool calls or inspect files your AI could reach. Optional Claude Code event capture is an unpublished prototype; an observed call would still not prove what happened to files or the network.",
+    answer: "A scan starts from your settings and shows what your AI could access. Activity monitoring adds what it actually tried to use, for the AI tools that support it.",
   },
   {
     question: "Can Boppi change permissions for me?",
-    answer: "Public v0.3.0 can remove a selected, supported MCP server entry after confirmation and keep a backup. Paired-device fixes, selected directory narrowing, rollback, and temporary grants have local implementations, with release and real-device validation pending. Boppi cannot universally revoke SaaS permissions or guarantee a running client has lost access.",
+    answer: "Yes, with your OK. Boppi can remove a connection, narrow which folders an AI can reach, grant temporary access, and roll changes back. Changes go into the AI tool's settings, so a tool that's already running picks them up when it restarts.",
   },
   {
-    question: "Can my team use the full platform today?",
-    answer: "The free public scanner is available now. An older hosted beta exists, but current Cloud, enterprise, and Just-in-Time workflows are not verified public capabilities. Email us about early access; there is no automatic enrollment or promised launch date.",
+    question: "How do I get started?",
+    answer: "Anyone can run the free scanner right now with npx boppi scan. No account needed. For Boppi Cloud for your team or company, email us for early access.",
   },
 ];
 
@@ -44,10 +44,10 @@ const Honesty = () => {
     <section id="honesty" className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-8 space-y-3">
-          <p className="section-kicker">Boundary</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Clear evidence. Clear boundaries.</h2>
+          <p className="section-kicker">Trust</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Clear evidence. Your call.</h2>
           <p className="text-lg text-muted-foreground">
-            Clear evidence, clear limits, and a choice about what happens next.
+            Boppi shows its work, and nothing changes without your OK.
           </p>
         </div>
 

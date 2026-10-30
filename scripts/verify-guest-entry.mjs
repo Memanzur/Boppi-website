@@ -77,7 +77,7 @@ try {
     await page.goto(base + '/');
     const faq = page.getByText('Does Boppi see what my AI actually did?', { exact: true });
     await faq.click();
-    check(`${width}: activity FAQ opens and explains the evidence boundary`, await page.getByText('A public scan reads configuration and models potential access.', { exact: false }).isVisible());
+    check(`${width}: activity FAQ opens and explains the evidence boundary`, await page.getByText('A scan starts from your settings and shows what your AI could access.', { exact: false }).isVisible());
     check(`${width}: no external requests`, external.length === 0);
     check(`${width}: no console errors`, errors.length === 0);
     await context.close();

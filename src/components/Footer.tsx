@@ -55,7 +55,7 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              AI access security for people and organizations. Know what your AI can access. Stay in control.
+              AI security and access control for people and teams. Know what your AI can access. Stay in control.
             </p>
           </div>
 
@@ -65,8 +65,8 @@ const Footer = () => {
                             <li><a href="/#paths" className="hover:text-primary transition-colors">Risk model</a></li>
               <li><a href="/#features" className="hover:text-primary transition-colors">What it tells you</a></li>
               <li><a href="/#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="/#platform" className="hover:text-primary transition-colors">Platform & status</a></li>
-              <li><a href="/#pricing" className="hover:text-primary transition-colors">Access</a></li>
+              <li><a href="/#platform" className="hover:text-primary transition-colors">Platform</a></li>
+              <li><a href="/#pricing" className="hover:text-primary transition-colors">Get started</a></li>
             </ul>
           </div>
 

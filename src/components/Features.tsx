@@ -1,49 +1,49 @@
-import { Route, Wrench, FileSearch, GitBranch, FileOutput, ListTree } from "lucide-react";
+import { Route, Wrench, FileSearch, KeyRound, Activity, ListTree } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const features = [
   {
     icon: ListTree,
-    title: "See what is connected",
+    title: "Find your AI connections",
     description:
-      "Find supported AI assistants and their configured tool connections. Understand which connections suggest access to files, credentials, commands, or external services.",
-    category: "Visibility",
+      "Boppi discovers the AI agents, MCP servers, and tools on your machine, plus the files, keys, and services they connect to.",
+    category: "Discover",
   },
   {
     icon: Route,
-    title: "Understand why access matters",
+    title: "See where the risk is",
     description:
-      "Reading files and connecting to the internet can each be useful. Together, they may create a way for private data to leave your machine. Boppi highlights potential combinations like this and explains the evidence.",
-    category: "Understanding",
+      "Reading files is fine. Sending data to the internet is fine. Together, they can leak private data. Boppi spots risky combinations like this and explains why in plain words.",
+    category: "Understand",
   },
   {
     icon: Wrench,
-    title: "Choose a change, then check it",
+    title: "Fix it in one click",
     description:
-      "Compare suggested configuration changes and the access you would give up. The public fix command can remove a selected MCP server entry after confirmation, with a backup. Rescan to check the configuration; a scan itself changes no permissions.",
+      "Restrict, change, or revoke what an AI can do with one approved click. Boppi saves a backup first, then checks that the fix took effect.",
     category: "Control",
   },
   {
+    icon: KeyRound,
+    title: "Just-in-Time access",
+    description:
+      "Give an AI tool access only when it needs it. Someone approves the request, and the access expires on its own.",
+    category: "Grant",
+  },
+  {
+    icon: Activity,
+    title: "Watch for changes",
+    description:
+      "Boppi keeps an eye out for new connections and permission changes, and flags new risks as they show up.",
+    category: "Monitor",
+  },
+  {
     icon: FileSearch,
-    title: "Evidence on every claim",
+    title: "Evidence behind every finding",
     description:
-      "Review what was read and what was inferred. Findings include evidence and confidence; a risk score helps prioritize review, rather than measuring the probability of an attack.",
-    category: "Trust",
-  },
-  {
-    icon: GitBranch,
-    title: "Check configuration before shipping",
-    description:
-      "Developers can scan a specific configuration in CI with --config and --fail-on. Fail a check on a chosen severity or an unreadable configuration. This checks settings; it does not block an assistant at runtime.",
-    category: "Ship",
-  },
-  {
-    icon: FileOutput,
-    title: "Keep a report you can review",
-    description:
-      "Save an HTML report, inspect the evidence in JSON, or compare local scan history. Reports stay on your machine unless you share them or explicitly push a sanitized inventory to a team workspace.",
-    category: "Share",
+      "Boppi Intelligence shows what it found, how sure it is, and why. No black-box scores, just reasons you can check.",
+    category: "Intelligence",
   },
 ];
 
@@ -53,11 +53,11 @@ const Features = () => {
     <section id="features" className="py-16 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
-          <p className="section-kicker">Start today · public scanner v0.3.0</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Useful access can add up to unexpected risk.</h2>
+          <p className="section-kicker">What Boppi does</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Useful access can add up to real risk.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            As you add AI tools, it gets harder to keep track of what they can reach.
-            Boppi connects the settings to the risk, so you can decide which access is necessary.
+            Every AI tool you add can reach a little more. Boppi puts it all in one place,
+            so you can see the risk and decide what stays.
           </p>
         </div>
 

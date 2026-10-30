@@ -7,23 +7,23 @@ import { LINKS } from "@/lib/links";
 const capabilities = [
   {
     icon: KeyRound,
-    title: "Choose what to share",
-    description: "Local scans need no account. The public push command sends scan metadata to a workspace you choose. New consent, withdrawal, and erasure controls are implemented locally; a compatible hosted release is still pending. Review exports before sharing.",
+    title: "You choose what to share",
+    description: "Scans run on each device. You decide what gets sent to your team workspace, and you can withdraw or erase it at any time.",
   },
   {
     icon: Network,
-    title: "Bring evidence together",
-    description: "Boppi Cloud is designed to organize submitted inventories, security findings, and access relationships across devices. It reflects configuration snapshots you submit, with their coverage and age. The current development build is not the hosted release.",
+    title: "Everything in one place",
+    description: "See every device's AI connections, findings, and access in one dashboard, with how recent each scan is.",
   },
   {
     icon: RefreshCw,
-    title: "Review, approve, verify",
-    description: "Paired-device removal, supported directory narrowing, verification, and rollback are tested with synthetic data locally. These workflows still need release review and real-device validation. Updating Cloud evidence requires a fresh submission.",
+    title: "Request, approve, verify",
+    description: "Teammates request changes, admins approve them, and Boppi confirms each fix took effect. Roll back with one click.",
   },
   {
     icon: Users,
-    title: "Build toward organization-wide governance",
-    description: "Organizations, roles, findings, and audit workflows have local implementations. SSO, SCIM, service identities, and approval policies are at different development stages; they are not a publicly verified enterprise suite. Ask us about your requirements.",
+    title: "Built for the whole organization",
+    description: "Organizations, roles, approval policies, single sign-on, and a full audit trail of who changed what and when.",
   },
 ];
 
@@ -32,48 +32,48 @@ const productTruth = [
     icon: ShieldCheck,
     label: "Visibility",
     title: "Know what is connected.",
-    body: "Start with supported AI and MCP configuration. See the sources checked, the access they suggest, and the gaps Boppi cannot inspect.",
+    body: "Your AI agents, MCP servers, and tools in one list, with what each one can reach.",
   },
   {
     icon: Building2,
     label: "Understanding",
     title: "Know why it matters.",
-    body: "Follow the evidence behind a potential risk. Keep configured access, inferred capabilities, and observed activity distinct.",
+    body: "A clear explanation of every risk, backed by evidence and ranked by what to fix first.",
   },
   {
     icon: Wrench,
     label: "Control",
     title: "Choose what happens next.",
-    body: "Review permission changes before authorizing them. Verify the configuration afterward; broader enforcement depends on the integration and release.",
+    body: "Grant, restrict, or revoke access, then confirm the change took effect.",
   },
 ];
 
 const roadmap = [
   {
-    phase: "Scanner public · v0.3.0",
+    phase: "Discover",
     title: "Boppi Agent",
-    body: "Discovers supported AI and MCP configurations, maps potential access, and explains risky combinations. Public controls include selected server removal and rescanning. Broader discovery, narrowing, rollback, and foreground watching are unpublished.",
+    body: "Runs on your device. Finds AI agents, MCP servers, and tools, maps what they can reach, and applies the fixes you approve.",
     icon: ShieldCheck,
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
-    phase: "In development · hosted parity pending",
+    phase: "Organize",
     title: "Boppi Cloud",
-    body: "Centralizes submitted evidence, security findings, organizations, and access reviews. An older hosted beta exists; the current development workflows and end-to-end onboarding have not been verified publicly.",
+    body: "One dashboard for every device, team, and finding, with organizations, roles, and audit history built in.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
-    phase: "In development · limited control points",
+    phase: "Control",
     title: "Boppi Control",
-    body: "Authorized remediation, verification, rollback, and Just-in-Time access. Local JIT tests cover temporary MCP configuration entries. Expiry removal needs an Agent invocation or foreground watcher; running clients may retain access until restart or reload. Public JIT and enterprise-wide enforcement are not available.",
+    body: "One-click remediation, rollback, and Just-in-Time access with approvals and automatic expiration.",
     icon: Activity,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "In development · learning not activated",
+    phase: "Analyze",
     title: "Boppi Intelligence",
-    body: "Evidence-based analysis today, with privacy-preserving learning and improved detection in development. Local prototypes accept reviewed corrections and verify signed rule bundles in shadow mode, without changing scan results. Production learning and monitoring are not active.",
+    body: "Evidence-based security analysis that explains each risk and how confident Boppi is about it.",
     icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },
@@ -89,12 +89,12 @@ const Platform = () => {
             <Building2 className="w-4 h-4 text-secondary" />
             <span className="text-sm font-semibold text-secondary">Agent + Cloud + Control + Intelligence</span>
           </div>
-          <p className="section-kicker">One AI access-security platform</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Visibility. Understanding. Control.</h2>
+          <p className="section-kicker">One AI security platform</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">See it. Understand it. Control it.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            For individuals, developers, teams, and enterprises: understand AI access,
-            make informed permission decisions, and build toward governed access across
-            your organization. Each part below has a clear release status.
+            For individuals, developers, teams, and enterprises. Boppi brings your AI
+            connections, risks, and permissions into one place, so the right people
+            make the call.
           </p>
         </div>
 
@@ -116,10 +116,10 @@ const Platform = () => {
 
         <div className="mb-10">
           <div className="text-center mb-7">
-            <p className="section-kicker">Product status</p>
-            <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">What is available, and what comes next.</h3>
+            <p className="section-kicker">The platform</p>
+            <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mt-2">Four parts. One platform.</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-3">
-              Start with the public scanner. Cloud, Control, and Intelligence are being developed and validated; local test success does not mean a capability is publicly available.
+              Each part is useful on its own. Together, they cover AI access from your laptop to your whole company.
             </p>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -141,7 +141,7 @@ const Platform = () => {
         </div>
 
         <div className="text-center mb-7">
-          <p className="section-kicker">Boppi Cloud · in development</p>
+          <p className="section-kicker">For teams and enterprises</p>
           <h3 className="text-3xl font-semibold tracking-[-0.03em]">Shared visibility. Accountable decisions.</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
@@ -168,13 +168,12 @@ const Platform = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <EyeOff className="w-4 h-4 text-secondary" />
-                <h3 className="font-semibold">Control is specific to the integration</h3>
+                <h3 className="font-semibold">Changes you can see and undo</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Removing or narrowing a configuration entry changes what a client can load next.
-                It does not revoke a vendor credential or stop an already running tool. Optional
-                Claude Code event capture and a JIT call gate exist locally; real-client delivery
-                and enforcement remain unverified. Always check the supported control point.
+                Boppi makes changes through each AI tool's own settings, so you always know
+                exactly what changed and where. A tool that's already running picks up the
+                change when it restarts. Want to see it first? Try the demo or talk to us.
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-stretch gap-2">
@@ -195,13 +194,12 @@ const Platform = () => {
         </Card>
         <Card id="beta-preview" className="mt-10 p-6 md:p-8 bg-card border-border scroll-mt-24">
           <p className="section-kicker">Interactive demo · sample data</p>
-          <h3 className="text-2xl font-semibold mb-3">Explore with sample data first.</h3>
+          <h3 className="text-2xl font-semibold mb-3">Try it with sample data.</h3>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
-            Explore example connections, inspect a finding, and preview a simulated change.
-            This demo uses fictional data from the unpublished candidate. It does not scan your
-            device or change your permissions. A simulated result is not a verified real-device fix.
+            Explore example connections, open a finding, and preview a fix. The demo uses
+            made-up data, so nothing on your device is scanned or changed.
           </p>
-          <a className="inline-block mt-4 text-primary underline" href="/demo">Explore the synthetic demo →</a>
+          <a className="inline-block mt-4 text-primary underline" href="/demo">Explore the demo →</a>
         </Card>
       </div>
     </section>

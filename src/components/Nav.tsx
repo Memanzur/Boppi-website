@@ -4,7 +4,7 @@ import { BETA_DEMO, LINKS } from "@/lib/links";
 const items = [
   { label: "How it works", href: "/#how-it-works" },
   { label: "Platform", href: "/#platform" },
-  { label: "Access", href: "/#pricing" },
+  { label: "Get started", href: "/#pricing" },
 ];
 
 const Nav = () => (
@@ -39,11 +39,11 @@ const Nav = () => (
           <span className="sr-only sm:not-sr-only">GitHub</span>
         </a>
         <a
-          href="/#platform"
-          aria-label="Product status"
+          href="/checkup"
+          aria-label="Start free"
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          <span className="sm:hidden">Status</span><span className="hidden sm:inline">Product status</span> <ArrowUpRight className="w-3.5 h-3.5" />
+          <span className="sm:hidden">Start</span><span className="hidden sm:inline">Start free</span> <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>
