@@ -31,7 +31,7 @@ const Pricing = () => {
           <p className="section-kicker">Get started</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start free. Bring your whole team.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Run the free scanner today. For Boppi Cloud and enterprise, email us for early access.
+            Run the free scanner today. Bring your team into a free workspace when you're ready.
           </p>
         </div>
 
@@ -73,11 +73,11 @@ const Pricing = () => {
             <div className="mb-6 pt-4">
               <h3 className="text-2xl font-bold mb-2">Boppi Cloud & Control</h3>
               <div className="flex flex-wrap items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold">Early access</span>
-                <span className="text-muted-foreground text-sm">teams & enterprise</span>
+                <span className="text-5xl font-bold">Free beta</span>
+                <span className="text-muted-foreground text-sm">at app.boppi.io</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                For teams that need shared visibility, approvals, and control over AI access.
+                For teams and enterprises that need shared visibility, approvals, and control over AI access.
               </p>
             </div>
 
@@ -94,16 +94,19 @@ const Pricing = () => {
               className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
               asChild
             >
-              <a href={LINKS.earlyAccess}>Email about early access</a>
+              <a href={LINKS.signup} target="_blank" rel="noopener noreferrer">Create a workspace</a>
             </Button>
-            <p className="mt-3 text-center text-sm text-muted-foreground">
-              Opens your email app
-            </p>
+            <a
+              href={LINKS.talk}
+              className="mt-3 text-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Talk to us
+            </a>
           </Card>
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>The free scanner works today with no account. Boppi Cloud is in early access: email us and tell us about your team.</p>
+          <p>The scanner works with no account. The team workspace is a free beta at app.boppi.io. Need enterprise features? Talk to us.</p>
         </div>
       </div>
     </section>

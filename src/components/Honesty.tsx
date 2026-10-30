@@ -34,7 +34,7 @@ const questions = [
   },
   {
     question: "How do I get started?",
-    answer: "Anyone can run the free scanner right now with npx boppi scan. No account needed. For Boppi Cloud for your team or company, email us for early access.",
+    answer: "Anyone can run the free scanner right now with npx boppi scan. No account needed. For your team, create a free workspace at app.boppi.io.",
   },
 ];
 

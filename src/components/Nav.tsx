@@ -39,11 +39,10 @@ const Nav = () => (
           <span className="sr-only sm:not-sr-only">GitHub</span>
         </a>
         <a
-          href="/checkup"
-          aria-label="Start free"
+          href={LINKS.app}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          <span className="sm:hidden">Start</span><span className="hidden sm:inline">Start free</span> <ArrowUpRight className="w-3.5 h-3.5" />
+          Sign in <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>

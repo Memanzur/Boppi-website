@@ -57,8 +57,9 @@ try {
     check(`${width}: checkup has no page overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await page.screenshot({ path: path.join(out, `checkup-${width}.png`), fullPage: true });
     await page.goto(base + '/');
-    check(`${width}: early-access CTA clearly opens email`, await page.getByRole('link', { name: 'Email about early access', exact: true }).getAttribute('href') === 'mailto:boppii.ioo@gmail.com?subject=Boppi%20early%20access');
-    check(`${width}: no unverified public signup or login CTAs`, await page.locator('a[href^="https://app.boppi.io"]').count() === 0);
+    check(`${width}: workspace CTA opens hosted signup in a new tab`, await page.getByRole('link', { name: 'Create a workspace', exact: true }).evaluate(a => a.href === 'https://app.boppi.io/signup' && a.target === '_blank'));
+    check(`${width}: sign in goes to the hosted app`, await page.getByRole('link', { name: /^Sign in/ }).getAttribute('href') === 'https://app.boppi.io');
+    check(`${width}: hosted app links only point at sign in and signup`, (await page.locator('a[href^="https://app.boppi.io"]').evaluateAll(as => as.map(a => a.href))).every(h => h === 'https://app.boppi.io/' || h === 'https://app.boppi.io/signup'));
     check(`${width}: free checkup CTA goes to instructions`, await page.getByRole('link', { name: 'Run a free checkup', exact: true }).getAttribute('href') === '/checkup');
     for (const route of ['/', '/checkup', '/demo', '/privacy', '/terms']) {
       await page.goto(base + route);
