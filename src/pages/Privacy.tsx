@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL, contactMailto } from "@/lib/site";
+
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -6,89 +8,114 @@ export default function Privacy() {
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-pink-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
-          <p className="text-gray-400 mb-8 italic">Last Updated: October 26, 2025</p>
+          <p className="text-gray-400 mb-8 italic">Last Updated: November 1, 2026</p>
 
           <section className="prose prose-invert max-w-none space-y-6">
             <section>
               <h2 className="text-2xl font-semibold text-cyan-400 mb-4">1. Introduction</h2>
               <p className="text-gray-300 leading-relaxed">
-                Boppi ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Chrome extension and services.
+                Boppi ("we", "our", or "us") provides Boppi Cloud, an AI access
+                security and governance platform. This policy describes the
+                marketing site at boppi.io and the account you create in the
+                control plane. Boppi is not a browser extension, and this policy
+                does not describe one.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">2. Information We Collect</h2>
-              
-              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.1 Information You Provide</h3>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">2. Information we handle</h2>
+
+              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.1 Account</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Email address and password (for account creation)</li>
-                <li>Name (optional)</li>
-                <li>User preferences and settings</li>
+                <li>Email address and password, when you create an account or sign in</li>
+                <li>The workspace you create, or the workspace you join by invitation</li>
+                <li>Optional multi-factor authentication, if you turn it on</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.2 Information Automatically Collected</h3>
+              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.2 Enrolled computer</h3>
+              <p className="text-gray-300 leading-relaxed">
+                If you enroll a computer, it reports findings for Claude Desktop,
+                Claude Code, and Cursor to your workspace. Those reports are
+                about configuration and potential access. They are not a copy of
+                your files and not a transcript of every prompt. Unknowns in a
+                finding stay visible. We do not claim the report covers every
+                AI tool or every action.
+              </p>
+
+              <h3 className="text-xl font-semibold text-pink-400 mt-4 mb-2">2.3 Marketing site</h3>
+              <p className="text-gray-300 leading-relaxed">
+                boppi.io is a static site. The repository for this site does not
+                include a third-party analytics script. The page requests the
+                Instrument Serif typeface from Google Fonts, which means your
+                browser contacts Google. The corner chip stores a dismissal
+                flag in session storage on your browser and does not send it
+                to us.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">3. How we use information</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>PII detection logs (anonymized)</li>
-                <li>Risk level assessments</li>
-                <li>Extension usage statistics</li>
-                <li>Page URLs where detections occur (anonymized)</li>
+                <li>To run your account and workspace</li>
+                <li>To show inventory, potential access paths, and evidenced findings with history</li>
+                <li>To show monitoring status, missed-report notices, and in-app alerts</li>
+                <li>To record an approval and to provide export</li>
+                <li>To answer email you send us</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-300 mb-2">We use your information to:</p>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">4. Where it is stored</h2>
+              <p className="text-gray-300 leading-relaxed">
+                The control plane is hosted on Vercel and stores account and
+                finding data with Supabase. This marketing site is also hosted
+                on Vercel. Traffic to both uses HTTPS. This policy does not
+                claim a certification, and it does not describe a local-only
+                product that keeps every record on the device.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">5. Sharing</h2>
+              <p className="text-gray-300 mb-2">We do not sell personal information. We share data only:</p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Provide and maintain our services</li>
-                <li>Notify you about changes to our services</li>
-                <li>Analyze usage patterns to improve our services</li>
-                <li>Detect and prevent security threats</li>
+                <li>With the hosting and database providers above, so the service can run</li>
+                <li>If you export it, or if you invite someone into your workspace</li>
+                <li>To comply with law, or to respond to abuse of the service</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">4. Data Storage and Security</h2>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">6. Your choices</h2>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>All data is encrypted in transit and at rest</li>
-                <li>Data is stored securely in Supabase (PostgreSQL database)</li>
-                <li>We implement industry-standard security measures</li>
+                <li>Export data from the control plane</li>
+                <li>Email us to request access to, or deletion of, your account data</li>
+                <li>Turn optional MFA on or leave it off</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed mt-4">
+                A self-serve deletion control is not described here. Send the
+                request by email and we will handle it on the account.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">7. Contact</h2>
+              <p className="text-gray-300 mb-2">For privacy questions, email:</p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li>
+                  <a href={contactMailto("Boppi privacy")} className="text-cyan-400 hover:underline">
+                    {CONTACT_EMAIL}
+                  </a>
+                </li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">5. Data Sharing</h2>
-              <p className="text-gray-300 mb-2">We do not sell your personal information. We may share data only:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>To comply with legal obligations</li>
-                <li>To protect our rights and safety</li>
-                <li>With service providers (e.g., Supabase) under strict agreements</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">6. Your Rights</h2>
-              <p className="text-gray-300 mb-2">You have the right to:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Access your personal data</li>
-                <li>Request deletion of your data</li>
-                <li>Request data portability</li>
-                <li>Opt-out of certain data processing</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">7. Contact Us</h2>
-              <p className="text-gray-300 mb-2">For privacy concerns, contact us at:</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Email: privacy@boppi.io</li>
-                <li>Website: <a href="https://boppi.io/contact" className="text-cyan-400 hover:underline">https://boppi.io/contact</a></li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">8. Changes to This Policy</h2>
+              <h2 className="text-2xl font-semibold text-cyan-400 mb-4">8. Changes</h2>
               <p className="text-gray-300">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+                We may update this policy. The date at the top is when this
+                page last changed. Earlier text on this site described a
+                browser extension and local masking. That description is withdrawn.
               </p>
             </section>
           </section>
