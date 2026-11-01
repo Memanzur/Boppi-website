@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# Boppi marketing site
 
-## Project info
+Public site for [boppi.io](https://boppi.io). It presents Boppi Cloud, an AI access security and governance platform, and sends people to create an account in the control plane.
 
-**URL**: https://lovable.dev/projects/2bb85996-dea3-43d5-9e02-c3d12cccd987
+The product is not a browser extension, not a local-only scanner, not antivirus, and not a chatbot. Copy on this site should stay inside what the control plane actually does today:
 
-## How can I edit this code?
+- Discovery for Claude Desktop, Claude Code, and Cursor on an enrolled computer
+- Potential access paths
+- Evidenced findings, with history
+- Monitoring, missed-report notices, and in-app alerts
+- Propose and approve remediation, manual steps, verify on the next scan
+- Audit, export, and optional MFA
 
-There are several ways of editing your application.
+Use **potential**, **evidenced**, and **modeled**. Do not write that Boppi is safe, that someone is protected, that it prevents attacks, or that it meets a compliance regime.
 
-**Use Lovable**
+Planned, and labeled that way on the page: just-in-time access, SSO/SCIM, policy engine, automatic enforcement, Boppi Intelligence, and billing. Prices are not published. Do not add a price without Melody's decision.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2bb85996-dea3-43d5-9e02-c3d12cccd987) and start prompting.
+## Control plane URL
 
-Changes made via Lovable will be committed automatically to this repo.
+Primary calls to action open signup on the control plane. One environment variable sets that origin:
 
-**Use your preferred IDE**
+```bash
+VITE_APP_URL=https://app.boppi.io
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- No path and no trailing slash. Signup is `${VITE_APP_URL}/signup`. Sign-in is `${VITE_APP_URL}/login`.
+- Vite only exposes variables prefixed with `VITE_` to the browser. `NEXT_PUBLIC_APP_URL` would not be read.
+- If `VITE_APP_URL` is unset or blank, the site falls back to `https://app.boppi.io` (the deployed control plane).
+- Copy `.env.example` to `.env.local` for local development.
+- On Vercel, set `VITE_APP_URL` on project **boppi-website** for Production (and Preview, if previews should point elsewhere). A new value applies on the next build. This repo does not change Vercel project settings.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Develop
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server listens on port 8080. `npm run build` produces `dist/`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Stack: Vite, TypeScript, React, Tailwind, shadcn/ui.
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2bb85996-dea3-43d5-9e02-c3d12cccd987) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Production hosting is the Vercel project `boppi-website`. Do not deploy from this repository unless Melody asks.
