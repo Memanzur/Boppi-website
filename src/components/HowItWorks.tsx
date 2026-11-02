@@ -4,27 +4,27 @@ const steps = [
   {
     title: "See the access",
     description:
-      "Boppi finds your AI agents, MCP servers, and tools, and lists what each one can reach.",
+      "Boppi reads MCP configuration for Claude Desktop, Claude Code, and Cursor, and lists what each connection can reach. Unknown reach stays unknown.",
   },
   {
     title: "Understand the risk",
     description:
-      "It connects the dots between access and risk, and shows you what matters most first.",
+      "It models exposure paths from that configuration, shows the evidence, and ranks what to review first. A path is potential. It is not a record that an attack happened.",
   },
   {
-    title: "Control permissions",
+    title: "Approve a change",
     description:
-      "Restrict, grant, or revoke access with one approved click. Need access for a short time? Grant it Just-in-Time and it expires on its own.",
+      "Review the proposed edit. boppi fix removes one server only after you confirm, and it saves a backup. Other edits you make yourself. Just-in-time access is coming soon.",
   },
   {
-    title: "Verify the change",
+    title: "Check the result",
     description:
-      "Boppi rescans to confirm the change took effect. Changed your mind? Roll it back.",
+      "Run the scan again. boppi verify grades whether the predicted paths are gone. An app that is already open picks up a config change when it restarts.",
   },
   {
-    title: "Monitor access",
+    title: "Keep the record",
     description:
-      "Boppi watches for new connections and permission changes, so new risks don't slip by.",
+      "Local history stays on the machine. When you want the team to see it, boppi push sends one sanitized inventory. Continuous watching is coming soon.",
   },
 ];
 
@@ -37,8 +37,7 @@ const HowItWorks = () => {
           <p className="section-kicker">How it works</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From access to action.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            See it, understand it, fix it, confirm it, and keep watching. Five steps,
-            plain answers at every one.
+            See it, understand it, approve a change, check the next scan, and keep the record.
           </p>
         </div>
 

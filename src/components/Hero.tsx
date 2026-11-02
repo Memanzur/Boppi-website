@@ -35,7 +35,7 @@ const CopyCommand = () => {
 const proofs = [
   { icon: LockKeyhole, text: "Runs on your machine. No account needed." },
   { icon: FileSearch, text: "Every finding shows its evidence." },
-  { icon: GitBranch, text: "Open source. Nothing changes without your OK." },
+  { icon: GitBranch, text: "Open source. A fix asks before it edits a file." },
 ];
 
 const Hero = () => {
@@ -54,7 +54,8 @@ const Hero = () => {
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
             Boppi shows you which AI agents, MCP servers, and tools are connected to your work,
-            what each one can reach, and where the risks are. Then it helps you fix them in one click.
+            what each one can reach, and where the risks are. It proposes a change. A person approves it
+            before a configuration file is edited.
           </p>
 
           <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">

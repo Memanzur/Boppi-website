@@ -7,7 +7,7 @@ const rules = [
     icon: FileSearch,
     title: "Your data stays yours",
     body:
-      "Scans run on your device and read your AI settings, not the contents of your files. Nothing is uploaded unless you choose to share it, and Boppi strips out known secret formats first. Preview any upload with --dry-run, and review exports before you share them.",
+      "Scans run on your device and read MCP configuration, not the contents of your files. Nothing is uploaded unless you run boppi push. Recognized secret shapes are redacted first. Preview the payload with --dry-run, and review an export before you share it.",
   },
   {
     icon: ShieldQuestion,
@@ -19,18 +19,18 @@ const rules = [
     icon: Scale,
     title: "You decide what changes",
     body:
-      "Boppi never changes a permission on its own. Every fix asks first and saves a backup. Backups hold your original settings, secrets included, so keep them somewhere safe.",
+      "boppi fix asks in the terminal before it removes one MCP server, and it saves a backup of that file. The backup can include secrets, and it stays on your machine. The command does not grant access, and it does not edit anything else.",
   },
 ];
 
 const questions = [
   {
     question: "Does Boppi see what my AI actually did?",
-    answer: "A scan starts from your settings and shows what your AI could access. Activity monitoring adds what it actually tried to use, for the AI tools that support it.",
+    answer: "A scan starts from your settings and shows what your AI could access. It does not record prompts, tool arguments, or what the agent actually did.",
   },
   {
     question: "Can Boppi change permissions for me?",
-    answer: "Yes, with your OK. Boppi can remove a connection, narrow which folders an AI can reach, grant temporary access, and roll changes back. Changes go into the AI tool's settings, so a tool that's already running picks them up when it restarts.",
+    answer: "boppi fix can remove one MCP server entry after you confirm, and it saves a backup first. It does not grant access, and it does not apply a change from the website. An app that is already open picks up the file when it restarts. Just-in-time access is coming soon.",
   },
   {
     question: "How do I get started?",
@@ -77,8 +77,12 @@ const Honesty = () => {
             ))}
           </div>
           <div className="mt-6 pt-5 border-t border-border/50 text-center">
+            <a href="/security" className="text-sm text-primary hover:underline font-semibold">
+              Read what a scan sends
+            </a>
+            <span className="mx-3 text-muted-foreground">·</span>
             <a href="/privacy" className="text-sm text-primary hover:underline font-semibold">
-              Read the privacy policy
+              Privacy policy
             </a>
           </div>
         </Card>

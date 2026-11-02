@@ -61,7 +61,7 @@ try {
     check(`${width}: sign in goes to the hosted app`, await page.getByRole('link', { name: /^Sign in/ }).getAttribute('href') === 'https://app.boppi.io');
     check(`${width}: hosted app links only point at sign in and signup`, (await page.locator('a[href^="https://app.boppi.io"]').evaluateAll(as => as.map(a => a.href))).every(h => h === 'https://app.boppi.io/' || h === 'https://app.boppi.io/signup'));
     check(`${width}: free checkup CTA goes to instructions`, await page.getByRole('link', { name: 'Run a free checkup', exact: true }).getAttribute('href') === '/checkup');
-    for (const route of ['/', '/checkup', '/demo', '/privacy', '/terms']) {
+    for (const route of ['/', '/checkup', '/demo', '/security', '/privacy', '/terms']) {
       await page.goto(base + route);
       const audit = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
       check(`${width}: ${route} WCAG A/AA automated checks`, audit.violations.length === 0);

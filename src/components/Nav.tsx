@@ -5,6 +5,7 @@ const items = [
   { label: "How it works", href: "/#how-it-works" },
   { label: "Platform", href: "/#platform" },
   { label: "Get started", href: "/#pricing" },
+  { label: "Security", href: "/security" },
 ];
 
 const Nav = () => (

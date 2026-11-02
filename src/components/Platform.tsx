@@ -8,22 +8,22 @@ const capabilities = [
   {
     icon: KeyRound,
     title: "You choose what to share",
-    description: "Scans run on each device. You decide what gets sent to your team workspace, and you can withdraw or erase it at any time.",
+    description: "Scans run on the device. Nothing is uploaded until you run boppi push, and --dry-run prints the payload first. Findings, backups, and local history stay on the machine.",
   },
   {
     icon: Network,
-    title: "Everything in one place",
-    description: "See every device's AI connections, findings, and access in one dashboard, with how recent each scan is.",
+    title: "Inventory in one place",
+    description: "Pushed scans show up as inventory, findings, and history, with how recent each push is.",
   },
   {
     icon: RefreshCw,
-    title: "Request, approve, verify",
-    description: "Teammates request changes, admins approve them, and Boppi confirms each fix took effect. Roll back with one click.",
+    title: "Propose, then a person approves",
+    description: "The workspace holds a remediation proposal until someone approves it. Approval does not edit the device by itself. A later scan is the check.",
   },
   {
     icon: Users,
-    title: "Built for the whole organization",
-    description: "Organizations, roles, approval policies, single sign-on, and a full audit trail of who changed what and when.",
+    title: "An account for the team",
+    description: "Team invites, MFA, versioned policies, and exports. Single sign-on is coming soon.",
   },
 ];
 
@@ -32,19 +32,19 @@ const productTruth = [
     icon: ShieldCheck,
     label: "Visibility",
     title: "Know what is connected.",
-    body: "Your AI agents, MCP servers, and tools in one list, with what each one can reach.",
+    body: "AI agents, MCP servers, and tools, with what the configuration says each one can reach.",
   },
   {
     icon: Building2,
     label: "Understanding",
     title: "Know why it matters.",
-    body: "A clear explanation of every risk, backed by evidence and ranked by what to fix first.",
+    body: "Every risk is a potential path with evidence, ranked so you know what to review first.",
   },
   {
     icon: Wrench,
     label: "Control",
     title: "Choose what happens next.",
-    body: "Grant, restrict, or revoke access, then confirm the change took effect.",
+    body: "Approve a proposed change, then confirm it on the next scan.",
   },
 ];
 
@@ -56,14 +56,13 @@ const Platform = () => {
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 border border-secondary/30">
             <Building2 className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-secondary">Agent + Cloud + Control + Intelligence</span>
+            <span className="text-sm font-semibold text-secondary">Agent + Cloud + Control</span>
           </div>
           <p className="section-kicker">One AI security platform</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">See it. Understand it. Control it.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            For individuals, developers, teams, and enterprises. Boppi brings your AI
-            connections, risks, and permissions into one place, so the right people
-            make the call.
+            For people and teams who need to see AI access and decide what changes.
+            Boppi brings connections, potential risks, and proposals into one place.
           </p>
         </div>
 
@@ -114,9 +113,10 @@ const Platform = () => {
                 <h3 className="font-semibold">Changes you can see and undo</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Boppi makes changes through each AI tool's own settings, so you always know
-                exactly what changed and where. A tool that's already running picks up the
-                change when it restarts. Want to see it first? Try the demo or talk to us.
+                boppi fix edits an MCP config file only after you confirm, and it keeps a backup
+                of that file. The cloud does not push the edit to the machine. An app that is
+                already open picks up the file when it restarts. Want to see a sample first?
+                Open the demo.
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-stretch gap-2">
@@ -139,7 +139,7 @@ const Platform = () => {
           <p className="section-kicker">Interactive demo · sample data</p>
           <h3 className="text-2xl font-semibold mb-3">Try it with sample data.</h3>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
-            Explore example connections, open a finding, and preview a fix. The demo uses
+            Explore example connections, open a finding, and preview a modeled removal. The demo uses
             made-up data, so nothing on your device is scanned or changed.
           </p>
           <a className="inline-block mt-4 text-primary underline" href="/demo">Explore the demo →</a>

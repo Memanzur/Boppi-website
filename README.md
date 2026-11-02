@@ -1,6 +1,6 @@
 # boppi.io website
 
-The marketing site for Boppi: home page, `/checkup`, the synthetic `/demo`, `/privacy` and `/terms`. Vite, React, TypeScript, Tailwind and shadcn/ui. The project started from a Lovable template; Lovable is not how it is built or published now.
+The marketing site for Boppi: home page, `/checkup`, the synthetic `/demo`, `/security`, `/privacy` and `/terms`. Vite, React, TypeScript, Tailwind and shadcn/ui. The project started from a Lovable template; Lovable is not how it is built or published now.
 
 ## Work on it locally
 

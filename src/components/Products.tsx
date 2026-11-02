@@ -5,28 +5,28 @@ const products = [
   {
     phase: "Discover",
     title: "Boppi Agent",
-    body: "Runs on your device. Finds AI agents, MCP servers, and tools, maps what they can reach, and applies the fixes you approve.",
+    body: "Runs on your machine. It finds AI agents and MCP servers, maps what their configuration can reach, and removes one server only after you confirm.",
     icon: ShieldCheck,
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
     phase: "Organize",
     title: "Boppi Cloud",
-    body: "One dashboard for every device, team, and finding, with organizations, roles, and audit history built in.",
+    body: "Inventory, findings, and history for the scans you push, plus team invites, MFA, versioned policies, and exports.",
     icon: Network,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
     phase: "Control",
     title: "Boppi Control",
-    body: "One-click remediation, rollback, and Just-in-Time access with approvals and automatic expiration.",
+    body: "Remediation is a proposal. A person approves it before a configuration change. The next scan is how you check the result.",
     icon: Activity,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "Analyze",
+    phase: "Coming soon",
     title: "Boppi Intelligence",
-    body: "Evidence-based security analysis that explains each risk and how confident Boppi is about it.",
+    body: "A separate analysis product is not available yet. Today's scan already explains each potential path, with the evidence and a confidence score.",
     icon: Wrench,
     tone: "bg-muted text-muted-foreground border-border",
   },
@@ -41,7 +41,7 @@ const Products = () => {
           <p className="section-kicker">The Boppi platform</p>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Four parts. One platform.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Each part is useful on its own. Together, they cover AI access from your laptop to your whole company.
+            The scanner is complete on its own. The workspace is there when a team wants that same inventory in one place.
           </p>
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">

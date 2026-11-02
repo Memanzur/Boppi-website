@@ -55,7 +55,7 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              AI security and access control for people and teams. Know what your AI can access. Stay in control.
+              Security and governance for AI agents and MCP servers. Know what your AI can access. You decide what changes.
             </p>
           </div>
 
@@ -83,6 +83,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="/security" className="hover:text-primary transition-colors">Security</a></li>
               <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
             </ul>
@@ -97,7 +98,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
-            <span>Scans run on your device · Sharing is optional</span>
+            <span>Scans run on your device · Upload only with boppi push</span>
           </div>
         </div>
       </div>

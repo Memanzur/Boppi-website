@@ -7,43 +7,43 @@ const features = [
     icon: ListTree,
     title: "Find your AI connections",
     description:
-      "Boppi discovers the AI agents, MCP servers, and tools on your machine, plus the files, keys, and services they connect to.",
+      "Boppi reads MCP configuration for Claude Desktop, Claude Code, and Cursor. It lists the agents and servers it finds, and the capabilities that configuration implies.",
     category: "Discover",
   },
   {
     icon: Route,
     title: "See where the risk is",
     description:
-      "Reading files is fine. Sending data to the internet is fine. Together, they can leak private data. Boppi spots risky combinations like this and explains why in plain words.",
+      "Reading files is one grant. Sending data to the internet is another. Together they can be a problem. Boppi models those chains and explains the evidence in plain words. A path is potential, not proof of an incident.",
     category: "Understand",
   },
   {
     icon: Wrench,
-    title: "Fix it in one click",
+    title: "Propose a fix, then approve it",
     description:
-      "Restrict, change, or revoke what an AI can do with one approved click. Boppi saves a backup first, then checks that the fix took effect.",
+      "boppi plan compares edits and changes nothing. boppi fix removes one server only after you confirm in the terminal, and it saves a backup first. The next scan is how you check the result.",
     category: "Control",
   },
   {
     icon: KeyRound,
-    title: "Just-in-Time access",
+    title: "Just-in-time access",
     description:
-      "Give an AI tool access only when it needs it. Someone approves the request, and the access expires on its own.",
-    category: "Grant",
+      "Coming soon. The published scanner does not grant temporary access or expire it for you. A person still approves any configuration change.",
+    category: "Coming soon",
   },
   {
     icon: Activity,
-    title: "Watch for changes",
+    title: "See what changed",
     description:
-      "Boppi keeps an eye out for new connections and permission changes, and flags new risks as they show up.",
-    category: "Monitor",
+      "Run the scan again. Local history compares it with the previous one. A foreground watch command is coming soon and is not in the published 0.3.0 scanner.",
+    category: "History",
   },
   {
     icon: FileSearch,
     title: "Evidence behind every finding",
     description:
-      "Boppi Intelligence shows what it found, how sure it is, and why. No black-box scores, just reasons you can check.",
-    category: "Intelligence",
+      "Each path names what the configuration showed, how confident the model is, and what is still unknown. You can check the reason. It is not a black-box score.",
+    category: "Evidence",
   },
 ];
 
