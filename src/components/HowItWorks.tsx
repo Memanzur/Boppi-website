@@ -2,29 +2,24 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "See the access",
-    description:
-      "Boppi finds your AI agents, MCP servers, and tools, and lists what each one can reach.",
+    title: "Discover",
+    description: "Read MCP configuration for Claude Desktop, Claude Code, and Cursor. Unknown reach stays unknown.",
   },
   {
-    title: "Understand the risk",
-    description:
-      "It connects the dots between access and risk, and shows you what matters most first.",
+    title: "Read the graph and paths",
+    description: "The scan connects agents, servers, and permissions, then reports the attack paths that combination can support.",
   },
   {
-    title: "Control permissions",
-    description:
-      "Restrict, grant, or revoke access with one approved click. Need access for a short time? Grant it Just-in-Time and it expires on its own.",
+    title: "Review the recommendation",
+    description: "Boppi names the permission change that removes the most modeled risk. The recommendation does not edit a file.",
   },
   {
-    title: "Verify the change",
-    description:
-      "Boppi rescans to confirm the change took effect. Changed your mind? Roll it back.",
+    title: "Fix and verify",
+    description: "A supported local change is applied after you confirm. The next scan checks whether the predicted paths are gone.",
   },
   {
-    title: "Monitor access",
-    description:
-      "Boppi watches for new connections and permission changes, so new risks don't slip by.",
+    title: "Roll back or share",
+    description: "Local rollback is in the latest scanner. Push sends one sanitized inventory to the workspace when you want the team to see it.",
   },
 ];
 
@@ -35,10 +30,9 @@ const HowItWorks = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal mb-14 max-w-2xl">
           <p className="section-kicker">How it works</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From access to action.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From discovery to a verified change.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            See it, understand it, fix it, confirm it, and keep watching. Five steps,
-            plain answers at every one.
+            This is the loop that is available now. Full JIT, enterprise-wide changes, and runtime blocking are on the roadmap.
           </p>
         </div>
 

@@ -5,21 +5,21 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { LINKS } from "@/lib/links";
 
 const scannerFeatures = [
-  "Works with Claude Desktop, Claude Code, and Cursor",
-  "Finds AI connections and maps what they can reach",
-  "Risk scores with plain-language explanations",
-  "Suggested fixes, ranked by how much risk they remove",
-  "HTML and JSON reports with evidence for every finding",
-  "CI checks with --config and --fail-on",
-  "Open source (Apache-2.0). No account, no telemetry. Scans stay on your machine unless you share them",
+  "Discovery for Claude Desktop, Claude Code, and Cursor",
+  "Security graph and attack paths from that configuration",
+  "Permission-change recommendations",
+  "Local remediation after you confirm, then verification",
+  "Local rollback, in the latest scanner",
+  "HTML, JSON, and SARIF reports",
+  "Open source (Apache-2.0). A scan stays on your machine unless you run boppi push",
 ];
 
 const teamFeatures = [
-  "One dashboard for every device and finding",
-  "Organizations, roles, and audit history",
-  "One-click remediation with rollback",
-  "Just-in-Time access with approvals and automatic expiration",
-  "Single sign-on and organization-wide policies",
+  "History for scans you push",
+  "Team invites",
+  "MFA on the account",
+  "Versioned policies",
+  "Exports",
 ];
 
 const Pricing = () => {
@@ -29,9 +29,9 @@ const Pricing = () => {
       <div className="max-w-5xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-12 space-y-4">
           <p className="section-kicker">Get started</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start free. Bring your whole team.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Start local. Join the workspace.</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Run the free scanner today. Bring your team into a free workspace when you're ready.
+            The published scanner is v0.3.0. Rollback is in the latest scanner. The private beta is the cloud workspace.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ const Pricing = () => {
                 <span className="text-muted-foreground text-sm">Apache-2.0</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Version 0.3.0 · scans and one-click fixes.
+                Version 0.3.0 asks before a local change. Rollback is in the latest scanner.
               </p>
             </div>
 
@@ -71,13 +71,13 @@ const Pricing = () => {
 
           <Card className="p-8 flex flex-col bg-card border-border hover:border-secondary/50 transition-colors duration-200">
             <div className="mb-6 pt-4">
-              <h3 className="text-2xl font-bold mb-2">Boppi Cloud & Control</h3>
+              <h3 className="text-2xl font-bold mb-2">Cloud workspace</h3>
               <div className="flex flex-wrap items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold">Free beta</span>
+                <span className="text-5xl font-bold">Private beta</span>
                 <span className="text-muted-foreground text-sm">at app.boppi.io</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                For teams and enterprises that need shared visibility, approvals, and control over AI access.
+                History, invites, MFA, versioned policies, and exports. Cloud monitoring inside the workspace is in beta.
               </p>
             </div>
 
@@ -94,7 +94,7 @@ const Pricing = () => {
               className="w-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/90"
               asChild
             >
-              <a href={LINKS.signup} target="_blank" rel="noopener noreferrer">Create a workspace</a>
+              <a href={LINKS.privateBeta} target="_blank" rel="noopener noreferrer">Join the private beta</a>
             </Button>
             <a
               href={LINKS.talk}
@@ -106,7 +106,9 @@ const Pricing = () => {
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>The scanner works with no account. The team workspace is a free beta at app.boppi.io. Need enterprise features? Talk to us.</p>
+          <p>
+            On the roadmap, and not available in the beta: full just-in-time access with verified expiry, enterprise-wide permission changes, runtime blocking, and identity integrations including SSO.
+          </p>
         </div>
       </div>
     </section>

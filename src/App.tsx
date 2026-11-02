@@ -9,6 +9,7 @@ import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Checkup from "./pages/Checkup";
 import Demo from "./pages/Demo";
+import Security from "./pages/Security";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/checkup" element={<Checkup />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/terms-of-service" element={<Terms />} />

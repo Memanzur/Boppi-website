@@ -47,7 +47,7 @@ export default function Privacy() {
                 else.
               </P>
               <P>
-                In public v0.3.0, boppi push is the network command. When you run it, it sends the
+                In public v0.3.0, boppi push is the network command. The <a href="/security" className="text-cyan-400 hover:underline">security page</a> lists what that command sends and what stays on the machine. When you run push, it sends the
                 sanitized inventory of a single scan (agent, server, capability, and permission records,
                 plus fingerprinted paths and redacted configuration metadata) to the workspace you
                 name with --url, over HTTPS, authenticated by the collector token you generated in that

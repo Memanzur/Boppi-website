@@ -2,9 +2,10 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { BETA_DEMO, LINKS } from "@/lib/links";
 
 const items = [
+  { label: "Pillars", href: "/#products" },
+  { label: "Status", href: "/#features" },
   { label: "How it works", href: "/#how-it-works" },
-  { label: "Platform", href: "/#platform" },
-  { label: "Get started", href: "/#pricing" },
+  { label: "Security", href: "/security" },
 ];
 
 const Nav = () => (
@@ -33,16 +34,27 @@ const Nav = () => (
           href={LINKS.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-border text-sm font-medium hover:border-primary/60 transition-colors"
+          className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-border text-sm font-medium hover:border-primary/60 transition-colors"
         >
           <Github className="w-4 h-4" />
           <span className="sr-only sm:not-sr-only">GitHub</span>
         </a>
         <a
           href={LINKS.app}
+          className="inline-flex items-center gap-1.5 px-2 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Sign in
+        </a>
+        <a
+          href={LINKS.privateBeta}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Join the private beta"
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
         >
-          Sign in <ArrowUpRight className="w-3.5 h-3.5" />
+          <span className="sm:hidden">Join beta</span>
+          <span className="hidden sm:inline">Join the private beta</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Check, Copy, ArrowRight, FileSearch, GitBranch, LockKeyhole } from "lucide-react";
+import { Check, Copy, ArrowRight, ArrowUpRight, FileSearch, GitBranch, LockKeyhole } from "lucide-react";
 import ScanTerminal from "@/components/ScanTerminal";
-import { SCAN_COMMAND, SCAN_VERSION } from "@/lib/links";
+import { LINKS, SCAN_COMMAND, SCAN_VERSION } from "@/lib/links";
 
 const CopyCommand = () => {
   const [copied, setCopied] = useState(false);
@@ -33,9 +33,9 @@ const CopyCommand = () => {
 };
 
 const proofs = [
-  { icon: LockKeyhole, text: "Runs on your machine. No account needed." },
-  { icon: FileSearch, text: "Every finding shows its evidence." },
-  { icon: GitBranch, text: "Open source. Nothing changes without your OK." },
+  { icon: LockKeyhole, text: "Discovery, the security graph, and attack paths for supported clients." },
+  { icon: FileSearch, text: "Recommendations, local remediation, and verification. Rollback is in the latest scanner." },
+  { icon: GitBranch, text: "Cloud workspace: history, team invites, MFA, versioned policies, and exports." },
 ];
 
 const Hero = () => {
@@ -45,24 +45,28 @@ const Hero = () => {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
             <span className="w-2 h-2 rounded-full bg-success" />
-            AI security & access control
+            AI security control plane
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance] mb-7">
-            Know what your AI can access. Stay in control.
+            Discover, map, and control AI access.
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-            Boppi shows you which AI agents, MCP servers, and tools are connected to your work,
-            what each one can reach, and where the risks are. Then it helps you fix them in one click.
+            Boppi is the control plane for AI agents and MCP servers. Six pillars — Discover, Graph,
+            Paths, Fix, Guard, and Learn — cover what agents can reach, which permission to change,
+            and how that change is governed.
           </p>
 
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">
-            Start with the free scanner. One command, no account, results in seconds.
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
-            <CopyCommand />
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+            <a
+              href={LINKS.privateBeta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Join the private beta <ArrowUpRight className="w-4 h-4" />
+            </a>
             <a
               href="/checkup"
               className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
@@ -71,9 +75,13 @@ const Hero = () => {
             </a>
           </div>
 
+          <div className="mb-6">
+            <CopyCommand />
+          </div>
+
           <p className="mb-6 text-xs text-muted-foreground leading-relaxed">
-            Free scanner {SCAN_VERSION} · Works with Claude Desktop, Claude Code, and Cursor ·
-            Needs Node.js 18+ · macOS (Windows and Linux are experimental)
+            Published scanner {SCAN_VERSION} · Claude Desktop, Claude Code, and Cursor ·
+            Node.js 18+ · macOS (Windows and Linux are experimental). Rollback is in the latest scanner, not in {SCAN_VERSION}.
           </p>
 
           <ul className="space-y-2.5">

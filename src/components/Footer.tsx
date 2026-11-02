@@ -55,17 +55,17 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              AI security and access control for people and teams. Know what your AI can access. Stay in control.
+              The AI security control plane. Discover, Graph, Paths, Fix, Guard, and Learn.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><a href="/#paths" className="hover:text-primary transition-colors">Risk model</a></li>
-              <li><a href="/#features" className="hover:text-primary transition-colors">What it tells you</a></li>
+              <li><a href="/#products" className="hover:text-primary transition-colors">Six pillars</a></li>
+              <li><a href="/#features" className="hover:text-primary transition-colors">Capability status</a></li>
               <li><a href="/#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="/#platform" className="hover:text-primary transition-colors">Platform</a></li>
+              <li><a href="/#platform" className="hover:text-primary transition-colors">Cloud workspace</a></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors">Get started</a></li>
             </ul>
           </div>
@@ -83,6 +83,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="/security" className="hover:text-primary transition-colors">Security</a></li>
               <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
             </ul>
@@ -97,7 +98,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-success" />
-            <span>Scans run on your device · Sharing is optional</span>
+            <span>Scans run on your device · Upload only with boppi push</span>
           </div>
         </div>
       </div>

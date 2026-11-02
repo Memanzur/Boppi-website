@@ -1,34 +1,42 @@
-import { Activity, Network, ShieldCheck, Wrench } from "lucide-react";
+import { Eye, GitBranch, Route, Wrench, Shield, Sparkles } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const products = [
+const pillars = [
   {
-    phase: "Discover",
-    title: "Boppi Agent",
-    body: "Runs on your device. Finds AI agents, MCP servers, and tools, maps what they can reach, and applies the fixes you approve.",
-    icon: ShieldCheck,
+    name: "Discover",
+    body: "Identify AI agents, MCP servers, integrations, and what they can access.",
+    icon: Eye,
     tone: "bg-primary/15 text-primary border-primary/30",
   },
   {
-    phase: "Organize",
-    title: "Boppi Cloud",
-    body: "One dashboard for every device, team, and finding, with organizations, roles, and audit history built in.",
-    icon: Network,
+    name: "Graph",
+    body: "Map agents, identities, permissions, and the resources those permissions reach.",
+    icon: GitBranch,
     tone: "bg-secondary/15 text-secondary border-secondary/30",
   },
   {
-    phase: "Control",
-    title: "Boppi Control",
-    body: "One-click remediation, rollback, and Just-in-Time access with approvals and automatic expiration.",
-    icon: Activity,
+    name: "Paths",
+    body: "Detect dangerous combinations and the attack paths they create.",
+    icon: Route,
     tone: "bg-accent/15 text-accent border-accent/30",
   },
   {
-    phase: "Analyze",
-    title: "Boppi Intelligence",
-    body: "Evidence-based security analysis that explains each risk and how confident Boppi is about it.",
+    name: "Fix",
+    body: "Recommend a permission change, apply a supported local fix, verify it, and roll it back.",
     icon: Wrench,
-    tone: "bg-muted text-muted-foreground border-border",
+    tone: "bg-primary/15 text-primary border-primary/30",
+  },
+  {
+    name: "Guard",
+    body: "Govern access with policy and monitoring. Full JIT and runtime blocking are on the roadmap.",
+    icon: Shield,
+    tone: "bg-secondary/15 text-secondary border-secondary/30",
+  },
+  {
+    name: "Learn",
+    body: "Improve detection from verified evidence. Early intelligence components are in beta.",
+    icon: Sparkles,
+    tone: "bg-accent/15 text-accent border-accent/30",
   },
 ];
 
@@ -38,23 +46,21 @@ const Products = () => {
     <section id="products" className="py-16 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal text-center mb-10 space-y-3">
-          <p className="section-kicker">The Boppi platform</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">Four parts. One platform.</h2>
+          <p className="section-kicker">Six pillars</p>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em]">One control plane.</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Each part is useful on its own. Together, they cover AI access from your laptop to your whole company.
+            The pillars are the product. Each capability under them is marked Available now, In beta, or On the roadmap.
           </p>
         </div>
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="hidden md:block absolute left-[12.5%] right-[12.5%] top-7 h-px bg-gradient-to-r from-primary/50 via-secondary/50 to-border" aria-hidden="true" />
-          {products.map((item) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {pillars.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.phase} className="relative text-center">
-                <div className={`relative z-10 mx-auto w-14 h-14 rounded-2xl border flex items-center justify-center shadow-lg shadow-background/40 ${item.tone}`}>
-                  <Icon className="w-6 h-6" />
+              <div key={item.name} className="rounded-2xl border border-border bg-card/60 p-5">
+                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center ${item.tone}`}>
+                  <Icon className="w-5 h-5" />
                 </div>
-                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground font-semibold mt-4">{item.phase}</p>
-                <h3 className="font-semibold text-lg mt-2">{item.title}</h3>
+                <h3 className="font-semibold text-lg mt-4">{item.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-2">{item.body}</p>
               </div>
             );

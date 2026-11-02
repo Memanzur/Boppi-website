@@ -7,6 +7,8 @@ export const LINKS = {
   issues: "https://github.com/Memanzur/boppi-scan/issues",
   app: "https://app.boppi.io",
   signup: "https://app.boppi.io/signup",
+  // Private beta uses the live app signup route.
+  privateBeta: "https://app.boppi.io/signup",
   earlyAccess: "mailto:boppii.ioo@gmail.com?subject=Boppi%20early%20access",
   email: "boppii.ioo@gmail.com",
   talk: "mailto:boppii.ioo@gmail.com?subject=Boppi%20for%20teams",
