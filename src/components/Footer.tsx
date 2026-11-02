@@ -55,17 +55,17 @@ const Footer = () => {
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Security and governance for AI agents and MCP servers. Know what your AI can access. You decide what changes.
+              The AI security control plane. Discover, Graph, Paths, Fix, Guard, and Learn.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><a href="/#paths" className="hover:text-primary transition-colors">Risk model</a></li>
-              <li><a href="/#features" className="hover:text-primary transition-colors">What it tells you</a></li>
+              <li><a href="/#products" className="hover:text-primary transition-colors">Six pillars</a></li>
+              <li><a href="/#features" className="hover:text-primary transition-colors">Capability status</a></li>
               <li><a href="/#how-it-works" className="hover:text-primary transition-colors">How it works</a></li>
-              <li><a href="/#platform" className="hover:text-primary transition-colors">Platform</a></li>
+              <li><a href="/#platform" className="hover:text-primary transition-colors">Cloud workspace</a></li>
               <li><a href="/#pricing" className="hover:text-primary transition-colors">Get started</a></li>
             </ul>
           </div>

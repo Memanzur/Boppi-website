@@ -17,7 +17,7 @@ const DiscoveryMarquee = () => (
         <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.03em]">See your AI connections in one scan.</h2>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-lg">
           MCP servers are the plug-ins that let an AI assistant use tools, files, and services.
-          Boppi reads MCP settings, lists the connections it finds, and maps what each one can reach.
+          Boppi reads MCP settings for supported clients, builds the security graph, and reports attack paths from that configuration.
           ChatGPT, Gemini, Copilot, VS Code, and Windsurf are not part of discovery.
         </p>
       </div>

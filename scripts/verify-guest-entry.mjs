@@ -57,7 +57,7 @@ try {
     check(`${width}: checkup has no page overflow`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await page.screenshot({ path: path.join(out, `checkup-${width}.png`), fullPage: true });
     await page.goto(base + '/');
-    check(`${width}: workspace CTA opens hosted signup in a new tab`, await page.getByRole('link', { name: 'Create a workspace', exact: true }).evaluate(a => a.href === 'https://app.boppi.io/signup' && a.target === '_blank'));
+    check(`${width}: private beta CTA opens hosted signup in a new tab`, await page.getByRole('link', { name: 'Join the private beta', exact: true }).evaluateAll(as => as.length > 0 && as.every(a => a.href === 'https://app.boppi.io/signup' && a.target === '_blank')));
     check(`${width}: sign in goes to the hosted app`, await page.getByRole('link', { name: /^Sign in/ }).getAttribute('href') === 'https://app.boppi.io');
     check(`${width}: hosted app links only point at sign in and signup`, (await page.locator('a[href^="https://app.boppi.io"]').evaluateAll(as => as.map(a => a.href))).every(h => h === 'https://app.boppi.io/' || h === 'https://app.boppi.io/signup'));
     check(`${width}: free checkup CTA goes to instructions`, await page.getByRole('link', { name: 'Run a free checkup', exact: true }).getAttribute('href') === '/checkup');

@@ -19,8 +19,8 @@ export default function Security() {
           <p className="section-kicker">Security</p>
           <h1 className="text-4xl font-semibold tracking-tight">What leaves the machine.</h1>
           <p className="text-muted-foreground leading-relaxed">
-            This page describes the published scanner, <span className="font-mono text-foreground">boppi</span> 0.3.0,
-            and the public behavior of the app at app.boppi.io. It does not describe commands that are not in that package.
+            Network behavior below is the published scanner, <span className="font-mono text-foreground">boppi</span> 0.3.0.
+            Local rollback is in the latest scanner. It restores a backup already on the machine and does not upload that backup. Version 0.3.0 writes the backup and does not include the rollback command.
           </p>
         </header>
 

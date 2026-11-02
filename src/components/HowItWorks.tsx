@@ -2,29 +2,24 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "See the access",
-    description:
-      "Boppi reads MCP configuration for Claude Desktop, Claude Code, and Cursor, and lists what each connection can reach. Unknown reach stays unknown.",
+    title: "Discover",
+    description: "Read MCP configuration for Claude Desktop, Claude Code, and Cursor. Unknown reach stays unknown.",
   },
   {
-    title: "Understand the risk",
-    description:
-      "It models exposure paths from that configuration, shows the evidence, and ranks what to review first. A path is potential. It is not a record that an attack happened.",
+    title: "Read the graph and paths",
+    description: "The scan connects agents, servers, and permissions, then reports the attack paths that combination can support.",
   },
   {
-    title: "Approve a change",
-    description:
-      "Review the proposed edit. boppi fix removes one server only after you confirm, and it saves a backup. Other edits you make yourself. Just-in-time access is coming soon.",
+    title: "Review the recommendation",
+    description: "Boppi names the permission change that removes the most modeled risk. The recommendation does not edit a file.",
   },
   {
-    title: "Check the result",
-    description:
-      "Run the scan again. boppi verify grades whether the predicted paths are gone. An app that is already open picks up a config change when it restarts.",
+    title: "Fix and verify",
+    description: "A supported local change is applied after you confirm. The next scan checks whether the predicted paths are gone.",
   },
   {
-    title: "Keep the record",
-    description:
-      "Local history stays on the machine. When you want the team to see it, boppi push sends one sanitized inventory. Continuous watching is coming soon.",
+    title: "Roll back or share",
+    description: "Local rollback is in the latest scanner. Push sends one sanitized inventory to the workspace when you want the team to see it.",
   },
 ];
 
@@ -35,9 +30,9 @@ const HowItWorks = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className="reveal mb-14 max-w-2xl">
           <p className="section-kicker">How it works</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From access to action.</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[1.05] [text-wrap:balance]">From discovery to a verified change.</h2>
           <p className="mt-4 text-xl text-muted-foreground">
-            See it, understand it, approve a change, check the next scan, and keep the record.
+            This is the loop that is available now. Full JIT, enterprise-wide changes, and runtime blocking are on the roadmap.
           </p>
         </div>
 

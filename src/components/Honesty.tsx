@@ -19,7 +19,7 @@ const rules = [
     icon: Scale,
     title: "You decide what changes",
     body:
-      "boppi fix asks in the terminal before it removes one MCP server, and it saves a backup of that file. The backup can include secrets, and it stays on your machine. The command does not grant access, and it does not edit anything else.",
+      "A supported local change asks before it edits a configuration file, and it saves a backup on the machine. Local rollback, in the latest scanner, restores that backup. It does not change permissions inside other companies' apps.",
   },
 ];
 
@@ -30,11 +30,11 @@ const questions = [
   },
   {
     question: "Can Boppi change permissions for me?",
-    answer: "boppi fix can remove one MCP server entry after you confirm, and it saves a backup first. It does not grant access, and it does not apply a change from the website. An app that is already open picks up the file when it restarts. Just-in-time access is coming soon.",
+    answer: "It can apply a supported local configuration change after you confirm, verify it on the next scan, and roll it back in the latest scanner. It does not make enterprise-wide permission changes. Full just-in-time access with verified expiry is on the roadmap.",
   },
   {
     question: "How do I get started?",
-    answer: "Anyone can run the free scanner right now with npx boppi scan. No account needed. For your team, create a free workspace at app.boppi.io.",
+    answer: "Run npx boppi scan with no account. Join the private beta at app.boppi.io/signup when the team should share history, invites, MFA, policies, and exports.",
   },
 ];
 
