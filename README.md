@@ -38,7 +38,7 @@ The Cloud app serves the same file. After a refresh, run its `scripts/sync-guest
 
 ## Deploying
 
-The site is the Vercel project `boppi-website`. Git deploys are disabled (`vercel.json` `git.deploymentEnabled: false`), so pushing a branch publishes nothing. Production deploys are a deliberate founder decision. Do not deploy from an agent session without explicit approval.
+The site is the Vercel project `boppi-website`. Git deploys are enabled. Production publishes from `claude/confident-positioning-2026-10-29`.
 
 ## Messaging review (local only)
 
