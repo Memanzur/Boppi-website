@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div>
               <div className="text-sm font-semibold">boppi on npm</div>
-              <div className="text-xs text-muted-foreground">npx boppi scan</div>
+              <div className="text-xs text-muted-foreground">npx @boppi/cli scan</div>
             </div>
           </a>
           <a

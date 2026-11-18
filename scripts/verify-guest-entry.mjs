@@ -48,7 +48,7 @@ try {
     await page.waitForURL('**/checkup');
     check(`${width}: guest checkup works without an account`, await page.getByRole('heading', { name: 'Start with your AI connections.' }).count() === 1 && (await context.cookies()).length === 0);
     await page.getByRole('button', { name: 'Copy checkup command' }).click();
-    check(`${width}: copies the real public scanner command`, await page.evaluate(() => navigator.clipboard.readText()) === 'npx boppi scan');
+    check(`${width}: copies the real public scanner command`, await page.evaluate(() => navigator.clipboard.readText()) === 'npx @boppi/cli scan');
     const body = await page.locator('main').innerText();
     check(`${width}: public/candidate and upload boundaries explicit`, body.includes('does not install that candidate') && body.includes('does not start MCP servers') && body.includes('Cloud sync is a separate choice'));
     await page.getByText('No results, errors, or missing integrations?', { exact: true }).click();

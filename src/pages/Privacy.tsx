@@ -31,7 +31,7 @@ export default function Privacy() {
               <H2>1. What Boppi is</H2>
               <P>
                 Boppi is an AI security and access-control platform. The public Agent scanner
-                (npm package "boppi", v0.3.0) analyzes supported AI and MCP configuration on your device.
+                (npm package "@boppi/cli", v0.5.0) analyzes supported AI and MCP configuration on your device.
                 Cloud centralizes submitted evidence; Control adds supported permission workflows;
                 Intelligence develops evidence-based improvements. The wider platform is in development.
                 This draft describes the website, public scanner, and unpublished workflows separately.
@@ -47,7 +47,7 @@ export default function Privacy() {
                 else.
               </P>
               <P>
-                In public v0.3.0, boppi push is the network command. When you run it, it sends the
+                In public v0.5.0, npx @boppi/cli push is the network command. When you run it, it sends the
                 sanitized inventory of a single scan (agent, server, capability, and permission records,
                 plus fingerprinted paths and redacted configuration metadata) to the workspace you
                 name with --url, over HTTPS, authenticated by the collector token you generated in that
@@ -73,7 +73,7 @@ export default function Privacy() {
                 items={[
                   "Your email address and a password hash, to sign you in.",
                   "Your organization name and the role of each member.",
-                  "Scan inventories that you push from one of your machines with boppi push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
+                  "Scan inventories that you push from one of your machines with npx @boppi/cli push, using a token your organization created. These contain agent names, server names, inferred capabilities and permissions, redacted configuration metadata and path fingerprints. They do not intentionally include prompt contents, runtime events or remediation backups.",
                   "Workspace audit records for supported actions.",
                   "In the unpublished 0.4.0 implementation only: corrections and review notes your team writes on the Intelligence page, including free-text reasons. Review provenance, separate contribution consent, withdrawal, and erasure workflows are implemented; hosted rollout is pending.",
                   "In the unpublished 0.4.0 implementation only, if you turn on activity sync for a collector: activity events sent with boppi events push. These carry the event type, server, tool, outcome and duration, plus keyed digests. They do not include tool arguments, prompts or file contents.",

@@ -1,9 +1,9 @@
-export const SCAN_COMMAND = "npx boppi scan";
-export const SCAN_VERSION = "v0.3.0";
+export const SCAN_COMMAND = "npx @boppi/cli scan";
+export const SCAN_VERSION = "v0.5.0";
 
 export const LINKS = {
   github: "https://github.com/Memanzur/boppi-scan",
-  npm: "https://www.npmjs.com/package/boppi",
+  npm: "https://www.npmjs.com/package/@boppi/cli",
   issues: "https://github.com/Memanzur/boppi-scan/issues",
   app: "https://app.boppi.io",
   signup: "https://app.boppi.io/signup",

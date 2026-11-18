@@ -57,7 +57,7 @@ const LINES: Line[] = [
   { text: "NEXT STEPS", tone: "head" },
   { text: "  1. Review the tradeoff before changing configuration. Then run boppi verify boppi-scan.json; incomplete evidence stays unresolved." },
   { text: "  2. boppi scan --html boppi-report.html writes a shareable report with the evidence for every claim." },
-  { text: "  3. Optional cloud history: preview with boppi push --dry-run. Real uploads need a consented collector and a compatible workspace release.", delay: 500 },
+  { text: "  3. Optional cloud history: preview with npx @boppi/cli push --dry-run. Real uploads need a consented collector and a compatible workspace release.", delay: 500 },
   { text: "" },
   { text: "SAMPLE SOURCES  Illustrative configuration files; this animation reads nothing:", tone: "head" },
   { text: "  - ~/Library/Application Support/Claude/claude_desktop_config.json", tone: "dim" },
