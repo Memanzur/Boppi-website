@@ -51,7 +51,10 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/boppi-logo.png" alt="Boppi" className="w-8 h-8" />
+              <picture>
+                <source srcSet="/boppi-mark.webp" type="image/webp" />
+                <img src="/boppi-mark.png" alt="" width={32} height={32} decoding="async" loading="lazy" className="w-8 h-8" />
+              </picture>
             <span className="text-xl font-semibold tracking-tight">boppi</span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -60,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h2 className="font-semibold mb-4">Product</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
                             <li><a href="/#paths" className="hover:text-primary transition-colors">Risk model</a></li>
               <li><a href="/#features" className="hover:text-primary transition-colors">What it tells you</a></li>
@@ -71,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Open source</h4>
+            <h2 className="font-semibold mb-4">Open source</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href={LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
               <li><a href={LINKS.npm} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">npm</a></li>
@@ -81,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h2 className="font-semibold mb-4">Legal</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
