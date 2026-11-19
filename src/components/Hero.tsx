@@ -43,13 +43,14 @@ const Hero = () => {
     <section className="relative px-6 pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-14 lg:gap-20 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
-            <span className="w-2 h-2 rounded-full bg-success" />
-            AI security & access control
-          </div>
-
-          <h1 className="text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance] mb-7">
-            Know what your AI can access. Stay in control.
+          <h1 className="mb-7">
+            <span className="flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.18em] uppercase mb-6">
+              <span className="w-2 h-2 rounded-full bg-success" aria-hidden="true" />
+              Boppi · AI security & access control
+            </span>
+            <span className="block text-4xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.055em] leading-[0.98] [text-wrap:balance]">
+              Know what your AI can access. Stay in control.
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">

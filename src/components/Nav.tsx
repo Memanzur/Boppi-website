@@ -11,8 +11,11 @@ const Nav = () => (
   <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-md">
     <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
       <a href="/" className="flex items-center gap-2">
-        <img src="/boppi-logo.png" alt="" className="w-7 h-7" />
-        <span className="text-lg font-bold gradient-text">boppi</span>
+        <picture>
+          <source srcSet="/boppi-mark.webp" type="image/webp" />
+          <img src="/boppi-mark.png" alt="Boppi" width={28} height={28} decoding="async" className="w-7 h-7" />
+        </picture>
+        <span className="text-lg font-bold gradient-text" aria-hidden="true">boppi</span>
       </a>
       <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
         {items.map((item) => (
